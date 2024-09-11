@@ -5,9 +5,9 @@
 将生成的安装包传至相应ip的服务器上，解压并安装各节点。
 
 ```sh
-$tar -zxvf 101.35.234.160_agency.tar.gz
-$cd 101.35.234.160_agency
-$bash install_node.sh
+tar -zxvf 101.35.234.160_agency.tar.gz #注意替换成自己的压缩包名
+cd 101.35.234.160_agency #进入工作目录
+bash install_node.sh #运行安装脚本
 ```
 
 执行成功后，会在每个 node 目录中生成 thanos-chain 和 thanos-gateway 两个目录。
@@ -18,8 +18,8 @@ $bash install_node.sh
 
 ```bash
 # 以node0为例
-$cd node0/thanos-chain
-$bash start_chain.sh
+cd node0/thanos-chain
+bash start_chain.sh
 ```
 
 当配置的初始节点应用均已启动，则链启动完成。脚本中每个进程默认设置占用 1g 的内存，如果需要修改，可以进入脚本中直接修改运行指令。
@@ -28,8 +28,8 @@ $bash start_chain.sh
 
 ```bash
 # 以node0为例
-$cd node0
-$tail -f node0/thanos-chain/logs/thanos-chain.log | grep 'empty do commit cost' #如果持续打印该消息，说明节点chain应用启动成功并参与共识。
+cd node0
+tail -f thanos-chain/logs/thanos-chain.log | grep 'empty do commit cost' #如果持续打印该消息，说明节点chain应用启动成功并参与共识。
 ```
 
 ## 启动节点网关 <a href="#id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-wang-guan" id="id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-wang-guan"></a>
@@ -38,27 +38,37 @@ $tail -f node0/thanos-chain/logs/thanos-chain.log | grep 'empty do commit cost' 
 
 ```bash
 # 以node0为例
-$cd node0/thanos-gateway
-$bash start_gateway.sh
+cd node0/thanos-gateway
+bash start_gateway.sh
 ```
 
 网关启动后查看 log 日志如下，则启动成功
 
 ```bash
 # 以node0为例
-$cd node0
-$cat node0/thanos-chain/logs/thanos-gateway.log |grep 'INFO [main]  Main start success!!' #如果打印该消息，说明节点gateway应用启动成功。
+cd node0
+cat thanos-gateway/logs/thanos-gateway.log |grep 'INFO [main]  Main start success!!' #如果打印该消息，说明节点gateway应用启动成功。
 ```
 
-如果节点网关连接节点应用失败，查看完整日志
+## 其他问题
+
+**内存不足**
+
+如果在运行程序时，遇到启动失败且无任何日志时，可能时服务器内存不住的原因。脚本中每个进程默认设置占用 1g 的内存，所以 chain 和 gateway 总共会占用至少 2g 的内存。
+
+如果需要修改，可以直接进入 `start-chain.sh` 以及 `start-gateway.sh` 脚本中修改运行指令。
+* start-chain\.sh
 
 ```bash
-# 以node0为例
-$cd node0
-$node0/thanos-chain/logs/thanos-gateway.log
+nohup java  -Xmx256m -Xms256m -Xmn256m -Xss4M -XX:SurvivorRatio=8  -jar thanos-chain.jar >/dev/null &
+```
+* start-gateway\.sh
+```bash
+nohup java  -Xmx256m -Xms256m -Xmn256m -Xss4M -XX:SurvivorRatio=8  -jar thanos-gateway.jar >/dev/null &
 ```
 
-会发现如下报错
+**rpc 端口绑定失败**
+如果节点网关 rpc 端口绑定失败，`thanos-gateway.log` 中会出现如下报错信息
 
 ```
 java.net.BindException: Cannot assign requested address (Bind failed)
@@ -81,26 +91,12 @@ java.net.BindException: Cannot assign requested address (Bind failed)
     at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
 ```
 
-需要检查对应的连接端口是否正确打通，可以尝试直接修改 node0/thanos-gateway/resource/thanos-gateway.conf 中间中的配置。
+需要查看 `node0/thanos-gateway/resource/thanos-gateway.conf` 配置文件并找到 `rpc` . `address` 条目，例如 `address=10.8.0.1:8180`
+* 检查对应的 8180 端口是否在安全组中配置打开
+* 检查 ip 地址是否为内网地址 (目前 rpc 限制为仅内网可访问，而 http 为可外网访问)
 
-找到 rpc.address 条目，直接值修改为 127.0.0.1:8182 ，因为当前 gateway 和 chain 运行在同一台服务器上，所以可以直接通过 127.0.0.1 访问端口，进而屏蔽端口连通性问题。
-
-```editorconfig
-rpc {
-    address = "127.0.0.1:8182"
-    acceptCount = 300
-    maxThreads = 400
-    readWriteTimeout = 60000
-}
-```
-
-如果 gateway 和 chain 需要运行在不同服务器上，请正确配置 ip 和 port 后，验证服务器端口连通性
-
-## 其他事项
-
-脚本中每个进程默认设置占用 1g 的内存，如果需要修改，可以直接进入 start-chain.sh 以及 start-gateway.sh 脚本中修改运行指令。
-
-```bash
-nohup java  -Xmx1g -Xms1g -Xmn750M -Xss4M -XX:SurvivorRatio=8  -jar thanos-chain.jar >/dev/null &
-nohup java  -Xmx1g -Xms1g -Xmn750M -Xss4M -XX:SurvivorRatio=8  -jar thanos-gateway.jar >/dev/null &
+检查并修改完成后，重新执行 `start_gateway.sh` 运行网关，注意如果上一次运行的进程如果未关闭，需要先手动关闭。
+```sh
+ps -ef | grep java #查询运行中的 java 进程
+kill -9 进程号 #找到对应的进程，并关闭
 ```

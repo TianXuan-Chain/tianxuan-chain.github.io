@@ -19,9 +19,9 @@
 
 **2）网关安装所需依赖**
 
-* `Oracle JDK 1.8`
-* `Maven .3.9`
-* `Git`
+* Oracle JDK - 1.8
+* Maven - 3.3.9
+* Git
 
 **3）创建操作目录**
 
@@ -45,7 +45,7 @@ mkdir resource/tls
 
 **4）添加可执行文件**
 
-获取可执行文件`thanos-gateway.jar`，获取方式见：[获取可执行文件](../thanos-chain/executable-file.md)。
+获取可执行文件`thanos-gateway.jar`，获取方式见：[获取可执行文件](../tianxaun-chain/executable-file.md)。
 
 将`thanos-gateway.jar`放在操作目录下，如`~/thanos-gateway/node0/`。
 
@@ -55,8 +55,7 @@ mkdir resource/tls
 
 1）在`~/thanos-gateway/node0/resource/`目录下 添加网关的总配置文件`thanos-gateway.conf`和日志管理配置`gateway-logback.xml`。
 
-`thanos-gateway.conf`内容如下。注意，涉及路径的配置项必须是<mark style="color:red;">绝对路径</mark>。
-
+`thanos-gateway.conf`内容模板如下。
 ```editorconfig
 gateway {
     #本机节点信息，用于与其他gateway节点互连
@@ -78,7 +77,7 @@ gateway {
         readWriteTimeout = 12000
     }
     #广播节点列表
-   # broadcast = ["2:10.246.199.210:200"]
+    # broadcast = ["2:10.246.199.210:200"]
     broadcast =[]
     push {
         #推送地址
@@ -108,6 +107,9 @@ tls {
     certsPath="/root/thanos-gateway/node0/resource/tls/chain.crt"
 }
 ```
+当前教程配置单节点天玄链网关，模板中需要修改的配置如下：
+* `gateway . rpc . address` 需要将 IP 修改为服务器的内网 IP 地址
+* `gateway . log . logConfigPath` 需要修改为相应的 gateway-logback.xml 文件的路劲。注意，涉及路径的配置项必须是<mark style="color:red;">绝对路径</mark>。
 
 gateway-logback.xml内容如下：
 

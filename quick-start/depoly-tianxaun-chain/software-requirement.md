@@ -7,13 +7,13 @@
 在执行此脚本前，依赖的软件需要预先在执行脚本的服务器上安装好，具体的软件清单如下：
 
 * 运行 “节点安装包构建” 脚本需要
-  * Oracle JDK \[1.8]
-  * Maven \[3.3.9]
-  * Git
-  * Crudini
+  * [Oracle JDK - 1.8](#oracle-jdk-18-安装)
+  * [Maven - 3.3.9](#maven-339-安装)
+  * [Git](#git-安装)
+  * [Crudini](#crudini-安装)
 * 运行 “节点安装与启动” 脚本需要
-  * Oracle JDK \[1.8]
-  * Crudini
+  * [Oracle JDK - 1.8](#oracle-jdk-18-安装)
+  * [Crudini](#crudini-安装)
 
 ## 安装教程 <a href="#id2.2-ruan-jian-yao-qiu-an-zhuang-jiao-cheng" id="id2.2-ruan-jian-yao-qiu-an-zhuang-jiao-cheng"></a>
 

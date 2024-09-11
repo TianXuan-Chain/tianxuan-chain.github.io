@@ -3,28 +3,28 @@
 ## 平台介绍
 
 * [天玄区块链](overview.md)
-* [版本信息](introduce/thanos-chain-ver.md)
+* [版本信息](introduce/tianxaun-chain-ver.md)
 
 ## 快速开始 <a href="#quick-start" id="quick-start"></a>
 
-* [快速搭建天玄链](quick-start/depoly-thanos-chain/README.md)
-  * [硬件要求](quick-start/depoly-thanos-chain/hardware-requirement.md)
-  * [软件要求](quick-start/depoly-thanos-chain/software-requirement.md)
-  * [构建节点安装包](quick-start/depoly-thanos-chain/build.md)
-  * [安装并启动节点](quick-start/depoly-thanos-chain/run.md)
-* [应用部署示例](quick-start/deploy-thanos-app.md)
+* [快速搭建天玄链](quick-start/depoly-tianxaun-chain/README.md)
+  * [硬件要求](quick-start/depoly-tianxaun-chain/hardware-requirement.md)
+  * [软件要求](quick-start/depoly-tianxaun-chain/software-requirement.md)
+  * [构建节点安装包](quick-start/depoly-tianxaun-chain/build.md)
+  * [安装并启动节点](quick-start/depoly-tianxaun-chain/run.md)
+* [应用部署示例](quick-start/deploy-tianxaun-app.md)
 
 ## 安装手册 <a href="#installation-manual" id="installation-manual"></a>
 
-* [天玄链](installation-manual/thanos-chain/README.md)
-  * [打包可执行文件](installation-manual/thanos-chain/executable-file.md)
-  * [安装](installation-manual/thanos-chain/installation.md)
-  * [配置说明](installation-manual/thanos-chain/configuration.md)
-  * [证书说明](installation-manual/thanos-chain/cert.md)
-  * [日志说明](installation-manual/thanos-chain/log.md)
-* [天玄网关](installation-manual/thanos-gateway/README.md)
-  * [安装](installation-manual/thanos-gateway/installation.md)
-  * [配置说明](installation-manual/thanos-gateway/configuration.md)
+* [天玄链](installation-manual/tianxaun-chain/README.md)
+  * [打包可执行文件](installation-manual/tianxaun-chain/executable-file.md)
+  * [安装](installation-manual/tianxaun-chain/installation.md)
+  * [配置说明](installation-manual/tianxaun-chain/configuration.md)
+  * [证书说明](installation-manual/tianxaun-chain/cert.md)
+  * [日志说明](installation-manual/tianxaun-chain/log.md)
+* [天玄网关](installation-manual/tianxaun-gateway/README.md)
+  * [安装](installation-manual/tianxaun-gateway/installation.md)
+  * [配置说明](installation-manual/tianxaun-gateway/configuration.md)
 
 ## 应用开发手册 <a href="#app-development-manual" id="app-development-manual"></a>
 

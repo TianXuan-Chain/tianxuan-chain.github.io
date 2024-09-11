@@ -1,12 +1,12 @@
 # 应用部署示例
 
-在开始本教程前，请先确保已经按照 [快速搭建天玄链](depoly-thanos-chain/) 部署好了一条测试链。
+在开始本教程前，请先确保已经按照 [快速搭建天玄链](depoly-tianxaun-chain/) 部署好了一条测试链。
 
 本教程将使用 Intelj Idea 进行，方便读者基于此 demo 进行开发，所以请确保在运行 demo 代码的机器上具备以下环境。
 
 * **IDE：**进入[IntelliJ IDE官网](https://www.jetbrains.com/idea/download/)，下载并安装社区版IntelliJ IDE
-* **Oracle JDK：**Java应用需要依赖 [oracle jdk1.8 ](depoly-thanos-chain/software-requirement.md#id2.2-ruan-jian-yao-qiu-oraclejdk1.8-an-zhuang-oraclejdk)，且jdk版本不低于 1.8.0u201
-* **Maven：**项目需要依赖 Maven，且版本不低于 [3.3.9](depoly-thanos-chain/software-requirement.md#id2.2-ruan-jian-yao-qiu-maven3.3.9-an-zhuang-maven)
+* **Oracle JDK：**Java应用需要依赖 [oracle jdk1.8 ](depoly-tianxaun-chain/software-requirement.md#id2.2-ruan-jian-yao-qiu-oraclejdk1.8-an-zhuang-oraclejdk)，且jdk版本不低于 1.8.0u201
+* **Maven：**项目需要依赖 Maven，且版本不低于 [3.3.9](depoly-tianxaun-chain/software-requirement.md#id2.2-ruan-jian-yao-qiu-maven3.3.9-an-zhuang-maven)
 
 ## 下载Demo物料包
 
