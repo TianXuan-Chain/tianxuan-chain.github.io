@@ -1,0 +1,37 @@
+{
+  "name": "tianxuan-docs",
+  "version": "1.0.0",
+  "description": "--- description: 天玄链是网易星球区块链团队主导研发、安全可控的企业级金融联盟链底层平台 cover: .gitbook/assets/Frame.png coverY: 0 ---",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "gitbook-plugin-atoc": "^1.0.3",
+    "gitbook-plugin-back-to-top-button": "^0.1.4",
+    "gitbook-plugin-code": "^0.1.0",
+    "gitbook-plugin-favicon": "^0.0.2",
+    "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-image-captions": "^3.1.0",
+    "gitbook-plugin-theme-comscore": "^0.0.3",
+    "slate-no-empty": "^0.1.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  },
+  "scripts": {
+    "build": "gitbook build",
+    "deploy": "gh-pages -d _book"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TianXuan-Chain/thanos-docs.git"
+  },
+  "author": "Emosama",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TianXuan-Chain/thanos-docs/issues"
+  },
+  "homepage": "https://github.com/TianXuan-Chain/thanos-docs#readme"
+}
