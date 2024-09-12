@@ -1,11 +1,15 @@
 # 构建节点安装包
 
+本教程脚本运行环境需要在 <mark>Linux</mark> 系统中进行，系统版本要求请见：[硬件需求](./hardware-requirement.md)。
+
 ## 下载物料包
 
 ```bash
-git clone https://github.com/TianXuan-Chain/thanos-package-generate.git # 拉取物料包
+cd ~ #使用 root 作为起始工作目录
 
-cd ./thanos-package-generate # 进入工作目录
+git clone https://github.com/TianXuan-Chain/thanos-package-generate.git #拉取物料包
+
+cd ./thanos-package-generate #进入工作目录
 ```
 
 ## 主要配置
@@ -13,21 +17,22 @@ cd ./thanos-package-generate # 进入工作目录
 找到 config.ini 文件。
 
 ```bash
-vim config.ini
+vim config.ini #修改配置文件
 ```
-### [chain-nodes] 配置项
+### \[chain-nodes] 配置项
 找到 \[chain-nodes] 部分的配置，初始化服务器和节点的数量
 
 ```
 [chain-nodes]
-; 格式为 : nodeIDX=p2p_ip listen_ip num agent
-; IDX为索引, 从0开始增加.
-; p2p_ip     => 服务器上用于p2p通信的网段的ip，多数时候都是公网ip.
-; private_ip => 服务器的内网ip
-; listen_ip  => 服务器上的监听端口, 用来接收rpc、channel的链接请求, 建议默认值为"0.0.0.0".
-; num        => 在服务器上需要启动的节点的数目.
-; agent      => 机构名称, 若是不关心机构信息, 值可以随意, 但是不可以为空.
-#node0 = 111.111.111.111 10.10.0.1  0.0.0.0  1  agent
+# 格式为 : nodeIDX=p2p_ip listen_ip num agent
+# IDX为索引, 从0开始增加.
+# p2p_ip     => 服务器上用于p2p通信的网段的ip，多数时候都是公网ip.
+# private_ip => 服务器的内网ip
+# listen_ip  => 服务器上的监听端口, 用来接收rpc、channel的链接请求, 建议默认值为"0.0.0.0".
+# num        => 在服务器上需要启动的节点的数目.
+# agent      => 机构名称, 若是不关心机构信息, 值可以随意, 但是不可以为空.
+# node0 = 111.111.111.111 10.10.0.1  0.0.0.0  1  agent
+
 node0=101.35.234.166  10.0.16.7  0.0.0.0  1  agency
 ```
 
@@ -48,7 +53,7 @@ node1=101.44.225.133  10.0.11.5  0.0.0.0  1  agency1
 
 上面配置中初始设置两个服务器 agency 和 agency1，其中 agency 上运行两个节点，agency1 上运行一个节点，一共三个节点。
 
-### [chain-ports] 和 [gateway-ports] 配置项
+### \[chain-ports] 和 \[gateway-ports] 配置项
 
 一般使用默认值即可。但需要在服务器对应安全组中打开，并注意以下两个事项：
 * 如果一台服务器上启动多个节点，节点使用的端口会以默认端口为基准往后递增 1
@@ -105,9 +110,8 @@ build
 
 注：下面介绍的相关配置，没有必要不需要改动
 
-### 安装脚本配置 <a href="#id2.3-gou-jian-jie-dian-an-zhuang-bao-an-zhuang-jiao-ben-pei-zhi" id="id2.3-gou-jian-jie-dian-an-zhuang-bao-an-zhuang-jiao-ben-pei-zhi"></a>
 
-**\[common] 部分**
+### \[common] 配置项
 
 配置一些基础信息
 
@@ -126,7 +130,7 @@ gateway_github_url = https://github.com/TianXuan-Chain/thanos-gateway.git
 # jar_local_path=/root/jar
 ```
 
-**\[tls] 和 \[crypto] 部分**
+### \[tls] 和 \[crypto] 配置项
 
 国密和密钥算法相关配置。
 
@@ -146,7 +150,7 @@ sharding_number = 1
 cipher_key_type = AES
 ```
 
-**\[maven-repo] 部分**
+### \[maven-repo] 配置项
 
 注意：该配置暂时已废弃，目前可忽略
 

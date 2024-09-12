@@ -4,24 +4,26 @@
 
 在开始本教程前，请确保已经准备好了以下资源
 
-* **JDK 1.8：**Java应用需要依赖oracle jdk1.8，且jdk版本不低于1.8.0u201
-* **Maven3.3.9：**项目编译需要依赖 Maven，且版本不低于 3.3.9
-* **bcprov-jdk：**在使用sdk时，需要在java运行环境中（具体为$JAVA\_HOME（jdk所在目录）/jre/lib/ext目录下）**添加** [bcprov-jdk15on-1.66.jar](https://confluence.leihuo.netease.com/download/attachments/224670634/bcprov-jdk15on-1.66.jar?version=1\&modificationDate=1624445942000\&api=v2) 包
-* **IDE：**进入[IntelliJ IDE官网](https://www.jetbrains.com/idea/download/)，下载并安装社区版IntelliJ IDE
-* **天玄测试链：**请参考 [快速搭建天玄网络](https://confluence.leihuo.netease.com/pages/viewpage.action?pageId=303020093) 搭建，并获取到相应的 rpc 或者 http 链接
-* **智能合约应用：**请准备好需要部署的应用合约（本教程涉及的物料包中也提供了两个简单的智能合约示例）
+* **JDK 1.8**： Java应用需要依赖oracle jdk1.8，且jdk版本不低于 1.8.0u201
+* **Maven3.3.9**： 项目编译需要依赖 Maven，且版本不低于 3.3.9
+* **bcprov-jdk**： 在使用sdk时，需要在java运行环境中（具体为$JAVA\_HOME（jdk所在目录）/jre/lib/ext目录下）添加 [bcprov-jdk15on-1.66.jar](https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bcprov-jdk15on-1.66.jar) 包
+* **IDE**： 进入[IntelliJ IDEA 官网](https://www.jetbrains.com/idea/download/)，下载并安装社区版 IntelliJ IDEA
+* **天玄测试链**： 请参考 [快速搭建天玄网络](../../quick-start/depoly-tianxaun-chain/README.md) 搭建，并获取到相应的 http 或者 rpc 链接
+* **智能合约应用**： 请准备好需要部署的应用合约（本教程涉及的物料包中也提供了两个简单的智能合约示例）
 
 ## 编译智能合约 <a href="#id4.3.2-kuai-su-ru-men-bian-yi-zhi-neng-he-yue" id="id4.3.2-kuai-su-ru-men-bian-yi-zhi-neng-he-yue"></a>
 
-注意：目前天玄链支持 solidity 编译及运行最高版本为 0.4.25 ，且必须使用附件提供的solc编译工具编译合约
+目前天玄链支持 solidity 编译及运行最高版本为 0.4.25 ，且必须使用附件提供的solc编译工具编译合约
+
+编译智能合约部分教程请使用 Linux 系统进行，推荐 <mark>Centos 7+ 或者 Ubuntu 18+</mark> 。
 
 ### 获取相关物料包 <a href="#id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao" id="id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao"></a>
 
 需要从 GitHub 上拉取`thanos-web3j`代码，由于`thanos-web3j`编译依赖于`thanos-common.jar`，所以还需要拉取`thanos-common`代码。
 
 ```bash
-git clone https://github.com/TianXuan-Chain/thanos-common.git
-git clone https://github.com/TianXuan-Chain/thanos-web3j.git
+git clone https://github.com/TianXuan-Chain/thanos-web3j.git # thanos-web3j代码库
+git clone https://github.com/TianXuan-Chain/thanos-common.git # thanos-common代码库 
 ```
 
 ### 编译 <a href="#id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao" id="id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao"></a>
@@ -130,14 +132,6 @@ gradle publishToMavenLocal
 # 可以使用 gradle build 指令
 ```
 
-### 获取 sdk 物料包 <a href="#id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao" id="id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao"></a>
-
-从 github 仓库拉取 `thanos-web3j`代码
-
-```bash
-git clone https://github.com/TianXuan-Chain/thanos-web3j.git
-```
-
 ### 配置 java 运行环境 <a href="#id4.3.2-kuai-su-ru-men-an-zhuang-solc" id="id4.3.2-kuai-su-ru-men-an-zhuang-solc"></a>
 
 在使用 web3j sdk 时，需要在 java 运行环境中（具体为`$JAVA_HOME/jre/lib/ext`目录下）**添加** bcprov-jdk15on-1.66.jar 包。该文件可以在此处获取：[https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bcprov-jdk15on-1.66.jar](https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bcprov-jdk15on-1.66.jar)
@@ -167,11 +161,14 @@ solc --version
 
 执行成功后，会在`dist`文件夹内产生一个`output`文件夹，合约编译后对应的`abi`，`bin`以及`java`文件（在`com`文件夹内）都存放在其中。`java`文件是基于`abi`与`bin`文件生成的，其中`abi`与以太坊的一致，`abi`相关知识可以在此处了解：[https://docs.soliditylang.org/en/latest/abi-spec.html#](https://docs.soliditylang.org/en/latest/abi-spec.html)
 
-## 部署并使用应用 <a href="#id4.3.2-kuai-su-ru-men-bu-shu-bing-shi-yong-ying-yong" id="id4.3.2-kuai-su-ru-men-bu-shu-bing-shi-yong-ying-yong"></a>
+## 部署并使用合约应用 <a href="#id4.3.2-kuai-su-ru-men-bu-shu-bing-shi-yong-ying-yong" id="id4.3.2-kuai-su-ru-men-bu-shu-bing-shi-yong-ying-yong"></a>
 
 ### 前置准备 <a href="#id4.3.2-kuai-su-ru-men-qian-zhi-zhun-bei" id="id4.3.2-kuai-su-ru-men-qian-zhi-zhun-bei"></a>
 
-如果上述流程和编写应用的不是一台机器，需要重新构建 Maven 本地依赖链。请参考[应用部署示例](../../quick-start/deploy-thanos-app.md)当前机器重新构建 Maven 本地依赖。
+* 开始本部分教程时，默认用户已经准备好了<mark>编译为 Java 的合约应用</mark>。
+
+* 这部分教程使用 IntelliJ IDEA 进行。如果上述流程和编写应用的不是一台机器 (例如：使用 Windows 系统进行)。请参考[应用部署示例](../../quick-start/deploy-thanos-app.md)在当前机器重新构建 Maven 本地依赖。
+
 
 ### 引入 SDK <a href="#id4.3.2-kuai-su-ru-men-yin-ru-sdk" id="id4.3.2-kuai-su-ru-men-yin-ru-sdk"></a>
 

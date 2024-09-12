@@ -27,19 +27,19 @@
 
 创建网关部署操作的目录，以`node0`为例：
 
-```bash
+```sh
 cd ~ && mkdir -p thanos-gateway/node0 && cd thanos-gateway/node0
 ```
 
 在节点目录下创建`database`，`logs`和`resource`子目录。其中，`logs`目录用于存放链执行日志。`resource`目录用于存放网关的配置文件。
 
-```bash
+```sh
 mkdir logs resource
 ```
 
 在`resource`目录下创建`tls`目录，用于存放证书相关文件。
 
-```bash
+```sh
 mkdir resource/tls
 ```
 
@@ -108,10 +108,10 @@ tls {
 }
 ```
 当前教程配置单节点天玄链网关，模板中需要修改的配置如下：
-* `gateway . rpc . address` 需要将 IP 修改为服务器的内网 IP 地址
-* `gateway . log . logConfigPath` 需要修改为相应的 gateway-logback.xml 文件的路劲。注意，涉及路径的配置项必须是<mark style="color:red;">绝对路径</mark>。
+* `gateway . rpc . address` 需要将 IP 修改为服务器的<mark>内网 IP 地址</mark>。
+* `gateway . log . logConfigPath` 需要修改为相应的 gateway-logback.xml 文件的路劲。注意，涉及路径的配置项必须是<mark>绝对路径</mark>。
 
-gateway-logback.xml内容如下：
+`gateway-logback.xml`内容如下：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -146,12 +146,18 @@ gateway-logback.xml内容如下：
 </configuration>
 ```
 
-而后，添加`tls`相关证书和密钥等文件。
+而后，添加 tls 相关证书和密钥等文件。
 
-由于节点网关和节点应用是一一对应的，需要将应用部署中生成的`tls`配置（在`~/thanos-chain/node0/resource/tls`目录下的`node.key`和`chain.crt`两个文件）添加至`~/thanos-gateway/node0/resource/tls`目录下。
+由于节点网关和节点应用是一一对应的，需要将应用部署中生成的 tls 配置（在`~/thanos-chain/node0/resource/tls`目录下的`node.key`和`chain.crt`两个文件）添加至`~/thanos-gateway/node0/resource/tls`目录下。
 
-至此，网关配置完成，可以启动。启动方法为：在网关操作目录`~/thanos-gateway/node0/下`，运行如下指令启动节点：
-
+```sh
+# 复制文件到指定目录
+cp ~/thanos-chain/node0/resource/tls/node.key ~/thanos-gateway/node0/resource/tls/
+cp ~/thanos-chain/node0/resource/tls/chain.crt ~/thanos-gateway/node0/resource/tls/
 ```
-java  -Xmx256m -Xms256m -Xmn256m -Xss4M -jar thanos-gateway.jar
+
+至此，网关配置完成，可以启动。启动方法为：在网关操作目录`~/thanos-gateway/node0/`下，运行如下指令启动节点：
+
+```sh
+java -Xmx256m -Xms256m -Xmn256m -Xss4M -jar thanos-gateway.jar
 ```

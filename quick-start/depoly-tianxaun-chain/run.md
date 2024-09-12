@@ -62,7 +62,9 @@ cat thanos-gateway/logs/thanos-gateway.log |grep 'INFO [main]  Main start succes
 ```bash
 nohup java  -Xmx256m -Xms256m -Xmn256m -Xss4M -XX:SurvivorRatio=8  -jar thanos-chain.jar >/dev/null &
 ```
+
 * start-gateway\.sh
+
 ```bash
 nohup java  -Xmx256m -Xms256m -Xmn256m -Xss4M -XX:SurvivorRatio=8  -jar thanos-gateway.jar >/dev/null &
 ```

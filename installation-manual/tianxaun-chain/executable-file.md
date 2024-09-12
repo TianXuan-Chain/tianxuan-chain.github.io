@@ -33,7 +33,7 @@ cd thanos-common
 mvn clean install -Dmaven.test.skip=true
 </code></pre>
 
-打包命令执行后，会在target目录下生成 thanos-common.jar 包，并且该 jar 包会被自动加载到本地的 Maven 仓库中
+打包命令执行后，会在 target 目录下生成 thanos-common.jar 包，并且该 jar 包会被自动加载到本地的 Maven 仓库中
 
 ## 打包 thanos-gateway <a href="#id3.1.1-huo-qu-ke-zhi-xing-wen-jian-san-da-bao-thanoscommon" id="id3.1.1-huo-qu-ke-zhi-xing-wen-jian-san-da-bao-thanoscommon"></a>
 
@@ -48,11 +48,16 @@ cd thanos-gateway
 mvn clean install -Dmaven.test.skip=true
 ```
 
-打包命令执行后，会在target目录下生成 thanos-gateway.jar&#x20;
+打包命令执行成功后，会在target目录下生成 thanos-gateway.jar&#x20;
 
 ## 打包 thanos-chain <a href="#id3.1.1-huo-qu-ke-zhi-xing-wen-jian-san-da-bao-thanoscommon" id="id3.1.1-huo-qu-ke-zhi-xing-wen-jian-san-da-bao-thanoscommon"></a>
 
 thanos-chain 应用，除了依赖 thanos-common.jar 以外，还依赖于 solcJ-all-0.4.25.jar 。按照文档执行顺序，thanos-common.jar 以应被加载到了本地 Maven 库中，还需要手动加载一下 solcJ-all-0.4.25.jar 到本地库，该 jar 包可在此处下载：[https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/solc/solcJ-all-0.4.25.jar](https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/solc/solcJ-all-0.4.25.jar)
+
+```sh
+# 将 solcJ-all-0.4.25.jar 加载到本地库
+mvn install:install-file -DgroupId=org.ethereum -DartifactId=solcJ-all -Dversion=0.4.25 -Dversion=0.4.25 -Dpackaging=jar -Dfile=solcJ-all-0.4.25.jar
+```
 
 该依赖包加载成功后，开始 thanos-chain 编译打包。
 
@@ -64,4 +69,5 @@ cd thanos-chain
 # 编译
 mvn clean install -Dmaven.test.skip=true
 ```
+打包命令执行成功后，会在target目录下生成 thanos-chain.jar&#x20;
 

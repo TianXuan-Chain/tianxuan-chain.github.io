@@ -121,25 +121,26 @@ keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 basicConstraints = CA:TRUE
 ```
 
-3）创建链私钥、证书和机构私钥、证书（按需求选择国密或者非国密）
+3）创建链私钥、证书和机构私钥、证书，按需求从<mark>国密</mark>和<mark>非国密</mark>中二选一即可，本教程请使用<mark>非国密</mark>
 
 ```bash
-# 1. 生成根ca的私钥ca.key与自签名证书ca.crt
 # 非国密
+# 1. 生成根ca的私钥ca.key与自签名证书ca.crt
 gmssl genrsa -out ca.key 2048
 gmssl req -new -x509 -days 3650 -key ca.key -out ca.crt
-# 国密
-gmssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:sm2p256v1 -out ca.key
-gmssl req -new -x509 -days 365 -key ca.key -sm3 -out ca.crt
-```
 
-```bash
 # 2. 生成机构私钥agency.key与证书agency.crt (由根ca签发)
-# 非国密
 gmssl genrsa -out agency.key 2048
 gmssl req -new -key agency.key -config cert.cnf -out agency.csr
 gmssl x509 -req -days 3650 -CA ca.crt -CAkey ca.key -CAcreateserial -in agency.csr -out agency.crt  -extensions v4_req -extfile cert.cnf
+```
+```bash
 # 国密
+# 1. 生成根ca的私钥ca.key与自签名证书ca.crt
+gmssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:sm2p256v1 -out ca.key
+gmssl req -new -x509 -days 365 -key ca.key -sm3 -out ca.crt
+
+# 2. 生成机构私钥agency.key与证书agency.crt (由根ca签发)
 gmssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:sm2p256v1 -out agency.key
 gmssl req -new -sm3 -key agency.key -config cert.cnf -out agency.csr
 gmssl x509 -req -days 3650 -CA ca.crt -CAkey ca.key -in agency.csr -out agency.crt -CAcreateserial -sm3 -extensions v4_req -extfile cert.cnf
@@ -154,20 +155,25 @@ gmssl x509 -req -days 3650 -CA ca.crt -CAkey ca.key -in agency.csr -out agency.c
 在 \~/thanos-chain/ca 目录下，执行如下命令，生成指定算法的节点密钥，并使用机构私钥签发节点证书。
 
 ```bash
-# 1. 生成节点私钥和节点证书
 # 非国密
+# 1. 生成节点私钥和节点证书
 gmssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:secp256k1 -out node.key
 gmssl req -new -key node.key -config cert.cnf  -out node.csr
 gmssl x509 -req -days 3650 -in node.csr -CAkey agency.key -CA agency.crt -out node.crt -CAcreateserial -extensions v3_req -extfile cert.cnf
 gmssl x509  -text -in node.crt | sed -n '5p' |  sed 's/://g' | tr "\n" " " | sed 's/ //g' | sed 's/[a-z]/\u&/g' | cat >node.serial
+
+# 2. 生成证书链文件
+cat ca.crt agency.crt  node.crt > chain.crt
+```
+
+```bash
 # 国密
+# 1. 生成节点私钥和节点证书
 gmssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:sm2p256v1 -out node.key
 gmssl req -new -sm3 -key node.key -config cert.cnf -out node.csr
 gmssl x509 -req -days 3650 -in node.csr -CAkey agency.key -CA agency.crt -out node.crt -CAcreateserial -sm3 -extensions v3_req -extfile cert.cnf
 gmssl x509  -text -in node.crt | sed -n '5p' |  sed 's/://g' | tr "\n" " " | sed 's/ //g' | sed 's/[a-z]/\u&/g' | cat >node.serial
-```
 
-```bash
 # 2. 生成证书链文件
 cat ca.crt agency.crt  node.crt > chain.crt
 ```
@@ -185,7 +191,10 @@ mv node.* chain.crt ~/thanos-chain/node0/resource/tls
 
 1）在 \~/thanos-chain/node0/resource/ 目录下 添加节点的总配置文件 thanos-chain.conf 和日志管理配置 chain-logback.xml。
 
-thanos-chain.conf内容如下。注意，涉及路径的配置项必须是<mark style="color:red;">绝对路径</mark>。
+thanos-chain.conf内容如下。注意，涉及路径的配置项必须是<mark style="color:red;">绝对路径</mark>，如以下配置项：
+* `resource . database . dir`
+* `resource . logConfigPath`
+* `tls . keyPath` 和 `tls . certsPath`
 
 ```editorconfig
 network {
@@ -395,7 +404,11 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: 33410
         ... 5 more
 ```
 
-genesis.json 内容如下，其中 validatorVerifiers 为组网节点身份信息，key 为节点公钥，value 为节点身份信息。请替换 validatorVerifiers 中第一个条目的 key 为 node.private::publicKey 对应的值。
+genesis.json 内容如下，其中 validatorVerifiers 为组网节点身份信息
+* key 为节点公钥
+* value 为节点身份信息。
+
+请替换 validatorVerifiers 中的条目信息为自己节点密钥信息。如将 key (如下配置中的 0100....ede8) 替换为自己的节点公钥将`node.private` 文件中的 publicKey 。
 
 ```json
 {
@@ -443,7 +456,7 @@ genesis.json 内容如下，其中 validatorVerifiers 为组网节点身份信�
 至此，单节点配置完成，可以启动。启动方法为：在节点目录下（\~/thanos-chain/node0/），运行如下指令启动节点：
 
 ```bash
-java  -Xmx256m -Xms256g -Xmn256g -Xss4M -jar thanos-chain.jar
+java  -Xmx256m -Xms256m -Xmn256m -Xss4M -jar thanos-chain.jar
 ```
 
 如果运行时遇到如下报错:

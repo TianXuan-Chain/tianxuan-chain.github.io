@@ -8,7 +8,7 @@
 | CPU核心数 | 2核                                                          | 4核   |
 | 硬盘大小   | 100G                                                        | 1T   |
 | 网络带宽   | 1Mb                                                         | 10Mb |
-| 操作系统   | CentOS 7+ (推荐)、Ubantu18+ |      |
+| 操作系统   | CentOS 7+ (推荐)、Ubuntu18+ |      |
 
 ## 网络及端口要求 <a href="#id2.1-ying-jian-yao-qiu-wang-luo-ji-duan-kou-yao-qiu" id="id2.1-ying-jian-yao-qiu-wang-luo-ji-duan-kou-yao-qiu"></a>
 

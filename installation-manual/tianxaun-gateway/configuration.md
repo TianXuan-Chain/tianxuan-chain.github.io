@@ -60,33 +60,33 @@ tls {
 }
 ```
 
-### 配置gateway标签 <a href="#id3.2.2-pei-zhi-pei-zhi-gateway-biao-qian" id="id3.2.2-pei-zhi-pei-zhi-gateway-biao-qian"></a>
+### 配置 gateway 标签 <a href="#id3.2.2-pei-zhi-pei-zhi-gateway-biao-qian" id="id3.2.2-pei-zhi-pei-zhi-gateway-biao-qian"></a>
 
-* node.myself：本机节点信息，用于与其他gateway节点互连。
-* rpc.address：本机rpc服务ip和端口，用于向sdk提供rpc服务。
-* rpc.acceptCount：本机rpc服务最多接收的连接数
-* rpc.maxThreads：本机rpc服务最多开启的线程数
-* rpc.readWriteTimeout：rpc连接的读写超时时间(毫秒)
-* http.address：本机http服务ip和端口，用于向sdk提供rpc服务。
-* http.acceptCount：本机http服务最多接收的连接数
-* http.maxThreads：本机http服务最多开启的线程数
-* http.readWriteTimeout：http连接的读写超时时间(毫秒)
-* broadcast：广播节点列表，即其他gateway节点信息。
-* push.address：gateway节点推送交易给chain应用时，chain应用的接收地址。
-* sync.address：gateway节点的端口号，负责监听chain应用推送的区块信息。
+* node.myself：本机节点信息，用于与其他 gateway 节点互连。
+* rpc.address：本机 rpc 服务 ip 和端口，用于向 sdk 提供 rpc 服务。
+* rpc.acceptCount：本机 rpc 服务最多接收的连接数
+* rpc.maxThreads：本机 rpc 服务最多开启的线程数
+* rpc.readWriteTimeout：rpc 连接的读写超时时间 (毫秒) 。
+* http.address：本机 http 服务 ip 和端口，用于向sdk提供 rpc 服务。
+* http.acceptCount：本机 http 服务最多接收的连接数。
+* http.maxThreads：本机 http 服务最多开启的线程数。
+* http.readWriteTimeout：http 连接的读写超时时间 (毫秒) 。
+* broadcast：广播节点列表，即其他 gateway 节点信息。
+* push.address：gateway 节点推送交易给 chain 应用时，chain 应用的接收地址。
+* sync.address：gateway 节点的端口号，负责监听 chain 应用推送的区块信息。
 * sync.cache.blockLimit：缓存的的区块最大数量。
 * sync.cache.txPoolDSCacheSizeLimit：缓存的交易池大小。
 * switch.only.broadcast.globalEvent：是否仅广播全局节点事件。
 
-### 配置tls标签 <a href="#id3.2.2-pei-zhi-pei-zhi-tls-biao-qian" id="id3.2.2-pei-zhi-pei-zhi-tls-biao-qian"></a>
+### 配置 tls 标签 <a href="#id3.2.2-pei-zhi-pei-zhi-tls-biao-qian" id="id3.2.2-pei-zhi-pei-zhi-tls-biao-qian"></a>
 
-* needTLS: gateway与web3j之间通信，是否要开启tls认证。
+* needTLS: gateway 与 web3j 之间通信，是否要开启 tls 认证。
 * keyPath：节点私钥文件路径。
 * certsPath：节点证书链文件路径。
 
-## 日志管理配置文件 logback.xml <a href="#id3.2.2-pei-zhi-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml" id="id3.2.2-pei-zhi-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml"></a>
+## 日志管理配置文件 gateway-logback.xml <a href="#id3.2.2-pei-zhi-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml" id="id3.2.2-pei-zhi-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml"></a>
 
-logback.xml指定了节点日志的存放位置和生成规则。配置内容示例如下：
+`gateway-logback.xml`指定了节点日志的存放位置和生成规则。配置内容示例如下：
 
 ```xml
 <?xml version="1.0" encoding="GBK"?>
@@ -155,16 +155,16 @@ logback.xml指定了节点日志的存放位置和生成规则。配置内容示
 
 ### 配置打印的日志组件 <a href="#id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-zu-jian" id="id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-zu-jian"></a>
 
-通过`<appender>`标签 指定打印的日志组件。在上述示例文件中，指定了三个日志组件：`STDOUT`、`FILE`、`ASYNC`
+通过 *\<appender>* 标签 指定打印的日志组件。在上述示例文件中，指定了三个日志组件：STDOUT、FILE、ASYNC
 
-1）STDOUT 日志组件： 采用`ch.qos.logback.core.ConsoleAppender`组件，将日志打印到控制台中。其中，`<encoder>`标签 对日志进行格式化。
+1）STDOUT 日志组件： 采用 *ch.qos.logback.core.ConsoleAppender* 组件，将日志打印到控制台中。其中，*\<encoder>* 标签 对日志进行格式化。
 
-2）FILE 日志组件：采用`ch.qos.logback.core.rolling.RollingFileAppender`组件，将日志滚动记录到文件中。其中，`<file>`标签指定了日志文件名，`<rollingPolicy>`指定了滚动策略。示例中采用`TimeBasedRollingPolicy`滚动策略，即根据时间进行滚动。其中`<fileNamePattern>`指定了滚动日志文件名，`<maxHistory>`控制保留的日志文件最大数量。
+2）FILE 日志组件：采用 *ch.qos.logback.core.rolling.RollingFileAppender* 组件，将日志滚动记录到文件中。其中，*\<file>* 标签指定了日志文件名，*\<rollingPolicy>* 定了滚动策略。示例中采用 *TimeBasedRollingPolicy* 滚动策略，即根据时间进行滚动。其中 *\<fileNamePattern>* 指定了滚动日志文件名，*\<maxHistory>* 控制保留的日志文件最大数量。
 
-3）ASYNC 日志组件： 采用`ch.qos.logback.classic.AsyncAppender`组件，负责异步记录日志。该组件仅充当事件分派器，必须搭配其他`appender`使用，示例文件中搭配 FILE 日志组件，表示将日志事件异步记录到文件中。
+3）ASYNC 日志组件： 采用 *ch.qos.logback.classic.AsyncAppender* 组件，负责异步记录日志。该组件仅充当事件分派器，必须搭配其他 *appender* 使用，示例文件中搭配 FILE 日志组件，表示将日志事件异步记录到文件中。
 
-此外，可通过`<root>`标签，指定日志的打印等级。并通过`<appender-ref>`标签指定生效的日志组件。
+此外，可通过 *\<root>* 标签，指定日志的打印等级。并通过 *\<appender-ref>* 标签指定生效的日志组件。
 
 ### 配置打印的日志等级 <a href="#id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-deng-ji" id="id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-deng-ji"></a>
 
-通过`<logger>`标签 指定相应类的日志等级。
+通过 *\<logger>* 标签指定相应类的日志等级。
