@@ -2,7 +2,8 @@
 
 ## 概述 <a href="#id3.1.5-ri-zhi-shuo-ming-yi-gai-shu" id="id3.1.5-ri-zhi-shuo-ming-yi-gai-shu"></a>
 
-天玄节点的所有日志都输出到 logs 目录下`thanos-chain-%d{yyyy-MM-dd-'h'HH}.log`的文件中，且定制了日志格式，方便用户通过日志查看链运行状态。日志配置说明请参考：[日志管理配置文件](configuration.md#id3.1.3-pei-zhi-shuo-ming-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml)。
+天玄节点的所有日志都输出到 *logs* 目录下
+ `thanos-chain-%d{yyyy-MM-dd-'h'HH}.log` 的文件中，且定制了日志格式，方便用户通过日志查看链运行状态。日志配置说明请参考：[日志管理配置文件](configuration.md#id3.1.3-pei-zhi-shuo-ming-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml)。
 
 ## 日志格式 <a href="#id3.1.5-ri-zhi-shuo-ming-er-ri-zhi-ge-shi" id="id3.1.5-ri-zhi-shuo-ming-er-ri-zhi-ge-shi"></a>
 
@@ -18,14 +19,14 @@ time log_level [module_name] content
 
 各字段含义如下：
 
-* `time`: 日志输出时间，精确到纳秒
-* `log_level`: 日志级别，目前主要包括`trace`, `debug`, `info`, `warning`, `error`和`fatal`，其中在发生极其严重错误时会输出`fatal`
-* `module_name`：模块关键字，如网络模块关键字为`network`，共识模块关键字为`consensus`
-* `content`：日志记录内容
+* **time**: 日志输出时间，精确到纳秒
+* **log_level**: 日志级别，目前主要包括 *trace* , *debug* , *info* , *warning* , *error* 和 *fatal* ，其中在发生极其严重错误时会输出 *fatal*
+* **module_name**：模块关键字，如网络模块关键字为 *network*，共识模块关键字为 *consensus*
+* **content**：日志记录内容
 
 ## 日志模块关键字 <a href="#id3.1.5-ri-zhi-shuo-ming-san-ri-zhi-mo-kuai-guan-jian-zi" id="id3.1.5-ri-zhi-shuo-ming-san-ri-zhi-mo-kuai-guan-jian-zi"></a>
 
-thanos-chain日志中核心模块关键字如下：
+*thanos-chain* 日志中核心模块关键字如下：
 
 | 模块        | 关键字           |
 | --------- | ------------- |

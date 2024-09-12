@@ -1,6 +1,6 @@
 # 天玄链功能接口列表
 
-下列接口的示例中采用 curl 命令，curl 是一个利用 url 语法在命令行下运行的数据传输工具，通过 curl 命令发送 http post 请求，可以访问天玄链的 JSON RPC 接口。curl 命令的 url 地址设置为节点配置文件监听端口（gateway.http.port）。为了格式化 json ，使用 json工具进行格式化显示。
+下列接口的示例中采用 *curl* 命令，*curl* 是一个利用 *url* 语法在命令行下运行的数据传输工具，通过 *curl* 命令发送 *http post* 请求，可以访问天玄链的 *JSON RPC* 接口。*curl* 命令的 *url* 地址设置为节点配置文件监听端口（*gateway.http.port*）。为了格式化 *json* ，使用 *json* 工具进行格式化显示。
 
 ## thanos\_clientVersion <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosclientversion" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosclientversion"></a>
 
@@ -14,8 +14,7 @@
 
 **返回值**
 
-* `object` - 版本信息，字段如下：
-  * version: `string` - 版本信息
+* `string` - 版本信息
 * 示例
 
 ```json
@@ -36,15 +35,15 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_cl
 
 **描述**
 
-* 计算参数的sha3的hash值，返回为16进制
+* 计算参数的 *sha3* 的 *hash* 值，返回为 16 进制
 
 **参数**
 
-* data: String - 元数据
+* data: string - 元数据
 
 **返回值**
 
-* `string` - 该元数据的hash值(0x开头的十六进制字符串)
+* `string` - 该元数据的 *hash* 值(0x开头的十六进制字符串)
 * 示例
 
 ```json
@@ -64,7 +63,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_sh
 
 **描述**
 
-* 返回thanos区块链组网版本
+* 返回天玄区块链组网版本
 
 **参数**
 
@@ -72,7 +71,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_sh
 
 **返回值**
 
-* `string` - thanos区块链组网版本
+* `string` - 天玄区块链组网版本
 * 示例
 
 ```json
@@ -92,7 +91,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ne
 
 **描述**
 
-* 返回thanos区块链协议版本
+* 返回天玄区块链协议版本
 
 **参数**
 
@@ -100,7 +99,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ne
 
 **返回值**
 
-* `string` - thanos区块链协议版本
+* `string` - 天玄区块链协议版本
 * 示例
 
 ```json
@@ -120,7 +119,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_pr
 
 **描述**
 
-* 返回thanos区块链编译器
+* 返回天玄区块链编译器
 
 **参数**
 
@@ -128,7 +127,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_pr
 
 **返回值**
 
-* `string[]` - thanos区块链编译器类型
+* `string[]` - 天玄区块链编译器类型
 * 示例
 
 ```json
@@ -150,15 +149,15 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 
 **描述**
 
-* 发送交易请求到区块链执行，返回交易hash
+* 发送交易请求到区块链执行，返回交易 *hash*
 
 **参数**
 
-* rawData : String - rlp序列化后交易
+* rawData : string - *rlp* 序列化后交易
 
 **返回值**
 
-* `string` - 交易hash
+* `string` - 交易 *hash*
 * 示例
 
 ```json
@@ -182,11 +181,11 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_se
 
 **参数**
 
-* rawData : String - rlp序列化后交易
+* rawData：string - *rlp* 序列化后交易
 
 **返回值**
 
-* `string :` - 交易执行回执
+* `string` - 交易执行回执
 * 示例
 
 ```json
@@ -214,7 +213,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d  '{"jsonrpc":"2.0","method":"thanos_e
 
 **返回值**
 
-* `Long :` - 区块快高
+* `Long` - 区块快高
 * 示例
 
 ```json
@@ -241,7 +240,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 
 **返回值**
 
-* `Long :` - 区块快高
+* `Long` - 区块快高
 * 示例
 
 ```json
@@ -261,15 +260,15 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 
 **描述**
 
-* 通过blockNumber获取区块链信息
+* 通过 *blockNumber* 获取区块链信息
 
 **参数**
 
-* blockNumber : String - 区块链编号
+* blockNumber : string - 区块链编号
 
 **返回值**
 
-* `string :` - 区块链信息
+* `string` - 区块链信息
 * 示例
 
 ```json
@@ -289,15 +288,15 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 
 **描述**
 
-* 通过交易hash获取交易信息
+* 通过交易 *hash* 获取交易信息
 
 **参数**
 
-* transactionHash : String - 交易hash
+* transactionHash : string - 交易 *hash*
 
 **返回值**
 
-* `string :` - 交易信息
+* `string` - 交易信息
 * 示例
 
 ```json
@@ -321,11 +320,11 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 
 **参数**
 
-* transactionHash : String - 交易hash
+* transactionHash : String - 交易 *hash*
 
 **返回值**
 
-* `string :` - 交易信息
+* `string` - 交易信息
 * 示例
 
 ```json
@@ -345,15 +344,15 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 
 **描述**
 
-* 通过交易hash批量获取交易信息
+* 通过交易 *hash* 批量获取交易信息
 
 **参数**
 
-* transactionHashList : String - 交易hash
+* transactionHashList : string - 交易 *hash*
 
 **返回值**
 
-* `string :` - 交易信息
+* `string` - 交易信息
 * 示例
 
 ```json
@@ -373,15 +372,15 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 
 **描述**
 
-* 通过全局节点事件hash获取事件信息
+* 通过全局节点事件 *hash* 获取事件信息
 
 **参数**
 
-* eventHash : String - 事件hash
+* eventHash : string - 事件 *hash*
 
 **返回值**
 
-* `string :` - 事件信息
+* `string` - 事件信息
 * 示例
 
 ```json
@@ -405,11 +404,11 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 
 **参数**
 
-* eventHash : String - 事件hash
+* eventHash: string - 事件 *hash*
 
 **返回值**
 
-* `string :` - 事件回执信息
+* `string` - 事件回执信息
 * 示例
 
 ```json
@@ -429,15 +428,15 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 
 **描述**
 
-* 通过交易hash批量获取交易信息
+* 通过交易 *hash* 批量获取交易信息
 
 **参数**
 
-* transactionHash : String - 交易hash
+* transactionHash : string - 交易 *hash*
 
 **返回值**
 
-* `string :` - 交易信息
+* `string` - 交易信息
 * 示例
 
 ```json
@@ -452,5 +451,3 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
   "result": ""
 }
 ```
-
-\

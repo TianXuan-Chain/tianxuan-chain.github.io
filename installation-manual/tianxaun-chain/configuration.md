@@ -2,16 +2,16 @@
 
 ## 概述 <a href="#id3.1.3-pei-zhi-shuo-ming-yi-gai-shu" id="id3.1.3-pei-zhi-shuo-ming-yi-gai-shu"></a>
 
-天玄节点应用中，每个节点包含一个主配置`thanos-chain.conf`，日志管理配置`logback.xml`，创世块配置`genesis.json`以及节点身份配置`nodeInfo.properties`。
+天玄节点应用中，每个节点包含一个主配置 `thanos-chain.conf` ，日志管理配置 `logback.xml` ，创世块配置 `genesis.json` 以及节点身份配置 `nodeInfo.properties` 。
 
-* `thanos-chain.conf`：主配置文件。包括节点网络配置、共识配置、账本配置文件路径、SSL 密钥库配置、密码算法等信息。
-* `logback.xml`：日志管理配置文件。包括日志存放路径、日志生成规则等。
-* `genesis.json`：创世块配置文件。包括组网节点身份信息、创世区块相关信息等。
-* `nodeInfo.properties`：节点身份配置文件。包括本节点的名称、所属机构、节点私钥、节点 ID 等。
+* **thanos-chain.conf**：主配置文件。包括节点网络配置、共识配置、账本配置文件路径、*SSL* 密钥库配置、密码算法等信息。
+* **logback.xml**：日志管理配置文件。包括日志存放路径、日志生成规则等。
+* **genesis.json**：创世块配置文件。包括组网节点身份信息、创世区块相关信息等。
+* **nodeInfo.properties**：节点身份配置文件。包括本节点的名称、所属机构、节点私钥、节点 *ID* 等。
 
 ## 主配置文件 thanos-chain.conf <a href="#id3.1.3-pei-zhi-shuo-ming-er-zhu-pei-zhi-wen-jian-thanoschain.conf" id="id3.1.3-pei-zhi-shuo-ming-er-zhu-pei-zhi-wen-jian-thanoschain.conf"></a>
 
-`thanos-chain.conf` 主要包括了`network`、`concesus`、`resource`、`tls`等配置项。配置内容示例如下：
+`thanos-chain.conf` 主要包括了 *network* 、*concesus* 、*resource* 、*tls* 等配置项。配置内容示例如下：
 
 ```json
 network {
@@ -87,51 +87,51 @@ tls {
 
 ### 配置 network <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-network" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-network"></a>
 
-* peer.rpc.ip：节点的 rpc 地址，用于和其他节点通信。通常填本机的外网或内网地址。
-* peer.bind.ip ：节点绑定的 ip 地址，通常固定为 0.0.0.0 。
-* peer.listen.discoveryPort ：节点监听的 p2p 端口号，主要用于收发【节点发现】消息（底层 udp 协议实现）。
-* peer.listen.rpcPort ：节点监听的 rpc 端口号，主要用于收发【共识】消息（底层 tcp 协议实现）。
-* peer.channel.read.timeout：节点间通道超时时间。
-* peer.discovery.ip.list：待连接节点的 ip 列表。
-* transferDataEncrypt：channel 通信是否加密，全节点统一。
-* epollSupport：是否启用 EpollEventLoopGroup 实现 JavaNIO 。默认为 false ，表示不启动。当 linux 系统支持 epoll 模式时，可将该项置为 true ，提高性能。
-* nettyPoolByteBuf：底层通讯字节是否池化，建议为 true 。
-* gateway.localListenAddress：链节点用于监听链网关发送交易的端口。
-* gateway.remoteServiceAddress：与该链节点交互的链网关的 ip 地址和端口号。
-* gateway.pushTxsQueueSize：接收 gateway 打包交易个数的队列大小，建议为 16 。
+* **peer.rpc.ip**：节点的 *rpc* 地址，用于和其他节点通信。通常填本机的外网或内网地址。
+* **peer.bind.ip**：节点绑定的 *ip* 地址，通常固定为 *0.0.0.0* 。
+* **peer.listen.discoveryPort**：节点监听的 *p2p* 端口号，主要用于收发【节点发现】消息（底层 *udp* 协议实现）。
+* **peer.listen.rpcPort**：节点监听的 *rpc* 端口号，主要用于收发【共识】消息（底层 *tcp* 协议实现）。
+* **peer.channel.read.timeout**：节点间通道超时时间。
+* **peer.discovery.ip.list**：待连接节点的 *ip* 列表。
+* **transferDataEncrypt**：*channel* 通信是否加密，全节点统一。
+* **epollSupport**：是否启用 *EpollEventLoopGroup* 实现 *JavaNIO* 。默认为 *false* ，表示不启动。当 *linux* 系统支持 *epoll* 模式时，可将该项置为 *true* ，提高性能。
+* **nettyPoolByteBuf**：底层通讯字节是否池化，建议为 *true* 。
+* **gateway.localListenAddress**：链节点用于监听链网关发送交易的端口。
+* **gateway.remoteServiceAddress**：与该链节点交互的链网关的 ip 地址和端口号。
+* **gateway.pushTxsQueueSize**：接收 *gateway* 打包交易个数的队列大小，建议为 16 。
 
 ### 配置 consensus <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-consensus" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-consensus"></a>
 
-* proposerType : 提案类型，目前仅支持轮循提案，值为 <mark>2</mark> 。
-* contiguousRounds：主节点正常共识时连续共识的轮数，超过该轮数需要切换主节点。
-* maxPackSize：一轮共识中交易最大打包量。
-* maxCommitEventNumInMemory：内存中最多存储的已共识事件数。
-* maxPrunedEventsInMemory：内存中最多存储的裁剪事件数。
-* reimportUnCommitEvent：是否重新共识未共识成功的交易。
-* poolLimit：交易池交易数量限制。
-* roundTimeoutBaseMS：chain bft 的每轮共识超时基数，建议为 5000 (即 5 秒) 。
-* parallelProcessorNum：dag 并行处理交易的 cpu 个数。
+* **proposerType**: 提案类型，目前仅支持轮循提案，值为 <mark>2</mark> 。
+* **contiguousRounds**：主节点正常共识时连续共识的轮数，超过该轮数需要切换主节点。
+* **maxPackSize**：一轮共识中交易最大打包量。
+* **maxCommitEventNumInMemory**：内存中最多存储的已共识事件数。
+* **maxPrunedEventsInMemory**：内存中最多存储的裁剪事件数。
+* **reimportUnCommitEvent**：是否重新共识未共识成功的交易。
+* **poolLimit**：交易池交易数量限制。
+* **roundTimeoutBaseMS**：*Chain BFT* 的每轮共识超时基数，建议为 5000 (即 5 秒) 。
+* **parallelProcessorNum**：*DAG* 并行处理交易的 *cpu* 个数。
 
 ### 配置 state <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-state" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-state"></a>
 
-* checkTimeoutMS：异步共识的检测超时时间，建议为 1500 (毫秒) 。
-* maxCommitBlockInMemory：内存中保留已共识成功的 block 数量。
+* **checkTimeoutMS**：异步共识的检测超时时间，建议为 1500 (毫秒) 。
+* **maxCommitBlockInMemory**：内存中保留已共识成功的 *block* 数量。
 
 ### 配置 resource <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-resource" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-resource"></a>
 
-* database.needEncrypt：账本信息是否需要加密存储。
-* database.encryptAlg：账本信息加密存储时采用的加密算法。如果无需加密，可忽视该配置项。
-* database.dir：账本信息存放路径。
-* logConfigPath：日志管理配置文件 logback.xml 所在路径。
+* **database.needEncrypt**：账本信息是否需要加密存储。
+* **database.encryptAlg**：账本信息加密存储时采用的加密算法。如果无需加密，可忽视该配置项。
+* **database.dir**：账本信息存放路径。
+* **logConfigPath**：日志管理配置文件 `logback.xml` 所在路径。
 
 ### 配置 tls <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-tls" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-tls"></a>
 
-* keyPath ：节点的私钥文件 node.key 所在路径。
-* certsPath ：节点的证书链 chain.crt 所在路径。
+* **keyPath**：节点的私钥文件 `node.key` 所在路径。
+* **certsPath**：节点的证书链 `chain.crt` 所在路径。
 
 ## 日志管理配置文件 chain-logback.xml <a href="#id3.1.3-pei-zhi-shuo-ming-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml" id="id3.1.3-pei-zhi-shuo-ming-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml"></a>
 
-`chain-logback.xml`指定了节点日志的存放位置和生成规则。配置内容示例如下：
+`chain-logback.xml` 指定了节点日志的存放位置和生成规则。配置内容示例如下：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -215,23 +215,23 @@ tls {
 
 ### 配置打印的日志组件 <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-zu-jian" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-zu-jian"></a>
 
-通过`<appender>`标签 指定打印的日志组件。在上述示例文件中，指定了三个日志组件：STDOUT、FILE、ASYNC
+通过 *\<appender>* 标签 指定打印的日志组件。在上述示例文件中，指定了三个日志组件：*STDOUT*、*FILE* 、*ASYNC*
 
-1）STDOUT 日志组件： 采用`ch.qos.logback.core.ConsoleAppender`组件，将日志打印到控制台中。其中，`<encoder>`标签 对日志进行格式化。
+1）**STDOUT 日志组件**： 采用 `ch.qos.logback.core.ConsoleAppender` 组件，将日志打印到控制台中。其中，`<encoder>` 标签 对日志进行格式化。
 
-2）FILE 日志组件：采用`ch.qos.logback.core.rolling.RollingFileAppender`组件，将日志滚动记录到文件中。其中，`<file>`标签指定了日志文件名，`<rollingPolicy>`指定了滚动策略。 示例中采用`TimeBasedRollingPolicy`滚动策略，即根据时间进行滚动。其中`<fileNamePattern>`指定了滚动日志文件名，`<maxHistory>`控制保留的日志文件最大数量。
+2）**FILE 日志组件**：采用 *ch.qos.logback.core.rolling.RollingFileAppender* 组件，将日志滚动记录到文件中。其中，*\<file>* 标签指定了日志文件名，*\<rollingPolicy>* 指定了滚动策略。 示例中采用 *TimeBasedRollingPolicy* 滚动策略，即根据时间进行滚动。其中 *\<fileNamePattern>* 指定了滚动日志文件名，*\<maxHistory>* 控制保留的日志文件最大数量。
 
-3）ASYNC 日志组件： 采用`ch.qos.logback.classic.AsyncAppender`组件，负责异步记录日志。该组件仅充当事件分派器，必须搭配其他`appender`使用，示例文件中搭配 FILE 日志组件，表示将日志事件异步记录到文件中。
+3）**ASYNC 日志组件**： 采用 *ch.qos.logback.classic.AsyncAppender* 组件，负责异步记录日志。该组件仅充当事件分派器，必须搭配其他 *appender* 使用，示例文件中搭配 *FILE* 日志组件，表示将日志事件异步记录到文件中。
 
-此外，可通过`<root>`标签，指定日志的打印等级。并通过`<appender-ref>`标签指定生效的日志组件。
+此外，可通过 *\<root>* 标签，指定日志的打印等级。并通过 *\<appender-ref>* 标签指定生效的日志组件。
 
 ### 配置打印的日志等级 <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-deng-ji" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-deng-ji"></a>
 
-通过`<logger>`标签 指定相应类的日志等级。
+通过 *\<logger>* 标签 指定相应类的日志等级。
 
 ## 创世块配置文件 genesis.json <a href="#id3.1.3-pei-zhi-shuo-ming-si-chuang-shi-kuai-pei-zhi-wen-jian-genesis.json" id="id3.1.3-pei-zhi-shuo-ming-si-chuang-shi-kuai-pei-zhi-wen-jian-genesis.json"></a>
 
-`genesis.json`主要包括了 validatorVerifiers，alloc 以及和创世区块相关配置。配置内容示例如下：
+`genesis.json` 主要包括了 *validatorVerifiers* ，*alloc* 以及和创世区块相关配置。配置内容示例如下：
 
 ```json
 {
@@ -281,46 +281,45 @@ tls {
 
 ### 配置 validatorVerifiers <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-validatorverifiers" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-validatorverifiers"></a>
 
-validatorVerifiers 包括了组网节点的身份信息，k-v 对形式。key 是组网节点的公钥字符串，value 包括以下字段：
+*validatorVerifiers* 包括了组网节点的身份信息，*k-v* 对形式。*key* 是组网节点的公钥字符串，*value* 包括以下字段：
 
-* consensusVotingPower：节点的共识投票权重。
-* shardingNum：节点所处分片。目前可忽略。
-* name：节点名称。
-* agency：节点所属机构。
-* caHash：节点证书序列号。目前可忽略。
+* **consensusVotingPower**：节点的共识投票权重。
+* **shardingNum**：节点所处分片。目前可忽略。
+* **name**：节点名称。
+* **agency**：节点所属机构。
+* **caHash**：节点证书序列号。目前可忽略。
 
 ### 配置 committeeAddrs
 
-committeeAddrs 包括了管理链的节点的委员会的公钥信息。
+*committeeAddrs* 包括了管理链的节点的委员会的公钥信息。
 
 ### 配置 operationsStaffAddrs
-operationsStaffAddrs 包括了链操作者白名单。
+*operationsStaffAddrs* 包括了链操作者白名单。
 
 ### 配置 voteThreshold
-
 委员会决策的门阀值。
 
 ### 配置 alloc <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-alloc" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-alloc"></a>
 
-alloc 包括了创世区块的合约状态。目前可忽略。
+*alloc* 包括了创世区块的合约状态。目前可忽略。
 
 ### 配置创世块相关信息 <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-chuang-shi-kuai-xiang-guan-xin-xi" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-chuang-shi-kuai-xiang-guan-xin-xi"></a>
 
-* maxShardingNum：分片最大数量。
-* shardingNum：本节点所属分片。
-* nonce：创世块的 nonce 值。
-* difficulty：创世块的计算难度 (目前可忽略) 。
-* mixhash：创世块的混合 hash (目前可忽略)。
-* coinbase：创世块的 coinbase (目前可忽略) 。
-* timestamp：创世块的时间戳。
-* parentHash：创世块的父区块 hash。
-* extraData：创世块的附加数据 (目前可忽略) 。
-* gasLimit：交易执行消耗的最大 gas 值。
-* startEventNumber：初始块高。
+* **maxShardingNum**：分片最大数量。
+* **shardingNum**：本节点所属分片。
+* **nonce**：创世块的 *nonce* 值。
+* **difficulty**：创世块的计算难度 (目前可忽略) 。
+* **mixhash**：创世块的混合 *hash* (目前可忽略)。
+* **coinbase**：创世块的 *coinbase* (目前可忽略) 。
+* **timestamp**：创世块的时间戳。
+* **parentHash**：创世块的父区块 *hash* 。
+* **extraData**：创世块的附加数据 (目前可忽略) 。
+* **gasLimit**：交易执行消耗的最大 *gas* 值。
+* **startEventNumber**：初始块高。
 
 ## 节点身份配置文件 nodeInfo.properties <a href="#id3.1.3-pei-zhi-shuo-ming-wu-jie-dian-shen-fen-pei-zhi-wen-jian-nodeinfo.properties" id="id3.1.3-pei-zhi-shuo-ming-wu-jie-dian-shen-fen-pei-zhi-wen-jian-nodeinfo.properties"></a>
 
-`nodeInfo.properties`主要包括了节点身份信息。配置内容示例如下：
+`nodeInfo.properties` 主要包括了节点身份信息。配置内容示例如下：
 
 ```editorconfig
 #ed25519
@@ -338,9 +337,9 @@ nodeEncryptKey=c9ec17b81d5abf18b979693faacbf917
 #nodeEncryptKey=a77ce8a55dbc209f052d6be716963ec2
 ```
 
-* name ：节点信息。
-* agency：节点所属结构。
-* caHash：节点证书序列号 (目前可忽略) 。
-* nodeIdPrivateKey：节点私钥字符串 (16进制) 。
-* nodeId：节点Id字符串。
-* nodeEncryptKey：账本信息加密存储时采用的加密私钥，需要与`database.encryptAlg`配置项指定的加密算法一致 (如果无需加密，可忽视该配置项) 。
+* **name**：节点信息。
+* **agency**：节点所属结构。
+* **caHash**：节点证书序列号 (目前可忽略) 。
+* **nodeIdPrivateKey**：节点私钥字符串 (16 进制) 。
+* **nodeId**：节点 *Id* 字符串。
+* **nodeEncryptKey**：账本信息加密存储时采用的加密私钥，需要与 *database.encryptAlg* 配置项指定的加密算法一致 (如果无需加密，可忽视该配置项) 。

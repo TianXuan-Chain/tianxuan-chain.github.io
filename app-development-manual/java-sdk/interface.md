@@ -2,7 +2,7 @@
 
 ## 接口方法调用 <a href="#id4.3.6-yuan-cheng-diao-yong-jie-kou-jie-kou-fang-fa-diao-yong" id="id4.3.6-yuan-cheng-diao-yong-jie-kou-jie-kou-fang-fa-diao-yong"></a>
 
-按照教程配置好 web3j 并初始化 Web3Manager 实例后，以 thanosGetLatestBeExecutedNum 为例：
+按照教程配置好 *Web3j* 并初始化 *Web3Manager* 实例后，以 *thanosGetLatestBeExecutedNum* 为例：
 
 ```java
 Web3j web3j = web3Manager.getHttpWeb3jRandomly();

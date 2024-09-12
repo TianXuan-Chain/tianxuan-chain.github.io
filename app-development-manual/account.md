@@ -2,7 +2,7 @@
 
 ## 生成账户 <a href="#id4.1-chuang-jian-he-shi-yong-zhang-hu-sheng-cheng-zhang-hu" id="id4.1-chuang-jian-he-shi-yong-zhang-hu-sheng-cheng-zhang-hu"></a>
 
-下面是使用 Java SDK 创建一个随机账户的方法，总共支持三种加密算法
+下面是使用 *Java SDK* 创建一个随机账户的方法，总共支持三种加密算法
 
 **1）ECDSA**
 
@@ -42,7 +42,7 @@ crypto {
 }
 ```
 
-使用指定私钥创建账户的方式如下，以 ECDSA 为例
+使用指定私钥创建账户的方式如下，以 *ECDSA* 为例
 
 ```java
 // SecureKey.fromPrivate(privateKeyBytes);
@@ -58,11 +58,11 @@ String accountAddr = credentials.getAddress();
 
 ## 账户地址的计算 <a href="#id4.1-chuang-jian-he-shi-yong-zhang-hu-zhang-hu-di-zhi-de-ji-suan" id="id4.1-chuang-jian-he-shi-yong-zhang-hu-zhang-hu-di-zhi-de-ji-suan"></a>
 
-账户地址由ECDSA公钥计算得来，与以太坊兼容，对ECDSA公钥的16进制表示计算keccak-256sum哈希，取计算结果的后20字节的16进制表示作为账户地址，每个字节需要两个16进制数表示，所以账户地址长度为40。
+账户地址由 *ECDSA* 公钥计算得来，与以太坊兼容，对 *ECDSA* 公钥的 16 进制表示计算 *keccak-256sum* 哈希，取计算结果的后 20 字节的 16 进制表示作为账户地址，每个字节需要两个 16 进制数表示，所以账户地址长度为 40 。
 
 **1）生成ECDSA私钥**
 
-首先，我们使用OpenSSL生成椭圆曲线私钥，椭圆曲线的参数使用secp256k1。执行下面的命令，生成PEM格式的私钥并保存在ecprivkey.pem文件中。
+首先，我们使用 *OpenSSL* 生成椭圆曲线私钥，椭圆曲线的参数使用 *secp256k1* 。执行下面的命令，生成 *PEM* 格式的私钥并保存在 ·ecprivkey.pem· 文件中。
 
 ```bash
 openssl ecparam -name secp256k1 -genkey -noout -out ecprivkey.pem
@@ -98,7 +98,7 @@ openssl ec -in ecprivkey.pem -text -noout 2>/dev/null| sed -n '7,11p' | tr -d ":
 
 **2）根据公钥计算地址**
 
-本节我们根据公钥计算对应的账户地址。我们需要获取keccak-256sum工具，可以从[这里下载](https://github.com/vkobel/ethereum-generate-wallet/tree/master/lib)。
+本节我们根据公钥计算对应的账户地址。我们需要获取 *keccak-256sum* 工具，可以从[这里下载](https://github.com/vkobel/ethereum-generate-wallet/tree/master/lib)。
 
 ```bash
 openssl ec -in ecprivkey.pem -text -noout 2>/dev/null| sed -n '7,11p' | tr -d ": \n" | awk '{print substr($0,3);}' | ./keccak-256sum -x -l | tr -d ' -' | tail -c 41

@@ -18,9 +18,9 @@
 ### 前置依赖软件 <a href="#id3.1.2-an-zhuang-1-qian-zhi-zhun-bei" id="id3.1.2-an-zhuang-1-qian-zhi-zhun-bei"></a>
 
 * [Oracle JDK 1.8](../../quick-start/depoly-thanos-chain/software-requirement.md#id2.2-ruan-jian-yao-qiu-oraclejdk1.8-an-zhuang-oraclejdk)
-* GmSSL-v2（该软件只支持 Linux 系统）
+* GmSSL-v2（该软件只支持 *Linux* 系统）
 
-GmSSL-v2 的安装流程如下
+*GmSSL-v2* 的安装流程如下
 
 ```bash
 # 注意需要安装 GmSSl-2.0，当前 GmSSL 最新代码为 3.0，需要指定 2.0 版本
@@ -32,7 +32,7 @@ sudo make install
 sudo cp libcrypto.so.1.1 libssl.so.1.1 /lib64
 ```
 
-由于gmssl默认安装在usr/local/bin路径下，如果当前linux系统的$PATH变量不包含该路径，需要添加
+由于 *gmssl* 默认安装在 `usr/local/bin` 路径下，如果当前 *linux* 系统的 *$PATH* 变量不包含该路径，需要添加
 
 ```bash
 vim /etc/profile
@@ -47,31 +47,35 @@ export PATH=/usr/local/bin:${PATH}
 source /etc/profile
 ```
 
-执行完成后，输入gmssl version查询版本号，如果顺利返回，说明gmssl安装完成。
+执行完成后，查询版本号，如果顺利返回，说明 *gmssl* 安装完成。
+
+```sh
+gmssl version
+```
 
 ### 创建操作目录 <a href="#id3.1.2-an-zhuang-chuang-jian-cao-zuo-mu-lu" id="id3.1.2-an-zhuang-chuang-jian-cao-zuo-mu-lu"></a>
 
-创建当前链节点的操作目录，以node0为例。
+创建当前链节点的操作目录，以 *node0* 为例。
 
 ```bash
 cd ~ && mkdir -p thanos-chain/node0 && cd thanos-chain/node0
 ```
 
-然后在节点目录下创建 database，logs 和 resource 子目录。其中，database 目录用于存放节点身份信息配置、创世块配置 以及 生成的链区块；logs 目录用于存放链执行日志；resource 目录用于存放节点的总配置文件。
+然后在节点目录下创建 `database` ，`logs` 和 `resource` 子目录。其中，`database` 目录用于存放节点身份信息配置、创世块配置 以及 生成的链区块；`logs` 目录用于存放链执行日志；`resource` 目录用于存放节点的总配置文件。
 
-```
+```sh
 mkdir database logs resource
 ```
 
-还需在 resource 目录下创建 tls 文件夹，用于放置证书等文件
+还需在 `resource` 目录下创建 `tls` 文件夹，用于放置证书等文件
 
-```
+```sh
 mkdir resource/tls
 ```
 
 ### 添加可执行文件 <a href="#id3.1.2-an-zhuang-tian-jia-ke-zhi-xing-wen-jian" id="id3.1.2-an-zhuang-tian-jia-ke-zhi-xing-wen-jian"></a>
 
-获取可执行文件 thanos-chain.jar（获取方式见 [获取可执行文件](executable-file.md)），并放在节点操作目录下，如 \~/thanos-chain/node0/
+获取可执行文件 `thanos-chain.jar`（获取方式见 [获取可执行文件](executable-file.md)），并放在节点操作目录下，如 `~/thanos-chain/node0/`
 
 ### 创建链证书和机构证书 <a href="#id3.1.2-an-zhuang-chuang-jian-lian-zheng-shu-he-ji-gou-zheng-shu" id="id3.1.2-an-zhuang-chuang-jian-lian-zheng-shu-he-ji-gou-zheng-shu"></a>
 
@@ -85,7 +89,9 @@ mkdir resource/tls
 cd ~ && mkdir -p thanos-chain/ca && cd thanos-chain/ca
 ```
 
-2）添加证书配置文件3）创建链私钥、证书和机构私钥、证书 cert.cnf , 内容如下
+2）添加证书配置文件
+
+3）创建链私钥、证书和机构私钥，证书 `cert.cnf` , 内容如下
 
 ```editorconfig
 [ca]
@@ -123,8 +129,9 @@ basicConstraints = CA:TRUE
 
 3）创建链私钥、证书和机构私钥、证书，按需求从<mark>国密</mark>和<mark>非国密</mark>中二选一即可，本教程请使用<mark>非国密</mark>
 
-```bash
-# 非国密
+非国密
+
+```sh
 # 1. 生成根ca的私钥ca.key与自签名证书ca.crt
 gmssl genrsa -out ca.key 2048
 gmssl req -new -x509 -days 3650 -key ca.key -out ca.crt
@@ -134,8 +141,10 @@ gmssl genrsa -out agency.key 2048
 gmssl req -new -key agency.key -config cert.cnf -out agency.csr
 gmssl x509 -req -days 3650 -CA ca.crt -CAkey ca.key -CAcreateserial -in agency.csr -out agency.crt  -extensions v4_req -extfile cert.cnf
 ```
-```bash
-# 国密
+
+国密
+
+```sh
 # 1. 生成根ca的私钥ca.key与自签名证书ca.crt
 gmssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:sm2p256v1 -out ca.key
 gmssl req -new -x509 -days 365 -key ca.key -sm3 -out ca.crt
@@ -148,14 +157,15 @@ gmssl x509 -req -days 3650 -CA ca.crt -CAkey ca.key -in agency.csr -out agency.c
 
 ### 配置单节点 <a href="#id3.1.2-an-zhuang-2-pei-zhi-dan-jie-dian" id="id3.1.2-an-zhuang-2-pei-zhi-dan-jie-dian"></a>
 
-本节主要以node0节点为例，介绍如何进行节点信息配置，包括节点身份信息、网络端口配置等。其他节点的配置流程相同。
+本节主要以 *node0* 节点为例，介绍如何进行节点信息配置，包括节点身份信息、网络端口配置等。其他节点的配置流程相同。
 
 **创建节点密钥及证书**
 
-在 \~/thanos-chain/ca 目录下，执行如下命令，生成指定算法的节点密钥，并使用机构私钥签发节点证书。
+在 `~/thanos-chain/ca` 目录下，执行如下命令，生成指定算法的节点密钥，并使用机构私钥签发节点证书。
+
+非国密
 
 ```bash
-# 非国密
 # 1. 生成节点私钥和节点证书
 gmssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:secp256k1 -out node.key
 gmssl req -new -key node.key -config cert.cnf  -out node.csr
@@ -166,8 +176,9 @@ gmssl x509  -text -in node.crt | sed -n '5p' |  sed 's/://g' | tr "\n" " " | sed
 cat ca.crt agency.crt  node.crt > chain.crt
 ```
 
+国密
+
 ```bash
-# 国密
 # 1. 生成节点私钥和节点证书
 gmssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:sm2p256v1 -out node.key
 gmssl req -new -sm3 -key node.key -config cert.cnf -out node.csr
@@ -178,23 +189,23 @@ gmssl x509  -text -in node.crt | sed -n '5p' |  sed 's/://g' | tr "\n" " " | sed
 cat ca.crt agency.crt  node.crt > chain.crt
 ```
 
-将生成的node0节点的密钥及证书添加至\~/thanos-chain/node0/resource/tls 目录下。
+将生成的 *node0* 节点的密钥及证书添加至 `~/thanos-chain/node0/resource/tls` 目录下。
 
-```bash
+```sh
 cp ca.crt agency.crt ~/thanos-chain/node0/resource/tls
 mv node.* chain.crt ~/thanos-chain/node0/resource/tls
 ```
 
 **添加节点配置**
 
-本节主要介绍节点部署需要添加的配置。配置文件中各配置项的具体含义参见 [thanos-chain配置说明](./)
+本节主要介绍节点部署需要添加的配置。配置文件中各配置项的具体含义参见 [thanos-chain 配置说明](./)
 
-1）在 \~/thanos-chain/node0/resource/ 目录下 添加节点的总配置文件 thanos-chain.conf 和日志管理配置 chain-logback.xml。
+1）在 `~/thanos-chain/node0/resource/` 目录下 添加节点的总配置文件 `thanos-chain.conf` 和日志管理配置 `chain-logback.xml` 。
 
-thanos-chain.conf内容如下。注意，涉及路径的配置项必须是<mark style="color:red;">绝对路径</mark>，如以下配置项：
-* `resource . database . dir`
-* `resource . logConfigPath`
-* `tls . keyPath` 和 `tls . certsPath`
+`thanos-chain.conf` 内容如下。注意，涉及路径的配置项必须是<mark style="color:red;">绝对路径</mark>，如以下配置项：
+* *resource . database . dir*
+* *resource . logConfigPath*
+* *tls . keyPath* 和 *tls . certsPath*
 
 ```editorconfig
 network {
@@ -268,7 +279,7 @@ tls {
 }
 ```
 
-chain-logback.xml内容如下：
+`chain-logback.xml` 内容如下：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -351,16 +362,16 @@ chain-logback.xml内容如下：
 </configuration>
 ```
 
-3）在\~/thanos-chain/node0/database/目录下 添加节点身份配置文件 nodeInfo.properties 和 创世块配置文件genesis.json。
+3）在 `~/thanos-chain/node0/database/` 目录下 添加节点身份配置文件 `nodeInfo.properties` 和 创世块配置文件 `genesis.json` 。
 
-在配置 nodeInfo.properties 前，需要先为节点生成 privateKey 和 id ，请先找到并进入 thanos-common.jar 所在的目录，并执行以下指令
+在配置 `nodeInfo.properties` 前，需要先为节点生成 privateKey 和 id ，请先找到并进入 `thanos-common.jar` 所在的目录，并执行以下指令
 
 ```bash
 # "ECDSA" 是链选用的密钥算法，1 分片链的 id ，当前天玄还未实现分片，所以默认为 1 即可
 java -jar ./thanos-common.jar "ECDSA" 1 1>>./node.private
 ```
 
-打开 node.private 文件，会看到如下信息：
+打开 `node.private` 文件，会看到如下信息：
 
 ```editorconfig
 #ECDSA
@@ -369,7 +380,7 @@ nodeId = 7b7bd52bef9840c91a8e6e51e2fab685916c60d770b8e5f0821a80cdb4b0dafccba540a
 publicKey = 010001047b7bd52bef9840c91a8e6e51e2fab685916c60d770b8e5f0821a80cdb4b0dafccba540aa30b340662d6eebc70e2dd6e6bbcbac67af1377683bba18121ac6ede8
 ```
 
-而后，配置 nodeInfo.properties 文件，替换 nodeIdPrivateKey 和 nodeId 部分。
+而后，配置 `nodeInfo.properties` 文件，替换 *nodeIdPrivateKey* 和 *nodeId* 部分。
 
 ```editorconfig
 # ECDSA
@@ -388,7 +399,7 @@ nodeEncryptKey= c9ec17b81d5abf18b979693faacbf917
 # nodeEncryptKey=a77ce8a55dbc209f052d6be716963ec2
 ```
 
-注意：在配置 nodeInfo.properties 文件时，内容最好手动输入，否则在读取配置的时候可能会出现编码问题，nodeIdPrivateKey 和 nodeId 的值可以复制粘贴。否则，在运行节点时可能会遇到如下错误：
+注意：在配置 `nodeInfo.properties` 文件时，内容最好手动输入，否则在读取配置的时候可能会出现编码问题，nodeIdPrivateKey 和 nodeId 的值可以复制粘贴。否则，在运行节点时可能会遇到如下错误：
 
 ```
 Exception in thread "main" org.spongycastle.util.encoders.DecoderException: exception decoding Hex string: 33410
@@ -404,11 +415,11 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: 33410
         ... 5 more
 ```
 
-genesis.json 内容如下，其中 validatorVerifiers 为组网节点身份信息
-* key 为节点公钥
-* value 为节点身份信息。
+`genesis.json` 内容如下，其中 *validatorVerifiers* 为组网节点身份信息
+* *key* 为节点公钥
+* *value* 为节点身份信息。
 
-请替换 validatorVerifiers 中的条目信息为自己节点密钥信息。如将 key (如下配置中的 0100....ede8) 替换为自己的节点公钥将`node.private` 文件中的 publicKey 。
+请替换 *validatorVerifiers* 中的条目信息为自己节点密钥信息。如将 *key* (如下配置中的 *0100....ede8*) 替换为自己的节点公钥将 `node.private` 文件中的 *publicKey* 。
 
 ```json
 {
@@ -453,7 +464,7 @@ genesis.json 内容如下，其中 validatorVerifiers 为组网节点身份信�
 }
 ```
 
-至此，单节点配置完成，可以启动。启动方法为：在节点目录下（\~/thanos-chain/node0/），运行如下指令启动节点：
+至此，单节点配置完成，可以启动。启动方法为：在节点目录下 `~/thanos-chain/node0/` ，运行如下指令启动节点：
 
 ```bash
 java  -Xmx256m -Xms256m -Xmn256m -Xss4M -jar thanos-chain.jar
@@ -470,7 +481,7 @@ java.lang.SecurityException: JCE cannot authenticate the provider BC
 
 ```
 
-需要手动将 bcprov-jdk15on-1.66.jar 包放置到 $JAVA\_HOME/jre/lib/ext 目录下，可从此处下载：[https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bcprov-jdk15on-1.66.jar](https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bcprov-jdk15on-1.66.jar)
+需要手动将 `bcprov-jdk15on-1.66.jar` 包放置到 `$JAVA_HOME/jre/lib/ext` 目录下，可从此处下载：[https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bcprov-jdk15on-1.66.jar](https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bcprov-jdk15on-1.66.jar)
 
 ### 配置多节点
 
@@ -480,9 +491,9 @@ java.lang.SecurityException: JCE cannot authenticate the provider BC
 
 重复 [配置单节点](installation.md#id3.1.2-an-zhuang-2-pei-zhi-dan-jie-dian) 的步骤完成各共识节点的配置。
 
-2）修改所有节点的 **genesis.json** 配置文件
+2）修改所有节点的 `genesis.json` 配置文件
 
-配置每个节点的 **genesis.json** 文件中的 **validatorVerifiers** 字段，使其包含所有组网节点的公钥和身份信息。举例如下，假设组网节点由3个节点组成，其节点信息如下：
+配置每个节点的 `genesis.json` 文件中的 *validatorVerifiers* 字段，使其包含所有组网节点的公钥和身份信息。举例如下，假设组网节点由 3 个节点组成，其节点信息如下：
 
 ```editorconfig
 #node0 的 nodeInfo.properties文件内容
@@ -510,7 +521,7 @@ nodeId=0be9f1ad6053103cd185995a34e92047eeeccfdeec6db7106d365f35603178ecf3e15e9a6
 #publicKey=040be9f1ad6053103cd185995a34e92047eeeccfdeec6db7106d365f35603178ecf3e15e9a69cfbff9c950097fd7acf5190cc03cd7983261ac7f70fa82ca48ff93
 ```
 
-则需要配置这三个节点的 genesis.json 中的 validatorVerifiers 字段，内容如下。该字段包含所有共识节点的公钥和身份信息（key为节点公钥，value为节点身份信息）。
+则需要配置这三个节点的 `genesis.json` 中的 *validatorVerifiers* 字段，内容如下。该字段包含所有共识节点的公钥和身份信息（ *key* 为节点公钥，*value* 为节点身份信息）。
 
 ```json
 "validatorVerifiers": {
