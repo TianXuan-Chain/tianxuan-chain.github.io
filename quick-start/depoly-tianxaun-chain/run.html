@@ -1,0 +1,966 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>安装并启动节点 · 天玄技术文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Emosama">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-atoc/atoc.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-cuav-chapters/cuav-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-fexa/fexa.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../deploy-tianxaun-app.html" />
+    
+    
+    <link rel="prev" href="build.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../assets/logo.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../assets/logo-32.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+	<div class="header-inner">
+		<!-- LOGO -->
+		<div class="logo"></div>
+		<span class="title"></span>
+
+		<!-- Search -->
+		
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+
+		<!-- Nav -->
+		<ul class="header-nav">
+			<li>
+				<a href="https://github.com/TianXuan-Chain" target="_blank">天玄代码库</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="book-summary">
+		<div class="book-summary-title">文档目录</div>
+		
+		
+		<nav role="navigation">
+			
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">平台介绍</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    天玄区块链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../introduce/tianxaun-chain-ver.html">
+            
+                <a href="../../introduce/tianxaun-chain-ver.html">
+            
+                    
+                    版本信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">快速开始</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    快速搭建天玄链
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="hardware-requirement.html">
+            
+                <a href="hardware-requirement.html">
+            
+                    
+                    硬件要求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="software-requirement.html">
+            
+                <a href="software-requirement.html">
+            
+                    
+                    软件要求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="build.html">
+            
+                <a href="build.html">
+            
+                    
+                    构建节点安装包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.4" data-path="run.html">
+            
+                <a href="run.html">
+            
+                    
+                    安装并启动节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../deploy-tianxaun-app.html">
+            
+                <a href="../deploy-tianxaun-app.html">
+            
+                    
+                    应用部署示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">安装手册</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../installation-manual/tianxaun-chain/">
+            
+                <a href="../../installation-manual/tianxaun-chain/">
+            
+                    
+                    天玄链
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../installation-manual/tianxaun-chain/executable-file.html">
+            
+                <a href="../../installation-manual/tianxaun-chain/executable-file.html">
+            
+                    
+                    打包可执行文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../installation-manual/tianxaun-chain/installation.html">
+            
+                <a href="../../installation-manual/tianxaun-chain/installation.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../installation-manual/tianxaun-chain/configuration.html">
+            
+                <a href="../../installation-manual/tianxaun-chain/configuration.html">
+            
+                    
+                    配置说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../installation-manual/tianxaun-chain/cert.html">
+            
+                <a href="../../installation-manual/tianxaun-chain/cert.html">
+            
+                    
+                    证书说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../../installation-manual/tianxaun-chain/log.html">
+            
+                <a href="../../installation-manual/tianxaun-chain/log.html">
+            
+                    
+                    日志说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../installation-manual/tianxaun-gateway/">
+            
+                <a href="../../installation-manual/tianxaun-gateway/">
+            
+                    
+                    天玄网关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../installation-manual/tianxaun-gateway/installation.html">
+            
+                <a href="../../installation-manual/tianxaun-gateway/installation.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../installation-manual/tianxaun-gateway/configuration.html">
+            
+                <a href="../../installation-manual/tianxaun-gateway/configuration.html">
+            
+                    
+                    配置说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">应用开发手册</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../app-development-manual/account.html">
+            
+                <a href="../../app-development-manual/account.html">
+            
+                    
+                    创建和使用账户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../app-development-manual/smart-contract.html">
+            
+                <a href="../../app-development-manual/smart-contract.html">
+            
+                    
+                    智能合约
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../app-development-manual/java-sdk/">
+            
+                <a href="../../app-development-manual/java-sdk/">
+            
+                    
+                    Java SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../app-development-manual/java-sdk/quick-start.html">
+            
+                <a href="../../app-development-manual/java-sdk/quick-start.html">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="../../app-development-manual/java-sdk/config.html">
+            
+                <a href="../../app-development-manual/java-sdk/config.html">
+            
+                    
+                    配置说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="../../app-development-manual/java-sdk/interface.html">
+            
+                <a href="../../app-development-manual/java-sdk/interface.html">
+            
+                    
+                    远程调用接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../../app-development-manual/interface-list.html">
+            
+                <a href="../../app-development-manual/interface-list.html">
+            
+                    
+                    天玄链功能接口列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">系统架构</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../architecture/overview.html">
+            
+                <a href="../../architecture/overview.html">
+            
+                    
+                    整体架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../architecture/tx-process.html">
+            
+                <a href="../../architecture/tx-process.html">
+            
+                    
+                    天玄链交易流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../../architecture/data-structure-and-encoding.html">
+            
+                <a href="../../architecture/data-structure-and-encoding.html">
+            
+                    
+                    数据结构&编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../../architecture/core-modules/">
+            
+                <a href="../../architecture/core-modules/">
+            
+                    
+                    核心模块
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.4.1" data-path="../../architecture/core-modules/consensus.html">
+            
+                <a href="../../architecture/core-modules/consensus.html">
+            
+                    
+                    共识算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.2" data-path="../../architecture/core-modules/p2p-network.html">
+            
+                <a href="../../architecture/core-modules/p2p-network.html">
+            
+                    
+                    P2P网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.3" data-path="../../architecture/core-modules/tx-parallelization.html">
+            
+                <a href="../../architecture/core-modules/tx-parallelization.html">
+            
+                    
+                    交易并行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.4" data-path="../../architecture/core-modules/storage.html">
+            
+                <a href="../../architecture/core-modules/storage.html">
+            
+                    
+                    存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.5" data-path="../../architecture/core-modules/execution-pipeline.html">
+            
+                <a href="../../architecture/core-modules/execution-pipeline.html">
+            
+                    
+                    流水线执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.6" data-path="../../architecture/core-modules/certificate-authority.html">
+            
+                <a href="../../architecture/core-modules/certificate-authority.html">
+            
+                    
+                    CA机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.7" data-path="../../architecture/core-modules/gateway.html">
+            
+                <a href="../../architecture/core-modules/gateway.html">
+            
+                    
+                    网关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.8" data-path="../../architecture/core-modules/vm.html">
+            
+                <a href="../../architecture/core-modules/vm.html">
+            
+                    
+                    虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.9" data-path="../../architecture/core-modules/crypto.html">
+            
+                <a href="../../architecture/core-modules/crypto.html">
+            
+                    
+                    密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">社区</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../community/team.html">
+            
+                <a href="../../community/team.html">
+            
+                    
+                    团队介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../../community/coordinator.html">
+            
+                <a href="../../community/coordinator.html">
+            
+                    
+                    合作伙伴
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../../community/channel.html">
+            
+                <a href="../../community/channel.html">
+            
+                    
+                    社群入口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+		</nav>
+		
+		
+	</div>
+
+	<!-- Content nav -->
+	<div class="book-anchor">
+		<div class="book-anchor-title">在这篇文章中:</div>
+		<div class="book-anchor-body">
+
+		</div>
+	</div>
+
+	<div class="book-body">
+		
+		<div class="body-inner">
+			
+			
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >安装并启动节点</a>
+    </h1>
+</div>
+
+
+
+
+			<div class="page-wrapper" tabindex="-1" role="main">
+				<div class="page-inner">
+					
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+					<section class="normal markdown-section">
+						
+						<h1 id="&#x5B89;&#x88C5;&#x5E76;&#x542F;&#x52A8;&#x8282;&#x70B9;">&#x5B89;&#x88C5;&#x5E76;&#x542F;&#x52A8;&#x8282;&#x70B9;</h1>
+<h2 id="&#x5B89;&#x88C5;&#x8282;&#x70B9;">&#x5B89;&#x88C5;&#x8282;&#x70B9;</h2>
+<p>&#x5C06;&#x751F;&#x6210;&#x7684;&#x5B89;&#x88C5;&#x5305;&#x4F20;&#x81F3;&#x76F8;&#x5E94;ip&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x89E3;&#x538B;&#x5E76;&#x5B89;&#x88C5;&#x5404;&#x8282;&#x70B9;&#x3002;</p>
+<pre><code class="lang-sh">tar -zxvf 101.35.234.160_agency.tar.gz <span class="hljs-comment">#&#x6CE8;&#x610F;&#x66FF;&#x6362;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x538B;&#x7F29;&#x5305;&#x540D;</span>
+<span class="hljs-built_in">cd</span> 101.35.234.160_agency <span class="hljs-comment">#&#x8FDB;&#x5165;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</span>
+bash install_node.sh <span class="hljs-comment">#&#x8FD0;&#x884C;&#x5B89;&#x88C5;&#x811A;&#x672C;</span>
+</code></pre>
+<p>&#x6267;&#x884C;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x4F1A;&#x5728;&#x6BCF;&#x4E2A; <em>node</em> &#x76EE;&#x5F55;&#x4E2D;&#x751F;&#x6210; <em>thanos-chain</em> &#x548C; <em>thanos-gateway</em> &#x4E24;&#x4E2A;&#x76EE;&#x5F55;&#x3002;</p>
+<h2 id="&#x542F;&#x52A8;&#x8282;&#x70B9;&#x5E94;&#x7528;-">&#x542F;&#x52A8;&#x8282;&#x70B9;&#x5E94;&#x7528; <a href="#id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-ying-yong" id="id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-ying-yong"></a></h2>
+<p>&#x542F;&#x52A8;&#x56DB;&#x4E2A;&#x8282;&#x70B9;&#x5E94;&#x7528;&#xFF0C;&#x987A;&#x5E8F;&#x4E3A;&#x5148;&#x542F;&#x52A8; <em>thanos-chain</em> &#x5E94;&#x7528;&#xFF0C;&#x518D;&#x542F;&#x52A8; <em>thanos-gateway</em> &#x5E94;&#x7528;&#x3002;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x4EE5;node0&#x4E3A;&#x4F8B;</span>
+<span class="hljs-built_in">cd</span> node0/thanos-chain
+bash start_chain.sh
+</code></pre>
+<p>&#x5F53;&#x914D;&#x7F6E;&#x7684;&#x521D;&#x59CB;&#x8282;&#x70B9;&#x5E94;&#x7528;&#x5747;&#x5DF2;&#x542F;&#x52A8;&#xFF0C;&#x5219;&#x94FE;&#x542F;&#x52A8;&#x5B8C;&#x6210;&#x3002;&#x811A;&#x672C;&#x4E2D;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x5360;&#x7528; <em>1g</em> &#x7684;&#x5185;&#x5B58;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x4FEE;&#x6539;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x5165;&#x811A;&#x672C;&#x4E2D;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x8FD0;&#x884C;&#x6307;&#x4EE4;&#x3002;</p>
+<p>&#x8FD0;&#x884C;&#x811A;&#x672C;&#x4F1A;&#x540E;&#x53F0;&#x542F;&#x52A8;&#x5E94;&#x7528;&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x4E0D;&#x4F1A;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#xFF0C;&#x8BF7;&#x8F6C;&#x81F3;&#x76F8;&#x5E94;&#x7684; <code>logs</code> &#x76EE;&#x5F55;&#x4E0B;&#x67E5;&#x770B;&#x8FD0;&#x884C;&#x65E5;&#x5FD7;&#x3002;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x4EE5;node0&#x4E3A;&#x4F8B;</span>
+<span class="hljs-built_in">cd</span> node0
+tail <span class="hljs-_">-f</span> thanos-chain/logs/thanos-chain.log | grep <span class="hljs-string">&apos;empty do commit cost&apos;</span> <span class="hljs-comment">#&#x5982;&#x679C;&#x6301;&#x7EED;&#x6253;&#x5370;&#x8BE5;&#x6D88;&#x606F;&#xFF0C;&#x8BF4;&#x660E;&#x8282;&#x70B9;chain&#x5E94;&#x7528;&#x542F;&#x52A8;&#x6210;&#x529F;&#x5E76;&#x53C2;&#x4E0E;&#x5171;&#x8BC6;&#x3002;</span>
+</code></pre>
+<h2 id="&#x542F;&#x52A8;&#x8282;&#x70B9;&#x7F51;&#x5173;-">&#x542F;&#x52A8;&#x8282;&#x70B9;&#x7F51;&#x5173; <a href="#id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-wang-guan" id="id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-wang-guan"></a></h2>
+<p>&#x8282;&#x70B9;&#x5E94;&#x7528;&#x542F;&#x52A8;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x518D;&#x542F;&#x52A8; <em>thanos-gateway</em></p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x4EE5;node0&#x4E3A;&#x4F8B;</span>
+<span class="hljs-built_in">cd</span> node0/thanos-gateway
+bash start_gateway.sh
+</code></pre>
+<p>&#x7F51;&#x5173;&#x542F;&#x52A8;&#x540E;&#x67E5;&#x770B; <em>log</em> &#x65E5;&#x5FD7;&#x5982;&#x4E0B;&#xFF0C;&#x5219;&#x542F;&#x52A8;&#x6210;&#x529F;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x4EE5;node0&#x4E3A;&#x4F8B;</span>
+<span class="hljs-built_in">cd</span> node0
+cat thanos-gateway/logs/thanos-gateway.log |grep <span class="hljs-string">&apos;INFO [main]  Main start success!!&apos;</span> <span class="hljs-comment">#&#x5982;&#x679C;&#x6253;&#x5370;&#x8BE5;&#x6D88;&#x606F;&#xFF0C;&#x8BF4;&#x660E;&#x8282;&#x70B9;gateway&#x5E94;&#x7528;&#x542F;&#x52A8;&#x6210;&#x529F;&#x3002;</span>
+</code></pre>
+<h2 id="&#x5176;&#x4ED6;&#x95EE;&#x9898;">&#x5176;&#x4ED6;&#x95EE;&#x9898;</h2>
+<p><strong>&#x5185;&#x5B58;&#x4E0D;&#x8DB3;</strong></p>
+<p>&#x5982;&#x679C;&#x5728;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x9047;&#x5230;&#x542F;&#x52A8;&#x5931;&#x8D25;&#x4E14;&#x65E0;&#x4EFB;&#x4F55;&#x65E5;&#x5FD7;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x65F6;&#x670D;&#x52A1;&#x5668;&#x5185;&#x5B58;&#x4E0D;&#x4F4F;&#x7684;&#x539F;&#x56E0;&#x3002;&#x811A;&#x672C;&#x4E2D;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x5360;&#x7528; <em>1g</em> &#x7684;&#x5185;&#x5B58;&#xFF0C;&#x6240;&#x4EE5; <em>chain</em> &#x548C; <em>gateway</em> &#x603B;&#x5171;&#x4F1A;&#x5360;&#x7528;&#x81F3;&#x5C11; <em>2g</em> &#x7684;&#x5185;&#x5B58;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x4FEE;&#x6539;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FDB;&#x5165; <code>start-chain.sh</code> &#x4EE5;&#x53CA; <code>start-gateway.sh</code> &#x811A;&#x672C;&#x4E2D;&#x4FEE;&#x6539;&#x8FD0;&#x884C;&#x6307;&#x4EE4;&#x3002;</p>
+<ul>
+<li>start-chain.sh</li>
+</ul>
+<pre><code class="lang-bash">nohup java  -Xmx256m -Xms256m -Xmn256m -Xss4M -XX:SurvivorRatio=8  -jar thanos-chain.jar &gt;/dev/null &amp;
+</code></pre>
+<ul>
+<li>start-gateway.sh</li>
+</ul>
+<pre><code class="lang-bash">nohup java  -Xmx256m -Xms256m -Xmn256m -Xss4M -XX:SurvivorRatio=8  -jar thanos-gateway.jar &gt;/dev/null &amp;
+</code></pre>
+<p><strong>rpc &#x7AEF;&#x53E3;&#x7ED1;&#x5B9A;&#x5931;&#x8D25;</strong>
+&#x5982;&#x679C;&#x8282;&#x70B9;&#x7F51;&#x5173; <em>rpc</em> &#x7AEF;&#x53E3;&#x7ED1;&#x5B9A;&#x5931;&#x8D25;&#xFF0C;<code>thanos-gateway.log</code> &#x4E2D;&#x4F1A;&#x51FA;&#x73B0;&#x5982;&#x4E0B;&#x62A5;&#x9519;&#x4FE1;&#x606F;</p>
+<pre><code>java.net.BindException: Cannot assign requested address (Bind failed)
+    at java.net.PlainSocketImpl.socketBind(Native Method)
+    at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+    at java.net.ServerSocket.bind(ServerSocket.java:375)
+    at java.net.ServerSocket.&lt;init&gt;(ServerSocket.java:237)
+    at javax.net.DefaultServerSocketFactory.createServerSocket(ServerSocketFactory.java:231)
+    at com.thanos.gateway.jsonrpc.RpcServiceProvider.loadServerSocket(RpcServiceProvider.java:69)
+    at com.thanos.gateway.jsonrpc.RpcServiceProvider.&lt;init&gt;(RpcServiceProvider.java:44)
+    at com.thanos.gateway.jsonrpc.JsonRpcInit.init(JsonRpcInit.java:14)
+    at com.thanos.gateway.Main.main(Main.java:31)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
+    at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+    at org.springframework.boot.loader.Launcher.launch(Launcher.java:108)
+    at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+    at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
+</code></pre><p>&#x9700;&#x8981;&#x67E5;&#x770B; <code>node0/thanos-gateway/resource/thanos-gateway.conf</code> &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5E76;&#x627E;&#x5230; <code>rpc</code> . <code>address</code> &#x6761;&#x76EE;&#xFF0C;&#x4F8B;&#x5982; <code>address=10.8.0.1:8180</code></p>
+<ul>
+<li>&#x68C0;&#x67E5;&#x5BF9;&#x5E94;&#x7684; 8180 &#x7AEF;&#x53E3;&#x662F;&#x5426;&#x5728;&#x5B89;&#x5168;&#x7EC4;&#x4E2D;&#x914D;&#x7F6E;&#x6253;&#x5F00;</li>
+<li>&#x68C0;&#x67E5; <em>Ip</em> &#x5730;&#x5740;&#x662F;&#x5426;&#x4E3A;&#x5185;&#x7F51;&#x5730;&#x5740; (&#x76EE;&#x524D; <em>rpc</em> &#x9650;&#x5236;&#x4E3A;&#x4EC5;&#x5185;&#x7F51;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x800C; <em>http</em> &#x4E3A;&#x5916;&#x7F51;&#x8BBF;&#x95EE;)</li>
+</ul>
+<p>&#x68C0;&#x67E5;&#x5E76;&#x4FEE;&#x6539;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x91CD;&#x65B0;&#x6267;&#x884C; <code>start_gateway.sh</code> &#x8FD0;&#x884C;&#x7F51;&#x5173;&#xFF0C;&#x6CE8;&#x610F;&#x5982;&#x679C;&#x4E0A;&#x4E00;&#x6B21;&#x8FD0;&#x884C;&#x7684;&#x8FDB;&#x7A0B;&#x5982;&#x679C;&#x672A;&#x5173;&#x95ED;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x624B;&#x52A8;&#x5173;&#x95ED;&#x3002;</p>
+<pre><code class="lang-sh">ps -ef | grep java <span class="hljs-comment">#&#x67E5;&#x8BE2;&#x8FD0;&#x884C;&#x4E2D;&#x7684; java &#x8FDB;&#x7A0B;</span>
+<span class="hljs-built_in">kill</span> -9 &#x8FDB;&#x7A0B;&#x53F7; <span class="hljs-comment">#&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x5E76;&#x5173;&#x95ED;</span>
+</code></pre>
+<script type="text/javascript">var className='atoc';</script>
+						
+					</section>
+					
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+				</div>
+			</div>
+			
+		</div>
+
+		
+		
+		<a href="build.html" class="navigation navigation-prev " aria-label="Previous page: 构建节点安装包">
+			<i class="fa fa-angle-left"></i>
+		</a>
+		
+		
+		<a href="../deploy-tianxaun-app.html" class="navigation navigation-next " aria-label="Next page: 应用部署示例">
+			<i class="fa fa-angle-right"></i>
+		</a>
+		
+		
+		
+	</div>
+	<script>
+		var gitbook = gitbook || [];
+		gitbook.push(function() {
+			gitbook.page.hasChanged({"page":{"title":"安装并启动节点","level":"2.1.4","depth":2,"next":{"title":"应用部署示例","level":"2.2","depth":1,"path":"quick-start/deploy-tianxaun-app.md","ref":"quick-start/deploy-tianxaun-app.md","articles":[]},"previous":{"title":"构建节点安装包","level":"2.1.3","depth":2,"path":"quick-start/depoly-tianxaun-chain/build.md","ref":"quick-start/depoly-tianxaun-chain/build.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-fexa","codetabs","-search","favicon","-lunr","search-plus","atoc","image-captions","-sharing","-livereload","code","cuav-chapters","heading-anchors","back-to-top-button","pageview-count","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"atoc":{"addClass":true,"className":"atoc"},"codetabs":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"assets/logo-120.ico","favicon":"assets/logo-32.ico"},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"favicon":{"shortcut":"assets/logo.jpg","bookmark":"assets/logo-32.ico"},"back-to-top-button":{},"pageview-count":{},"edit-link":{"base":"https://github.com/TianXuan-Chain/thanos-docs","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{},"image-captions":{"caption":"Image - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"Emosama","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"overview.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"https://github.com/TianXuan-Chain","target":"_blank","name":"天玄代码库"}]},"_pictures":[]},"title":"天玄技术文档","language":"zh-hans","gitbook":"*"},"file":{"path":"quick-start/depoly-tianxaun-chain/run.md","mtime":"2024-09-12T08:38:02.148Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-12T08:38:07.469Z"},"basePath":"../..","book":{"language":""}});
+		});
+	</script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-atoc/atoc.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-cuav-chapters/cuav-chapters.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-fexa/fexa.js"></script>
+        
+    
+
+    </body>
+</html>
+
