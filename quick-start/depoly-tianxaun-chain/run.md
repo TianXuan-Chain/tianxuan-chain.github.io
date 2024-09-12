@@ -93,7 +93,7 @@ java.net.BindException: Cannot assign requested address (Bind failed)
     at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
 ```
 
-需要查看 `node0/thanos-gateway/resource/thanos-gateway.conf` 配置文件并找到 `rpc` . `address` 条目，例如 `address=10.8.0.1:8180`
+需要查看 `node0/thanos-gateway/resource/thanos-gateway.conf` 配置文件并找到 *rpc.address* 条目，例如 *address=10.8.0.1:8180*
 * 检查对应的 8180 端口是否在安全组中配置打开
 * 检查 *Ip* 地址是否为内网地址 (目前 *rpc* 限制为仅内网可访问，而 *http* 为外网访问)
 
