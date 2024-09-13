@@ -4,7 +4,7 @@
 2) 安装 gitbook-cli
    ```sh
    npm install gitbook-cli -g
-   ```sh
+   ```
 3) 拉取文档代码库
    ```sh
    git clone https://github.com/TianXuan-Chain/tianxuan-docs.git
@@ -19,9 +19,9 @@
    npm run build
    ```
 6) 本地部署
-   ```
-   gitbook serve
    ```sh
+   gitbook serve
+   ```
 7) 部署到 github pages
    ```sh
    npm run deploy
