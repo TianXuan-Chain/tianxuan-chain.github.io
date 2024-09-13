@@ -1,12 +1,12 @@
 # 智能合约
 
-天玄目前支持 Solidity 合约
+天玄目前支持 *Solidity* 合约
 
 * Solidity 合约与以太坊相同，目前支持的版本为 v0.4.25
 * 相关语法学习，请参考：[Solidity 官方文档](https://docs.soliditylang.org/en/latest/)
 * [Remix 在线IDE](https://remix.ethereum.org/)
 
-下面是编写一个简单的`Erc20`代币合约的示例
+下面是编写一个简单的 *Erc20* 代币合约的示例
 
 **1）合约接口**
 

@@ -198,7 +198,7 @@ mv node.* chain.crt ~/thanos-chain/node0/resource/tls
 
 **添加节点配置**
 
-本节主要介绍节点部署需要添加的配置。配置文件中各配置项的具体含义参见 [thanos-chain 配置说明](./)
+本节主要介绍节点部署需要添加的配置。配置文件中各配置项的具体含义参见 [thanos-chain 配置说明](./configuration.md)
 
 1）在 `~/thanos-chain/node0/resource/` 目录下 添加节点的总配置文件 `thanos-chain.conf` 和日志管理配置 `chain-logback.xml` 。
 

@@ -2,7 +2,7 @@
 
 ## 安装节点
 
-将生成的安装包传至相应ip的服务器上，解压并安装各节点。
+将生成的安装包传至相应 *Ip* 的服务器上，解压并安装各节点。
 
 ```sh
 tar -zxvf 101.35.234.160_agency.tar.gz #注意替换成自己的压缩包名
@@ -70,6 +70,7 @@ nohup java  -Xmx256m -Xms256m -Xmn256m -Xss4M -XX:SurvivorRatio=8  -jar thanos-g
 ```
 
 **rpc 端口绑定失败**
+
 如果节点网关 *rpc* 端口绑定失败，`thanos-gateway.log` 中会出现如下报错信息
 
 ```

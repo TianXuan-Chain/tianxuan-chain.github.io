@@ -1,12 +1,12 @@
 # 应用部署示例
 
-在开始本教程前，请先确保已经按照 [快速搭建天玄链](depoly-tianxaun-chain/) 在服务器上部署好了一条测试链。
+在开始本教程前，请先确保已经按照 [快速搭建天玄链](./depoly-tianxaun-chain/README.md) 在服务器上部署好了一条测试链。
 
 本教程将在 <mark>*Windows*</mark> 环境下，使用 *IntelliJ IDEA* 进行，方便读者基于此 *Demo* 进行开发，所以请确保在运行 *Demo* 代码的机器上具备以下环境。
 
-* **IDE：**进入 [*IntelliJ IDEA* 官网](https://www.jetbrains.com/idea/download/) ，下载并安装社区版 *IntelliJ IDEA*
-* **Oracle JDK：**Java应用需要依赖 [*Oracle JDK*](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html) ，且jdk版本不低于 1.8.0u201
-* **Maven：**项目需要依赖 [*Maven*](https://archive.apache.org/dist/maven/maven-3/3.3.9/) ，且版本不低于 3.3.9
+* **IDE**：进入 [*IntelliJ IDEA* 官网](https://www.jetbrains.com/idea/download/) ，下载并安装社区版 *IntelliJ IDEA*
+* **Oracle JDK**：Java应用需要依赖 [*Oracle JDK*](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html) ，且 *JDK* 版本不低于 1.8.0u201
+* **Maven**：项目需要依赖 [*Maven*](https://archive.apache.org/dist/maven/maven-3/3.3.9/) ，且版本不低于 3.3.9
 
 ## 下载Demo物料包
 
@@ -131,7 +131,7 @@ crypto {
 * **tls**： 是否开启 *tls* 以及 *tls* 相关的证书和私钥的配置 (当前默认关闭，是否开启需要和节点的配置保持一致)
 * **crypto**： 加密相关配置
 
-当前教程，只需要将自己的 *http* 链接配置到 *http . ip . list* 中即可。如果按照之前教程部署的链，没有修改过默认端口，则直接修改为<mark>节点服务器 *ip* : 8580</mark> 即可。
+当前教程，只需要将自己的 *http* 链接配置到 *http . ip . list* 中即可。如果按照之前教程部署的链，没有修改过默认端口，则直接修改为<mark> [节点服务器 *ip* : 8580] </mark> 即可。
 
 或者请查询节点网关的配置文件 `thanos-gateway.conf` 中所设置的端口号，更多信息请见：[网关配置说明](../installation-manual/tianxaun-gateway/configuration.md#主配置文件-thanos-chainconf)。
 
