@@ -54,6 +54,6 @@
 
 ## 社区 <a href="#community" id="community"></a>
 
-* [团队介绍](community/team.md)
-* [合作伙伴](community/coordinator.md)
+<!-- * [团队介绍](community/team.md)
+* [合作伙伴](community/coordinator.md) -->
 * [社群入口](community/channel.md)
