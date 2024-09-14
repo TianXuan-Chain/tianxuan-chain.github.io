@@ -6,6 +6,7 @@
     "showLevel": true
   },
   "plugins": [
+    "popup",
     "splitter",
     "hide-element",
     "search-pro-fixed",
