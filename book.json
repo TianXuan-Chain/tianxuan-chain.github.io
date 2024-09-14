@@ -2,38 +2,105 @@
   "title": "天玄技术文档",
   "language": "zh-hans",
   "author": "Emosama",
+  "theme-default": {
+    "showLevel": true
+  },
   "plugins": [
-    "theme-fexa",
-    "codetabs",
+    "splitter",
+    "hide-element",
+    "search-pro-fixed",
+    "-highlight",
+    "chapter-fold",
+    "expandable-chapters",
+    "tbfed-pagefooter",
+    "github",
+    "flexible-alerts",
+    "prism",
+    "auto-scroll-table",
+    "theme-d4t",
     "-search",
-    "favicon",
     "-lunr",
-    "search-plus",
-    "atoc",
     "image-captions",
     "-sharing",
-    "-livereload",
     "code",
-    "cuav-chapters",
-    "heading-anchors",
     "back-to-top-button",
     "pageview-count"
   ],
   "variables": {
-    "themeFexa":{
-        "nav":[
-            {
-                "url":"https://github.com/TianXuan-Chain",
-                "target":"_blank",
-                "name": "天玄代码库"
-            }
-        ]
+    "d4t": {
+      "nav": [
+        {
+          "url": "https://github.com/TianXuan-Chain",
+          "target": "_blank",
+          "name": "天玄代码仓库"
+        }
+      ]
     }
   },
-  "pluginsConfig": { 
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/TianXuan-Chain"
+    },
+    "hide-element": {
+      "elements": [
+        ".gitbook-link",
+        ".title",
+        ".treeview__copyright",
+        ".treeview__main-title"
+      ]
+    },
+    "d4t": {
+      "search-placeholder": "请输关键字搜索",
+      "logo": "./assets/logo.svg",
+      "favicon": "./assets/fav.ico"
+    },
+    "tbfed-pagefooter": {
+      "copyright": "Copyright &copy netease 2024",
+      "modify_label": "文档修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "flexible-alerts": {
+      "style": "callout",
+      "comment": {
+        "label": "Comment",
+        "icon": "fa fa-comments",
+        "className": "info"
+      }
+    },
+    "prism": {
+      "css": [
+        "prismjs/themes/prism-tomorrow.css"
+      ],
+      "lang": {
+        "flow": "typescript"
+      },
+      "ignore": [
+        "mermaid",
+        "eval-js",
+        "ascii",
+        "result",
+        "manifest",
+        "payload",
+        "google",
+        "tree",
+        "java_out",
+        "log4j2",
+        "jsp",
+        "class",
+        "Exception",
+        "stack",
+        "c#",
+        "xml-dtd",
+        "C++",
+        "twig",
+        "jinja2",
+        "exception",
+        "tpl"
+       ]
+    },
     "fontsettings": {
-      "theme": "white", 
-      "family": "sans", 
+      "theme": "white",
+      "family": "sans",
       "size": 2
     },
     "image-captions": {
@@ -41,23 +108,6 @@
     },
     "code": {
       "copyButtons": true
-    },
-    "favicon": {
-      "shortcut": "assets/logo.jpg",
-      "bookmark": "assets/logo-32.ico"
-    },
-    "atoc": {
-      "addClass": true,
-      "className": "atoc"
-    },
-    "edit-link": {
-      "base": "https://github.com/TianXuan-Chain/thanos-docs",
-      "label": "Edit This Page"
-    },
-    "theme-fexa":{
-      "search-placeholder":"输入关键字搜索",
-      "logo":"assets/logo-120.ico", 
-      "favicon": "assets/logo-32.ico"
     }
   },
   "structure": {

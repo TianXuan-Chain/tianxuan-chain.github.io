@@ -4,7 +4,7 @@
 
 天玄充分支持国产密码学算法，基于[国产密码学标准](http://www.gmbz.org.cn/main/bzlb.html)，实现了国密加解密、签名、验签、哈希算法、国密SSL通信协议，实现了对国家密码局认定的商用密码的完全支持。
 
-国密版天玄将交易签名验签、P2P网络连接、节点连接、数据落盘加密等底层模块的密码学算法均替换为国密算法，国密版天玄与标准版主要特性对比如下：
+国密版天玄将交易签名验签、P2P 网络连接、节点连接、数据落盘加密等底层模块的密码学算法均替换为国密算法，国密版天玄与标准版主要特性对比如下：
 
 |       | ECDSA版天玄            | EdDSA版天玄   | 国密版天玄 |
 | ------- | ------------- | ------------- | ------------- |
@@ -18,10 +18,16 @@
 (注：国密算法SM2, SM3, SM4均基于国产密码学标准开发)
 ## 系统框架
 系统整体框架如下图所示：
-<figure><img src="../../assets/密码.png" alt=""><figcaption align="middle"><p>图1. 天玄密码框架</p></figcaption></figure>
+
+<div style="text-align: left;">
+    <figure style="display: inline-block; margin: 0;">
+        <img src="../../assets/密码.png" alt="图1. 天玄密码框架" style="width: 100%; max-width: 800px; height: auto;">
+        <figcaption style="text-align: center; max-width: 1000px; font-weight: bold; font-size: 14px; margin-top: -25px; color: #555;">图1. 天玄密码框架</figcaption>
+    </figure>
+</div>
 
 ## 国密SSL 1.1 握手建立流程
-国密版节点之间的认证选用国密SSL 1.1的ECDHE_SM4_SM3密码套件进行SSL链接的建立，差异如下表所示：
+国密版节点之间的认证选用国密 SSL 1.1 的 ECDHE_SM4_SM3 密码套件进行 SSL 链接的建立，差异如下表所示：
 |       | OpenSSL            | 国密SSL   |
 | ------- | ------------- | ------------- | 
 | 加密套件	 | 采用ECDH、RSA、SHA-256、AES256等密码算法     | TLSv1.3协议 | 

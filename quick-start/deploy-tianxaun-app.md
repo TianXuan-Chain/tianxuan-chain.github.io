@@ -23,23 +23,23 @@ git clone https://github.com/TianXuan-Chain/thanos-demo.git
 
 ## 配置 IntelliJ IDEA <a href="#id2.2-bu-shu-di-yi-ge-tian-xuan-ying-yong-pei-zhi-maven-he-jdk" id="id2.2-bu-shu-di-yi-ge-tian-xuan-ying-yong-pei-zhi-maven-he-jdk"></a>
 
-配置 *JDK*。
+**配置 *JDK***
 
-<div align="left">
-
-<figure><img src="../assets/image.png" alt="" width="600"><figcaption></figcaption></figure>
-
+<div style="text-align: left;">
+    <figure style="display: inline-block; margin: 0;">
+        <img src="../assets/配置JDK.png" alt="图1. 配置 JDK" style="width: 100%; max-width: 600px; height: auto;">
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图1. 配置 JDK</figcaption>
+    </figure>
 </div>
 
-配置 *Maven*。
+**配置 *Maven***
 
-<div align="left">
-
-<figure><img src="../assets/image (1).png" alt="" width="600"><figcaption></figcaption></figure>
-
+<div style="text-align: left;">
+    <figure style="display: inline-block; margin: 0;">
+        <img src="../assets/配置Maven.png" alt="图2. 配置 Maven" style="width: 100%; max-width: 600px; height: auto;">
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图2. 配置 Maven</figcaption>
+    </figure>
 </div>
-
-
 
 ## 编译 thanos-common
 
@@ -53,10 +53,11 @@ mvn install:install-file -Dfile=bctls-gm-jdk15on.jar -DgroupId=org.bouncycastle 
 
 最后，使用 *IntelliJ IDEA* 打开 *thanos-common* 项目，按照下图所示执行 `maven install`（也可以直接在 *cmd* 中执行）。
 
-<div align="left">
-
-<figure><img src="../assets/1725602613602.png" alt="" width="400"><figcaption></figcaption></figure>
-
+<div style="text-align: left;">
+    <figure style="display: inline-block; margin: 0;">
+        <img src="../assets/执行Maven命令.png" alt="图3. 执行 maven install" style="width: 100%; max-width: 600px; height: auto;">
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图3. 执行 maven install</figcaption>
+    </figure>
 </div>
 
 编译执行成功后，`thanos-common.jar` 会被加载到本地仓库中。
@@ -65,10 +66,11 @@ mvn install:install-file -Dfile=bctls-gm-jdk15on.jar -DgroupId=org.bouncycastle 
 
 使用 *IntelliJ IDEA* 打开 *thanos-web3j* 项目，执行 `gradle publishToMavenLocal` （如果本地安装了 *gradle* ，也可以通过 *cmd* 执行）。
 
-<div align="left">
-
-<figure><img src="../assets/image (2).png" alt="" width="400"><figcaption></figcaption></figure>
-
+<div style="text-align: left;">
+    <figure style="display: inline-block; margin: 0;">
+        <img src="../assets/执行Gradle命令.png" alt="图4. 执行 gradle publishToMavenLocal" style="width: 100%; max-width: 400px; height: auto;">
+        <figcaption style="text-align: center; max-width: 400px; font-weight: bold; font-size: 14px; color: #555;">图4. 执行 gradle publishToMavenLocal</figcaption>
+    </figure>
 </div>
 
 执行成功，`thanos-web3j.jar` 将会被加载到本地 *Maven* 库中。
@@ -137,18 +139,20 @@ crypto {
 
 配置完成并加载 Maven 依赖后运行 *SimpleTokenHttpTest.main* 。
 
-<div align="left">
-
-<figure><img src="../assets/image (3).png" alt="" width="600"><figcaption></figcaption></figure>
-
+<div style="text-align: left;">
+    <figure style="display: inline-block; margin: 0;">
+        <img src="../assets/运行程序.png" alt="图5. 运行程序" style="width: 100%; max-width: 600px; height: auto;">
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图5. 运行程序</figcaption>
+    </figure>
 </div>
 
 该方法会使用 *thanos-web3j* 模拟部署一个简单的 *Token* 应用到测试链上，并模拟执行 *Token* 转移交易。成功运行后，等待片刻，你会看到如下信息
 
-<div align="left">
-
-<figure><img src="../assets/image (4).png" alt="" width="600"><figcaption></figcaption></figure>
-
+<div style="text-align: left;">
+    <figure style="display: inline-block; margin: 0;">
+        <img src="../assets/运行结果.png" alt="图6. 运行结果" style="width: 100%; max-width: 600px; height: auto;">
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图6. 运行结果</figcaption>
+    </figure>
 </div>
 
 返回应用合约地址，表明合约部署成功，后面的 *transder from* 以及 *transfer to* 等信息是模拟执行的合约交易结果。

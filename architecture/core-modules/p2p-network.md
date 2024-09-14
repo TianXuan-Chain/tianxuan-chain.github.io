@@ -22,9 +22,9 @@
 
 通常情况下，一个节点要加入区块链网络，至少要准备三个文件：
 
-* node.key 节点密钥，EC/ED/SM 等格式
-* node.crt 节点证书，由 CA 颁发
-* ca.crt CA 证书，CA 机构提供
+* **node.key**：节点密钥，EC/ED/SM 等格式
+* **node.crt**：节点证书，由 CA 颁发
+* **ca.crt**：CA 证书，CA 机构提供
 
 ### 管理网络连接
 
@@ -34,7 +34,7 @@
 
 建立 TLS 链接既是为了验证节点身份的合法性，又为后续新节点发送入网请求做准备。建立TLS链接的步骤如下：
 
-* 节点利用密钥文件 node.key 和 chain.crt 初始化 SSLContext。
+* 节点利用密钥文件 `node.key` 和 `chain.crt` 初始化  SSLContext 。
 * 节点发送 TLS 链接请求给共识节点，请求建立连接。
 * 当双向身份认证通过后，TLS 链接建立成功，新节点与共识节点可以进行通信。
 
@@ -57,10 +57,10 @@
 
 #### 全局广播 <a href="#id5.4.2p2p-wang-luo-quan-ju-guang-bo" id="id5.4.2p2p-wang-luo-quan-ju-guang-bo"></a>
 
-区块链节点A获取所有的区块链节点，阻隔发起单播流程
+区块链节点 A 获取所有的区块链节点，阻隔发起单播流程
 
 #### RPC调用 <a href="#id5.4.2p2p-wang-luo-rpc-diao-yong" id="id5.4.2p2p-wang-luo-rpc-diao-yong"></a>
 
-区块链节点A区块链节点B根据节点ID，会发起一个有rpc 标识的消息单播发送，节点B收到该rpc消息后，会依据具体的消息，将处理结果返回节点A。
+区块链节点 A 区块链节点B根据节点 ID，会发起一个有 RPC 标识的消息单播发送，节点 B 收到该 RPC 消息后，会依据具体的消息，将处理结果返回节点 A 。
 
 
