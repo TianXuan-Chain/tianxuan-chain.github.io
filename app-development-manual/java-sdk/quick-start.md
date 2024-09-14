@@ -102,7 +102,7 @@ source /etc/profile.d/gradle.sh
 gradle -v
 ```
 
-注意：如果第一步拉取 *gradle* 安装包失败，表明服务器网络连接 *gradle* 官网存在限制，请到 [官网网站](https://services.gradle.org/distributions/gradle-5.6.2-all.zip) 下载后上传到服务器。
+注意：如果第一步拉取 *gradle* 安装包失败，表明服务器网络连接 *gradle* 官网存在限制，请到 [官方网站](https://services.gradle.org/distributions/gradle-5.6.2-all.zip) 下载后上传到服务器。
 
 *gradle* 安装完成后，如果是国内服务器，可以看需求是否修改为国内的镜像源。在 `{USER_HOME}/.gradle/` 目录下创建 `init.gradle` 文件，并添加下面内容：
 
@@ -170,7 +170,7 @@ solc --version
 
 * 开始本部分教程时，默认用户已经准备好了<mark>编译为 *Java* 的合约应用</mark>。
 
-* 这部分教程使用 *IntelliJ IDEA* 进行。如果上述流程和编写应用的不是一台机器 (例如：使用 *Windows* 系统进行)。请参考[应用部署示例](../../quick-start/deploy-thanos-app.md)在当前机器重新构建 *Maven* 本地依赖。
+* 这部分教程使用 *IntelliJ IDEA* 进行。如果上述流程和编写应用的不是一台机器 (例如：使用 *Windows* 系统进行)。请参考[应用部署示例](../../quick-start/deploy-tianxaun-app.md)在当前机器重新构建 *Maven* 本地依赖。
 
 
 ### 引入 SDK <a href="#id4.3.2-kuai-su-ru-men-yin-ru-sdk" id="id4.3.2-kuai-su-ru-men-yin-ru-sdk"></a>
@@ -233,7 +233,7 @@ SystemConfig systemConfig = new SystemConfig(1, 60, new ArrayList<>(), rpcIpPort
 * 主配置文件 `thanos-web3j.conf`
 * 日志配置文件 `logback.xml`
 
-配置文件说明文档详见：[*thanos-web3j* 配置说明](config.md)。
+配置文件说明文档详见：[*thanos-web3j* 配置说明](./config.md)。
 
 完整的应用及配置文件的目录相对关系如下：
 

@@ -12,7 +12,7 @@
 * Maven 3.3.9
 * git
 
-上述软件的安装教程可见：[软件安装](../../quick-start/depoly-thanos-chain/software-requirement.md)
+上述软件的安装教程可见：[软件安装](../../quick-start/depoly-tianxaun-chain/software-requirement.md)
 
 ## 打包 thanos-common <a href="#id3.1.1-huo-qu-ke-zhi-xing-wen-jian-san-da-bao-thanoscommon" id="id3.1.1-huo-qu-ke-zhi-xing-wen-jian-san-da-bao-thanoscommon"></a>
 

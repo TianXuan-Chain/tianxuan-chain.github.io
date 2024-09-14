@@ -64,7 +64,7 @@ chain.crt   #链式证书文件，由 ca.crt agency.crt node.crt 合并而成
 
 ## 证书生成流程 <a href="#id3.1.4-zheng-shu-shuo-ming-san-zheng-shu-sheng-cheng-liu-cheng" id="id3.1.4-zheng-shu-shuo-ming-san-zheng-shu-sheng-cheng-liu-cheng"></a>
 
-注意：需要安装好 *GmSSL-v2* ，可参考[节点应用安装部分](installation.md#tian-xuan-lian-an-zhuang-da-jian)
+注意：需要安装好 *GmSSL-v2* ，可参考 [GmSSL-v2 安装](../../installation-manual/tianxaun-chain/installation.md#前置依赖软件)
 
 证书生成流程如下
 

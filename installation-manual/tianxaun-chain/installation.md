@@ -17,7 +17,7 @@
 
 ### 前置依赖软件 <a href="#id3.1.2-an-zhuang-1-qian-zhi-zhun-bei" id="id3.1.2-an-zhuang-1-qian-zhi-zhun-bei"></a>
 
-* [Oracle JDK 1.8](../../quick-start/depoly-thanos-chain/software-requirement.md#id2.2-ruan-jian-yao-qiu-oraclejdk1.8-an-zhuang-oraclejdk)
+* [Oracle JDK 1.8](../../quick-start/depoly-tianxaun-chain/software-requirement.md#oracle-jdk-18-安装)
 * GmSSL-v2（该软件只支持 *Linux* 系统）
 
 *GmSSL-v2* 的安装流程如下
