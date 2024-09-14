@@ -17,15 +17,35 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro-fixed/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-atoc/atoc.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
                 
             
                 
@@ -37,10 +57,6 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-cuav-chapters/cuav-chapters.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
                 
             
@@ -49,15 +65,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-fexa/fexa.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-d4t/style.css">
                 
             
         
@@ -79,7 +91,6 @@
     
 
         
-    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -96,45 +107,36 @@
     <link rel="prev" href="../app-development-manual/interface-list.html" />
     
 
-    
-        <link rel="shortcut icon" href='../assets/logo.jpg' type="image/x-icon">
-    
-    
-        <link rel="bookmark" href='../assets/logo-32.ico' type="image/x-icon">
-    
-    
-    
-
     </head>
     <body>
         
 <div class="book">
-	<div class="header-inner">
-		<!-- LOGO -->
-		<div class="logo"></div>
-		<span class="title"></span>
+    <div class="header-inner">
+        <!-- LOGO -->
+        <a href="/"><div class="logo"></div></a>
+        <span class="title"></span>
 
-		<!-- Search -->
-		
+        <!-- Search -->
+        
 <div id="book-search-input" role="search">
     <input type="text" placeholder="输入并搜索" />
 </div>
 
 
-		<!-- Nav -->
-		<ul class="header-nav">
-			<li>
-				<a href="https://github.com/TianXuan-Chain" target="_blank">天玄代码库</a>
-			</li>
-		</ul>
-	</div>
+        <!-- Nav -->
+        <ul class="header-nav">
+            <li>
+                <a href="https://github.com/TianXuan-Chain" target="_blank">天玄代码仓库</a>
+            </li>
+        </ul>
+    </div>
 
-	<div class="book-summary">
-		<div class="book-summary-title">文档目录</div>
-		
-		
-		<nav role="navigation">
-			
+    <div class="book-summary">
+        <div class="sidebar-nav-space"></div>
+        
+        
+        <nav role="navigation">
+            
 
 
 <ul class="summary">
@@ -747,24 +749,24 @@
 </ul>
 
 
-		</nav>
-		
-		
-	</div>
+        </nav>
+        
+        
+    </div>
 
-	<!-- Content nav -->
-	<div class="book-anchor">
-		<div class="book-anchor-title">在这篇文章中:</div>
-		<div class="book-anchor-body">
+    <!-- Content nav -->
+    <div class="book-anchor">
+        <div class="book-anchor-title">ON THIS PAGE</div>
+        <div class="book-anchor-body">
 
-		</div>
-	</div>
+        </div>
+    </div>
 
-	<div class="book-body">
-		
-		<div class="body-inner">
-			
-			
+    <div class="book-body">
+        
+        <div class="body-inner">
+            
+            
 
 <div class="book-header" role="navigation">
     
@@ -779,49 +781,53 @@
 
 
 
-			<div class="page-wrapper" tabindex="-1" role="main">
-				<div class="page-inner">
-					
-<div class="search-plus" id="book-search-results">
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    
+<div id="book-search-results">
     <div class="search-noresults">
     
-					<section class="normal markdown-section">
-						
-						<h1 id="&#x6574;&#x4F53;&#x67B6;&#x6784;">&#x6574;&#x4F53;&#x67B6;&#x6784;</h1>
+                    <section class="normal markdown-section">
+                        
+                        <h1 id="&#x6574;&#x4F53;&#x67B6;&#x6784;">&#x6574;&#x4F53;&#x67B6;&#x6784;</h1>
 <h2 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h2>
 <p>&#x5929;&#x7384;&#x533A;&#x5757;&#x94FE;&#x5F15;&#x64CE;&#x4F7F;&#x7528;&#x6A21;&#x5757;&#x5316;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x8BBE;&#x8BA1;&#xFF0C;&#x65B9;&#x4FBF;&#x5BF9;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x8FDB;&#x884C;&#x63D2;&#x62D4;&#x548C;&#x517C;&#x5BB9;&#x3002;&#x6574;&#x4F53;&#x67B6;&#x6784;&#x81EA;&#x4E0B;&#x800C;&#x4E0A;&#xFF0C;&#x5929;&#x7384;&#x5212;&#x5206;&#x6210;&#x57FA;&#x7840;&#x5C42;&#x3001;&#x6838;&#x5FC3;&#x5C42;&#x548C;&#x7F51;&#x5173;&#x5C42;&#x3002;</p>
-<div align="left">
-
-<figure><img src="../assets/&#x6574;&#x4F53;&#x67B6;&#x6784;.png" alt=""><figcaption></figcaption></figure>
-
+<div style="text-align: left;">
+    <figure style="display: inline-block; margin: 0;">
+        <img src="../assets/&#x6574;&#x4F53;&#x67B6;&#x6784;.png" alt="&#x56FE;1. &#x6574;&#x4F53;&#x67B6;&#x6784;" style="width: 100%; max-width: 800px; height: auto;">
+        <figcaption style="text-align: center; max-width: 1000px; font-weight: bold; font-size: 14px; margin-top: -20px; color: #555;">&#x56FE;1. &#x6574;&#x4F53;&#x67B6;&#x6784;</figcaption>
+    </figure>
 </div>
 
 <ul>
-<li>&#x57FA;&#x7840;&#x5C42;&#xFF1A;&#x63D0;&#x4F9B;&#x5929;&#x7384;&#x5F15;&#x64CE;&#x57FA;&#x7840;&#x7684;&#x5B58;&#x50A8;&#x3001;P2P&#x7F51;&#x7EDC;&#x3001;&#x52A0;&#x5BC6;&#x7B49;&#x6A21;&#x5757;&#x548C;&#x7B97;&#x6CD5;&#x5E93;&#x3002;</li>
+<li>&#x57FA;&#x7840;&#x5C42;&#xFF1A;&#x63D0;&#x4F9B;&#x5929;&#x7384;&#x5F15;&#x64CE;&#x57FA;&#x7840;&#x7684;&#x5B58;&#x50A8;&#x3001;P2P &#x7F51;&#x7EDC;&#x3001;&#x52A0;&#x5BC6;&#x7B49;&#x6A21;&#x5757;&#x548C;&#x7B97;&#x6CD5;&#x5E93;&#x3002;</li>
 <li>&#x6838;&#x5FC3;&#x5C42;&#xFF1A;&#x5B9E;&#x73B0;&#x533A;&#x5757;&#x94FE;&#x7684;&#x6838;&#x5FC3;&#x529F;&#x80FD;&#x548C;&#x903B;&#x8F91;&#xFF0C;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;<ul>
 <li>&#x533A;&#x5757;&#x94FE;&#x6838;&#x5FC3;&#x5C42;&#xFF0C;&#x63D0;&#x4F9B;&#x533A;&#x5757;&#x94FE;&#x7279;&#x5F81;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3001;&#x4EA4;&#x6613;&#x6267;&#x884C;&#x5F15;&#x64CE;&#x548C;&#x8D26;&#x6237;&#x5B58;&#x50A8;&#x9A71;&#x52A8;</li>
-<li>&#x4E92;&#x8054;&#x6838;&#x5FC3;&#x5C42;&#xFF1A;&#x5B9E;&#x73B0;&#x533A;&#x5757;&#x94FE;&#x7684;&#x57FA;&#x7840;P2P&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x3001;&#x5171;&#x8BC6;&#x673A;&#x5236;&#x548C;&#x533A;&#x5757;&#x540C;&#x6B65;&#x673A;&#x5236;</li>
+<li>&#x4E92;&#x8054;&#x6838;&#x5FC3;&#x5C42;&#xFF1A;&#x5B9E;&#x73B0;&#x533A;&#x5757;&#x94FE;&#x7684;&#x57FA;&#x7840; P2P &#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x3001;&#x5171;&#x8BC6;&#x673A;&#x5236;&#x548C;&#x533A;&#x5757;&#x540C;&#x6B65;&#x673A;&#x5236;</li>
 </ul>
 </li>
-<li>&#x7F51;&#x5173;&#x5C42;&#xFF1A;&#x9762;&#x5411;&#x533A;&#x5757;&#x94FE;&#x7528;&#x6237;&#xFF0C;&#x63D0;&#x4F9B;&#x4EA4;&#x4E92;&#x7684;RPC&#x63A5;&#x53E3;&#x3001;SDK&#x548C;&#x63A7;&#x5236;&#x53F0;</li>
+<li>&#x7F51;&#x5173;&#x5C42;&#xFF1A;&#x9762;&#x5411;&#x533A;&#x5757;&#x94FE;&#x7528;&#x6237;&#xFF0C;&#x63D0;&#x4F9B;&#x4EA4;&#x4E92;&#x7684; RPC &#x63A5;&#x53E3;&#x3001;SDK &#x548C;&#x63A7;&#x5236;&#x53F0;</li>
 </ul>
 <h2 id="&#x6838;&#x5FC3;&#x6A21;&#x5757;">&#x6838;&#x5FC3;&#x6A21;&#x5757;</h2>
 <h3 id="&#x5171;&#x8BC6;&#x7B97;&#x6CD5;">&#x5171;&#x8BC6;&#x7B97;&#x6CD5;</h3>
-<p>&#x5929;&#x7384;&#x5B9E;&#x73B0;&#x4E86;&#x53EF;&#x5927;&#x89C4;&#x6A21;&#x6269;&#x5C55;&#x7684;HotStuff&#x7B97;&#x6CD5;&#xFF0C;&#x5E76;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x5F02;&#x6B65;&#x5316;&#x6539;&#x8FDB;&#x5347;&#x7EA7;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x66F4;&#x9AD8;&#x6027;&#x80FD;&#x7684;&#x541E;&#x5410;&#x91CF;&#x548C;&#x5904;&#x7406;&#x901F;&#x5EA6;&#x3002;&#x5728;&#x5355;&#x94FE;&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x5929;&#x7384;&#x5C06;&#x6267;&#x884C;&#x548C;&#x5171;&#x8BC6;&#x8FC7;&#x7A0B;&#x5206;&#x79BB;&#xFF0C;&#x5B9E;&#x73B0;&#x6D41;&#x6C34;&#x7EBF;&#x5171;&#x8BC6;&#x3001;&#x6267;&#x884C;&#x7684;&#x5F02;&#x6B65;&#x5316;&#xFF0C;&#x8FDB;&#x4E00;&#x6B65;&#x7A81;&#x7834;&#x4E86;&#x5355;&#x94FE;&#x7684;&#x6027;&#x80FD;&#x74F6;&#x9888;&#x3002;</p>
+<p>&#x5929;&#x7384;&#x5B9E;&#x73B0;&#x4E86;&#x53EF;&#x5927;&#x89C4;&#x6A21;&#x6269;&#x5C55;&#x7684; HotStuff &#x7B97;&#x6CD5;&#xFF0C;&#x5E76;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x5F02;&#x6B65;&#x5316;&#x6539;&#x8FDB;&#x5347;&#x7EA7;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x66F4;&#x9AD8;&#x6027;&#x80FD;&#x7684;&#x541E;&#x5410;&#x91CF;&#x548C;&#x5904;&#x7406;&#x901F;&#x5EA6;&#x3002;&#x5728;&#x5355;&#x94FE;&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x5929;&#x7384;&#x5C06;&#x6267;&#x884C;&#x548C;&#x5171;&#x8BC6;&#x8FC7;&#x7A0B;&#x5206;&#x79BB;&#xFF0C;&#x5B9E;&#x73B0;&#x6D41;&#x6C34;&#x7EBF;&#x5171;&#x8BC6;&#x3001;&#x6267;&#x884C;&#x7684;&#x5F02;&#x6B65;&#x5316;&#xFF0C;&#x8FDB;&#x4E00;&#x6B65;&#x7A81;&#x7834;&#x4E86;&#x5355;&#x94FE;&#x7684;&#x6027;&#x80FD;&#x74F6;&#x9888;&#x3002;</p>
 <h3 id="p2p&#x7F51;&#x7EDC;">P2P&#x7F51;&#x7EDC;</h3>
-<p>&#x5929;&#x7384;&#x5B9E;&#x73B0;&#x4E86;Gossip&#x534F;&#x8BAE;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x9AD8;&#x6548;&#x3001;&#x901A;&#x7528;&#x3001;&#x5B89;&#x5168;&#x4EE5;&#x53CA;&#x8282;&#x70B9;&#x53D1;&#x73B0;&#x7684;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x57FA;&#x7840;&#x529F;&#x80FD;&#xFF0C;&#x652F;&#x6301;&#x533A;&#x5757;&#x94FE;&#x6D88;&#x606F;&#x7684;rpc &#x8C03;&#x7528;&#xFF0C;&#x5355;&#x64AD;&#x548C;&#x5168;&#x5C40;&#x5E7F;&#x64AD;&#x3002;</p>
+<p>&#x5929;&#x7384;&#x5B9E;&#x73B0;&#x4E86; Gossip &#x534F;&#x8BAE;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x9AD8;&#x6548;&#x3001;&#x901A;&#x7528;&#x3001;&#x5B89;&#x5168;&#x4EE5;&#x53CA;&#x8282;&#x70B9;&#x53D1;&#x73B0;&#x7684;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x57FA;&#x7840;&#x529F;&#x80FD;&#xFF0C;&#x652F;&#x6301;&#x533A;&#x5757;&#x94FE;&#x6D88;&#x606F;&#x7684; RPC &#x8C03;&#x7528;&#xFF0C;&#x5355;&#x64AD;&#x548C;&#x5168;&#x5C40;&#x5E7F;&#x64AD;&#x3002;</p>
 <h3 id="&#x52A0;&#x5BC6;&#x673A;&#x5236;">&#x52A0;&#x5BC6;&#x673A;&#x5236;</h3>
-<p>&#x5929;&#x7384;&#x5145;&#x5206;&#x652F;&#x6301;&#x56FD;&#x4EA7;&#x5BC6;&#x7801;&#x5B66;&#x7B97;&#x6CD5;&#xFF0C;&#x57FA;&#x4E8E;<a href="http://www.gmbz.org.cn/main/bzlb.html" target="_blank">&#x56FD;&#x4EA7;&#x5BC6;&#x7801;&#x5B66;&#x6807;&#x51C6;</a>&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#x56FD;&#x5BC6;TLSv1.1&#x534F;&#x8BAE;&#x3001;SM2&#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#x3001;SM3&#x6D88;&#x606F;&#x6458;&#x8981;&#x7B97;&#x6CD5;&#x3001;SM4&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x3001;&#x56FD;&#x5BC6;&#x53CC;&#x8BC1;&#x4E66;&#x6A21;&#x5F0F;&#x3001;&#x56FD;&#x5BC6;solidity&#x7F16;&#x8BD1;&#x5668;&#x3002;</p>
+<p>&#x5929;&#x7384;&#x5145;&#x5206;&#x652F;&#x6301;&#x56FD;&#x4EA7;&#x5BC6;&#x7801;&#x5B66;&#x7B97;&#x6CD5;&#xFF0C;&#x57FA;&#x4E8E;<a href="http://www.gmbz.org.cn/main/bzlb.html" target="_blank">&#x56FD;&#x4EA7;&#x5BC6;&#x7801;&#x5B66;&#x6807;&#x51C6;</a>&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#x56FD;&#x5BC6; TLSv1.1 &#x534F;&#x8BAE;&#x3001;SM2 &#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#x3001;SM3 &#x6D88;&#x606F;&#x6458;&#x8981;&#x7B97;&#x6CD5;&#x3001;SM4 &#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x3001;&#x56FD;&#x5BC6;&#x53CC;&#x8BC1;&#x4E66;&#x6A21;&#x5F0F;&#x3001;&#x56FD;&#x5BC6; Solidity &#x7F16;&#x8BD1;&#x5668;&#x3002;</p>
 <h3 id="&#x6267;&#x884C;&#x5F15;&#x64CE;">&#x6267;&#x884C;&#x5F15;&#x64CE;</h3>
-<p>&#x5929;&#x7384;&#x7684;&#x53EF;&#x63D2;&#x62D4;&#x6267;&#x884C;&#x6A21;&#x5757;&#x76EE;&#x524D;&#x652F;&#x6301;EVM&#x3001;JVM&#x4E24;&#x79CD;&#x6267;&#x884C;&#x5F15;&#x64CE;&#x3002;&#x5E76;&#x4E14;&#x9488;&#x5BF9;&#x4E32;&#x884C;&#x6548;&#x7387;&#x95EE;&#x9898;&#x6784;&#x5EFA;&#x4EA4;&#x6613;&#x6267;&#x884C;&#x4F9D;&#x8D56;&#x7684;DAG&#x56FE;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x7EBF;&#x6027;&#x5E8F;&#x7B49;&#x4EF7;&#x7684;&#x5E76;&#x884C;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x5929;&#x7384;&#x7684;&#x53EF;&#x63D2;&#x62D4;&#x6267;&#x884C;&#x6A21;&#x5757;&#x76EE;&#x524D;&#x652F;&#x6301; EVM &#x3001;JVM &#x4E24;&#x79CD;&#x6267;&#x884C;&#x5F15;&#x64CE;&#x3002;&#x5E76;&#x4E14;&#x9488;&#x5BF9;&#x4E32;&#x884C;&#x6548;&#x7387;&#x95EE;&#x9898;&#x6784;&#x5EFA;&#x4EA4;&#x6613;&#x6267;&#x884C;&#x4F9D;&#x8D56;&#x7684; DAG &#x56FE;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x7EBF;&#x6027;&#x5E8F;&#x7B49;&#x4EF7;&#x7684;&#x5E76;&#x884C;&#x6267;&#x884C;&#x3002;</p>
 <h3 id="&#x5B58;&#x50A8;&#x6A21;&#x578B;">&#x5B58;&#x50A8;&#x6A21;&#x578B;</h3>
-<p>&#x5929;&#x7384;&#x9488;&#x5BF9;&#x8054;&#x76DF;&#x94FE;&#x573A;&#x666F;&#xFF0C;&#x5BF9;&#x5B58;&#x50A8;&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x4E86;&#x4F18;&#x5316;&#xFF0C;&#x53BB;&#x9664;&#x4E86;MPT&#x6811;&#x7684;&#x7D22;&#x5F15;&#x7ED3;&#x6784;&#xFF0C;&#x51CF;&#x5C11;&#x4E86;&#x5728;&#x6267;&#x884C;&#x662F;&#x5BF9;MPT&#x6811;&#x7684;&#x68C0;&#x7D22;&#x3002;&#x5E95;&#x5C42;&#x4F7F;&#x7528;LevelDB&#x4F5C;&#x4E3A;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#xFF0C;&#x4EE5;&#x652F;&#x6301;&#x6D77;&#x91CF;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x5929;&#x7384;&#x9488;&#x5BF9;&#x8054;&#x76DF;&#x94FE;&#x573A;&#x666F;&#xFF0C;&#x5BF9;&#x5B58;&#x50A8;&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x4E86;&#x4F18;&#x5316;&#xFF0C;&#x53BB;&#x9664;&#x4E86;MPT&#x6811;&#x7684;&#x7D22;&#x5F15;&#x7ED3;&#x6784;&#xFF0C;&#x51CF;&#x5C11;&#x4E86;&#x5728;&#x6267;&#x884C;&#x662F;&#x5BF9;MPT&#x6811;&#x7684;&#x68C0;&#x7D22;&#x3002;&#x5E95;&#x5C42;&#x4F7F;&#x7528; LevelDB &#x4F5C;&#x4E3A;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#xFF0C;&#x4EE5;&#x652F;&#x6301;&#x6D77;&#x91CF;&#x6570;&#x636E;&#x3002;</p>
 <h3 id="&#x8EAB;&#x4EFD;&#x8BA4;&#x8BC1;">&#x8EAB;&#x4EFD;&#x8BA4;&#x8BC1;</h3>
-<p>&#x5929;&#x7384;&#x91C7;&#x53D6;&#x96C6;&#x4E2D;&#x5F0F;&#x8BA4;&#x8BC1;&#x4F53;&#x7CFB;&#x3002;&#x4E3A;&#x8054;&#x76DF;&#x94FE;&#x6784;&#x5EFA;&#x4E86;&#x4E09;&#x7EA7;&#x7684;CA&#x51C6;&#x5165;&#x673A;&#x5236;&#xFF1A;&#x94FE;&#x8BC1;&#x4E66; &#x2192; &#x673A;&#x6784;&#x8BC1;&#x4E66; &#x2192; &#x8282;&#x70B9;&#x8BC1;&#x4E66;&#xFF0C;&#x5206;&#x522B;&#x5BF9;&#x4E09;&#x4E2A;&#x7EA7;&#x522B;&#x7684;&#x7EC4;&#x7EC7;&#x3001;&#x673A;&#x6784;&#x7684;&#x52A0;&#x5165;&#x548C;&#x9000;&#x51FA;&#x63D0;&#x4F9B;&#x9A8C;&#x8BC1;&#x529F;&#x80FD;&#x3002;</p>
-<script type="text/javascript">var className='atoc';</script>
-						
-					</section>
-					
+<p>&#x5929;&#x7384;&#x91C7;&#x53D6;&#x96C6;&#x4E2D;&#x5F0F;&#x8BA4;&#x8BC1;&#x4F53;&#x7CFB;&#x3002;&#x4E3A;&#x8054;&#x76DF;&#x94FE;&#x6784;&#x5EFA;&#x4E86;&#x4E09;&#x7EA7;&#x7684; CA &#x51C6;&#x5165;&#x673A;&#x5236;&#xFF1A;&#x94FE;&#x8BC1;&#x4E66; &#x2192; &#x673A;&#x6784;&#x8BC1;&#x4E66; &#x2192; &#x8282;&#x70B9;&#x8BC1;&#x4E66;&#xFF0C;&#x5206;&#x522B;&#x5BF9;&#x4E09;&#x4E2A;&#x7EA7;&#x522B;&#x7684;&#x7EC4;&#x7EC7;&#x3001;&#x673A;&#x6784;&#x7684;&#x52A0;&#x5165;&#x548C;&#x9000;&#x51FA;&#x63D0;&#x4F9B;&#x9A8C;&#x8BC1;&#x529F;&#x80FD;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; netease 2024 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x6863;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2024-09-14 15:53:14
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                        
+                    </section>
+                    
     </div>
     <div class="search-results">
         <div class="has-results">
@@ -838,31 +844,31 @@
     </div>
 </div>
 
-				</div>
-			</div>
-			
-		</div>
+                </div>
+            </div>
+            
+        </div>
 
-		
-		
-		<a href="../app-development-manual/interface-list.html" class="navigation navigation-prev " aria-label="Previous page: 天玄链功能接口列表">
-			<i class="fa fa-angle-left"></i>
-		</a>
-		
-		
-		<a href="tx-process.html" class="navigation navigation-next " aria-label="Next page: 天玄链交易流程">
-			<i class="fa fa-angle-right"></i>
-		</a>
-		
-		
-		
-	</div>
-	<script>
-		var gitbook = gitbook || [];
-		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"整体架构","level":"5.1","depth":1,"next":{"title":"天玄链交易流程","level":"5.2","depth":1,"path":"architecture/tx-process.md","ref":"architecture/tx-process.md","articles":[]},"previous":{"title":"天玄链功能接口列表","level":"4.4","depth":1,"path":"app-development-manual/interface-list.md","ref":"app-development-manual/interface-list.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-fexa","codetabs","-search","favicon","-lunr","search-plus","atoc","image-captions","-sharing","-livereload","code","cuav-chapters","heading-anchors","back-to-top-button","pageview-count","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"atoc":{"addClass":true,"className":"atoc"},"codetabs":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"assets/logo-120.ico","favicon":"assets/logo-32.ico"},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"favicon":{"shortcut":"assets/logo.jpg","bookmark":"assets/logo-32.ico"},"back-to-top-button":{},"pageview-count":{},"edit-link":{"base":"https://github.com/TianXuan-Chain/thanos-docs","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{},"image-captions":{"caption":"Image - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"Emosama","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"overview.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"https://github.com/TianXuan-Chain","target":"_blank","name":"天玄代码库"}]},"_pictures":[]},"title":"天玄技术文档","language":"zh-hans","gitbook":"*"},"file":{"path":"architecture/overview.md","mtime":"2024-09-12T06:45:48.613Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-13T08:26:44.967Z"},"basePath":"..","book":{"language":""}});
-		});
-	</script>
+        
+        
+        <a href="../app-development-manual/interface-list.html" class="navigation navigation-prev " aria-label="Previous page: 天玄链功能接口列表">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        
+        
+        <a href="tx-process.html" class="navigation navigation-next " aria-label="Next page: 天玄链交易流程">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        
+        
+        
+    </div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"整体架构","level":"5.1","depth":1,"next":{"title":"天玄链交易流程","level":"5.2","depth":1,"path":"architecture/tx-process.md","ref":"architecture/tx-process.md","articles":[]},"previous":{"title":"天玄链功能接口列表","level":"4.4","depth":1,"path":"app-development-manual/interface-list.md","ref":"app-development-manual/interface-list.md","articles":[]},"dir":"ltr"},"config":{"plugins":["popup","splitter","hide-element","search-pro-fixed","-highlight","chapter-fold","expandable-chapters","tbfed-pagefooter","github","flexible-alerts","prism","auto-scroll-table","theme-d4t","-search","-lunr","image-captions","-sharing","code","back-to-top-button","pageview-count"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-d4t":{},"tbfed-pagefooter":{"copyright":"Copyright &copy netease 2024","modify_label":"文档修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js","ascii","result","manifest","payload","google","tree","java_out","log4j2","jsp","class","Exception","stack","c#","xml-dtd","C++","twig","jinja2","exception","tpl"]},"github":{"url":"https://github.com/TianXuan-Chain"},"d4t":{"search-placeholder":"请输关键字搜索","logo":"./assets/logo.svg","favicon":"./assets/fav.ico"},"splitter":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"search-pro-fixed":{},"hide-element":{"elements":[".gitbook-link",".title",".treeview__copyright",".treeview__main-title"]},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"pageview-count":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"image-captions":{"caption":"Image - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"Emosama","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"overview.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"https://github.com/TianXuan-Chain","target":"_blank","name":"天玄代码仓库"}]},"_pictures":[{"backlink":"community/channel.html#fig6.3.1","level":"6.3","list_caption":"Figure: 网易公众号","alt":"网易公众号","nro":1,"url":"../assets/%E5%85%AC%E4%BC%97%E5%8F%B7.png","index":1,"caption_template":"Image - _CAPTION_","label":"网易公众号","attributes":{},"skip":false,"key":"6.3.1"}]},"title":"天玄技术文档","language":"zh-hans","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"architecture/overview.md","mtime":"2024-09-14T07:53:14.261Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-14T07:54:10.151Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
 </div>
 
         
@@ -870,35 +876,43 @@
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-atoc/atoc.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-cuav-chapters/cuav-chapters.js"></script>
-        
-    
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
         
     
         
@@ -914,7 +928,7 @@
         
     
         
-        <script src="../gitbook/gitbook-plugin-theme-fexa/fexa.js"></script>
+        <script src="../gitbook/gitbook-plugin-theme-d4t/script.js"></script>
         
     
 

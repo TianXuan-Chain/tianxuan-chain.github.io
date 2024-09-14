@@ -17,15 +17,35 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro-fixed/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-atoc/atoc.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
                 
             
                 
@@ -37,10 +57,6 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-cuav-chapters/cuav-chapters.css">
-                
-            
-                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
                 
             
@@ -49,15 +65,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-fexa/fexa.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-d4t/style.css">
                 
             
         
@@ -79,7 +91,6 @@
     
 
         
-    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -96,45 +107,36 @@
     <link rel="prev" href="installation.html" />
     
 
-    
-        <link rel="shortcut icon" href='../../assets/logo.jpg' type="image/x-icon">
-    
-    
-        <link rel="bookmark" href='../../assets/logo-32.ico' type="image/x-icon">
-    
-    
-    
-
     </head>
     <body>
         
 <div class="book">
-	<div class="header-inner">
-		<!-- LOGO -->
-		<div class="logo"></div>
-		<span class="title"></span>
+    <div class="header-inner">
+        <!-- LOGO -->
+        <a href="/"><div class="logo"></div></a>
+        <span class="title"></span>
 
-		<!-- Search -->
-		
+        <!-- Search -->
+        
 <div id="book-search-input" role="search">
     <input type="text" placeholder="输入并搜索" />
 </div>
 
 
-		<!-- Nav -->
-		<ul class="header-nav">
-			<li>
-				<a href="https://github.com/TianXuan-Chain" target="_blank">天玄代码库</a>
-			</li>
-		</ul>
-	</div>
+        <!-- Nav -->
+        <ul class="header-nav">
+            <li>
+                <a href="https://github.com/TianXuan-Chain" target="_blank">天玄代码仓库</a>
+            </li>
+        </ul>
+    </div>
 
-	<div class="book-summary">
-		<div class="book-summary-title">文档目录</div>
-		
-		
-		<nav role="navigation">
-			
+    <div class="book-summary">
+        <div class="sidebar-nav-space"></div>
+        
+        
+        <nav role="navigation">
+            
 
 
 <ul class="summary">
@@ -747,24 +749,24 @@
 </ul>
 
 
-		</nav>
-		
-		
-	</div>
+        </nav>
+        
+        
+    </div>
 
-	<!-- Content nav -->
-	<div class="book-anchor">
-		<div class="book-anchor-title">在这篇文章中:</div>
-		<div class="book-anchor-body">
+    <!-- Content nav -->
+    <div class="book-anchor">
+        <div class="book-anchor-title">ON THIS PAGE</div>
+        <div class="book-anchor-body">
 
-		</div>
-	</div>
+        </div>
+    </div>
 
-	<div class="book-body">
-		
-		<div class="body-inner">
-			
-			
+    <div class="book-body">
+        
+        <div class="body-inner">
+            
+            
 
 <div class="book-header" role="navigation">
     
@@ -779,67 +781,67 @@
 
 
 
-			<div class="page-wrapper" tabindex="-1" role="main">
-				<div class="page-inner">
-					
-<div class="search-plus" id="book-search-results">
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    
+<div id="book-search-results">
     <div class="search-noresults">
     
-					<section class="normal markdown-section">
-						
-						<h1 id="&#x914D;&#x7F6E;&#x8BF4;&#x660E;">&#x914D;&#x7F6E;&#x8BF4;&#x660E;</h1>
+                    <section class="normal markdown-section">
+                        
+                        <h1 id="&#x914D;&#x7F6E;&#x8BF4;&#x660E;">&#x914D;&#x7F6E;&#x8BF4;&#x660E;</h1>
 <h2 id="&#x6982;&#x8FF0;-">&#x6982;&#x8FF0; <a href="#id3.2.2-pei-zhi-yi-gai-shu" id="id3.2.2-pei-zhi-yi-gai-shu"></a></h2>
 <p>&#x8282;&#x70B9;&#x7F51;&#x5173;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x4E3B;&#x914D;&#x7F6E; <code>thanos-gateway.conf</code> &#x548C;&#x65E5;&#x5FD7;&#x7BA1;&#x7406;&#x914D;&#x7F6E; <code>logback.xml</code> &#x3002;</p>
 <h2 id="&#x4E3B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;-thanos-chainconf-">&#x4E3B;&#x914D;&#x7F6E;&#x6587;&#x4EF6; thanos-chain.conf <a href="#id3.2.2-pei-zhi-er-zhu-pei-zhi-wen-jian-thanoschain.conf" id="id3.2.2-pei-zhi-er-zhu-pei-zhi-wen-jian-thanoschain.conf"></a></h2>
 <p><code>thanos-gateway.conf</code> &#x4E3B;&#x8981;&#x5305;&#x62EC;&#x4E86; <em>gateway</em> &#x548C; <em>tls</em> &#x7B49;&#x914D;&#x7F6E;&#x9879;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-editorconfig">gateway {
-    #&#x672C;&#x673A;&#x8282;&#x70B9;&#x4FE1;&#x606F;&#xFF0C;&#x7528;&#x4E8E;&#x4E0E;&#x5176;&#x4ED6;gateway&#x8282;&#x70B9;&#x4E92;&#x8FDE;
-    node.myself = &quot;1:10.246.199.210:100&quot;
+<pre class="language-"><code class="lang-editorconfig">gateway {
+    <span class="token comment">#&#x672C;&#x673A;&#x8282;&#x70B9;&#x4FE1;&#x606F;&#xFF0C;&#x7528;&#x4E8E;&#x4E0E;&#x5176;&#x4ED6;gateway&#x8282;&#x70B9;&#x4E92;&#x8FDE;</span>
+    <span class="token key attr-name">node.myself</span> <span class="token value attr-value"><span class="token punctuation">=</span> &quot;1:10.246.199.210:100&quot;</span>
 
     rpc {
-        #&#x672C;&#x673A;rpc&#x670D;&#x52A1;ip&#x548C;&#x7AEF;&#x53E3;&#xFF0C;&#x7528;&#x4E8E;&#x5411;sdk&#x63D0;&#x4F9B;rpc&#x670D;&#x52A1;&#x3002;
-        address = &quot;10.246.199.210:8180&quot;
-        acceptCount = 300
-        maxThreads = 400
-        readWriteTimeout = 60000
+        <span class="token comment">#&#x672C;&#x673A;rpc&#x670D;&#x52A1;ip&#x548C;&#x7AEF;&#x53E3;&#xFF0C;&#x7528;&#x4E8E;&#x5411;sdk&#x63D0;&#x4F9B;rpc&#x670D;&#x52A1;&#x3002;</span>
+        <span class="token key attr-name">address</span> <span class="token value attr-value"><span class="token punctuation">=</span> &quot;10.246.199.210:8180&quot;</span>
+        <span class="token key attr-name">acceptCount</span> <span class="token value attr-value"><span class="token punctuation">=</span> 300</span>
+        <span class="token key attr-name">maxThreads</span> <span class="token value attr-value"><span class="token punctuation">=</span> 400</span>
+        <span class="token key attr-name">readWriteTimeout</span> <span class="token value attr-value"><span class="token punctuation">=</span> 60000</span>
     }
 
     http {
-        #&#x672C;&#x673A;http&#x670D;&#x52A1;&#x7AEF;&#x53E3;&#x53F7;&#xFF0C;&#x7528;&#x4E8E;&#x5411;sdk&#x63D0;&#x4F9B;http&#x670D;&#x52A1;&#x3002;
-        port = 8580
-        acceptCount = 300
-        maxThreads = 400
-        readWriteTimeout = 12000
+        <span class="token comment">#&#x672C;&#x673A;http&#x670D;&#x52A1;&#x7AEF;&#x53E3;&#x53F7;&#xFF0C;&#x7528;&#x4E8E;&#x5411;sdk&#x63D0;&#x4F9B;http&#x670D;&#x52A1;&#x3002;</span>
+        <span class="token key attr-name">port</span> <span class="token value attr-value"><span class="token punctuation">=</span> 8580</span>
+        <span class="token key attr-name">acceptCount</span> <span class="token value attr-value"><span class="token punctuation">=</span> 300</span>
+        <span class="token key attr-name">maxThreads</span> <span class="token value attr-value"><span class="token punctuation">=</span> 400</span>
+        <span class="token key attr-name">readWriteTimeout</span> <span class="token value attr-value"><span class="token punctuation">=</span> 12000</span>
     }
-    #&#x5E7F;&#x64AD;&#x8282;&#x70B9;&#x5217;&#x8868;
-   # broadcast = [&quot;2:10.246.199.210:200&quot;]
-    broadcast =[]
+    <span class="token comment">#&#x5E7F;&#x64AD;&#x8282;&#x70B9;&#x5217;&#x8868;</span>
+   <span class="token comment"># broadcast = [&quot;2:10.246.199.210:200&quot;]</span>
+    <span class="token key attr-name">broadcast</span> <span class="token value attr-value"><span class="token punctuation">=</span>[]</span>
     push {
-        #&#x63A8;&#x9001;&#x5730;&#x5740;
-        address = &quot;10.246.197.244:7580&quot;
+        <span class="token comment">#&#x63A8;&#x9001;&#x5730;&#x5740;</span>
+        <span class="token key attr-name">address</span> <span class="token value attr-value"><span class="token punctuation">=</span> &quot;10.246.197.244:7580&quot;</span>
     }
     sync {
-        #&#x540C;&#x6B65;&#x51FA;&#x5757;&#x5730;&#x5740;
-        address = 7180
+        <span class="token comment">#&#x540C;&#x6B65;&#x51FA;&#x5757;&#x5730;&#x5740;</span>
+        <span class="token key attr-name">address</span> <span class="token value attr-value"><span class="token punctuation">=</span> 7180</span>
         cache {
-            blockLimit = 10
-            txPoolDSCacheSizeLimit = 2000
+            <span class="token key attr-name">blockLimit</span> <span class="token value attr-value"><span class="token punctuation">=</span> 10</span>
+            <span class="token key attr-name">txPoolDSCacheSizeLimit</span> <span class="token value attr-value"><span class="token punctuation">=</span> 2000</span>
         }
     }
     switch {
-        #&#x662F;&#x5426;&#x4EC5;&#x5E7F;&#x64AD;&#x5168;&#x5C40;&#x8282;&#x70B9;&#x4E8B;&#x4EF6;
-        only.broadcast.globalEvent = 0
+        <span class="token comment">#&#x662F;&#x5426;&#x4EC5;&#x5E7F;&#x64AD;&#x5168;&#x5C40;&#x8282;&#x70B9;&#x4E8B;&#x4EF6;</span>
+        <span class="token key attr-name">only.broadcast.globalEvent</span> <span class="token value attr-value"><span class="token punctuation">=</span> 0</span>
     }
     log {
-        logConfigPath = &quot;/root/thanos-gateway/node0/resource/gateway-logback.xml&quot;
+        <span class="token key attr-name">logConfigPath</span> <span class="token value attr-value"><span class="token punctuation">=</span> &quot;/root/thanos-gateway/node0/resource/gateway-logback.xml&quot;</span>
     }
 }
-#tls settings, such as path of keystore,truststore,etc
+<span class="token comment">#tls settings, such as path of keystore,truststore,etc</span>
 tls {
-    #&#x4E0E;web3j&#x7684;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#xFF0C;&#x662F;&#x5426;&#x4F7F;&#x7528;tls&#x52A0;&#x5BC6;
-    needTLS = false
-    keyPath=&quot;/root/thanos-gateway/node1/resource/tls/node.key&quot;
-    certsPath=&quot;/root/thanos-gateway/node1/resource/tls/chain.crt&quot;
+    <span class="token comment">#&#x4E0E;web3j&#x7684;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#xFF0C;&#x662F;&#x5426;&#x4F7F;&#x7528;tls&#x52A0;&#x5BC6;</span>
+    <span class="token key attr-name">needTLS</span> <span class="token value attr-value"><span class="token punctuation">=</span> false</span>
+    <span class="token key attr-name">keyPath</span><span class="token value attr-value"><span class="token punctuation">=</span>&quot;/root/thanos-gateway/node1/resource/tls/node.key&quot;</span>
+    <span class="token key attr-name">certsPath</span><span class="token value attr-value"><span class="token punctuation">=</span>&quot;/root/thanos-gateway/node1/resource/tls/chain.crt&quot;</span>
 }
 </code></pre>
 <h3 id="&#x914D;&#x7F6E;-gateway-&#x6807;&#x7B7E;-">&#x914D;&#x7F6E; gateway &#x6807;&#x7B7E; <a href="#id3.2.2-pei-zhi-pei-zhi-gateway-biao-qian" id="id3.2.2-pei-zhi-pei-zhi-gateway-biao-qian"></a></h3>
@@ -868,68 +870,68 @@ tls {
 </ul>
 <h2 id="&#x65E5;&#x5FD7;&#x7BA1;&#x7406;&#x914D;&#x7F6E;&#x6587;&#x4EF6;-gateway-logbackxml-">&#x65E5;&#x5FD7;&#x7BA1;&#x7406;&#x914D;&#x7F6E;&#x6587;&#x4EF6; gateway-logback.xml <a href="#id3.2.2-pei-zhi-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml" id="id3.2.2-pei-zhi-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml"></a></h2>
 <p><code>gateway-logback.xml</code>&#x6307;&#x5B9A;&#x4E86;&#x8282;&#x70B9;&#x65E5;&#x5FD7;&#x7684;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;&#x548C;&#x751F;&#x6210;&#x89C4;&#x5219;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;GBK&quot;</span><span class="hljs-meta">?&gt;</span></span>
-<span class="hljs-tag">&lt;<span class="hljs-name">configuration</span> <span class="hljs-attr">debug</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+<pre class="language-"><code class="lang-xml"><span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;GBK&quot;?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span> <span class="token attr-name">debug</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">shutdownHook</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ch.qos.logback.core.hook.DelayingShutdownHook&quot;</span>/&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>shutdownHook</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ch.qos.logback.core.hook.DelayingShutdownHook<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">appender</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;STDOUT&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">encoder</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">pattern</span>&gt;</span>%d{HH:mm:ss.SSS} %p [%c{1}]  %m%n<span class="hljs-tag">&lt;/<span class="hljs-name">pattern</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">encoder</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">filter</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ch.qos.logback.classic.filter.ThresholdFilter&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">level</span>&gt;</span>TRACE<span class="hljs-tag">&lt;/<span class="hljs-name">level</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">appender</span>&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>STDOUT<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ch.qos.logback.core.ConsoleAppender<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>encoder</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span>%d{HH:mm:ss.SSS} %p [%c{1}]  %m%n<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pattern</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>encoder</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ch.qos.logback.classic.filter.ThresholdFilter<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>level</span><span class="token punctuation">&gt;</span></span>TRACE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>level</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>appender</span><span class="token punctuation">&gt;</span></span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">appender</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;FILE&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">file</span>&gt;</span>./logs/thanos-gateway.log<span class="hljs-tag">&lt;/<span class="hljs-name">file</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">rollingPolicy</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;</span>&gt;</span>
-            <span class="hljs-comment">&lt;!-- rollover hourly --&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">fileNamePattern</span>&gt;</span>./logs/thanos-gateway-%d{yyyy-MM-dd-&apos;h&apos;HH}.log<span class="hljs-tag">&lt;/<span class="hljs-name">fileNamePattern</span>&gt;</span>
-            <span class="hljs-comment">&lt;!-- ~1 month --&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">maxHistory</span>&gt;</span>720<span class="hljs-tag">&lt;/<span class="hljs-name">maxHistory</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">totalSizeCap</span>&gt;</span>50GB<span class="hljs-tag">&lt;/<span class="hljs-name">totalSizeCap</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">rollingPolicy</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">encoder</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">pattern</span>&gt;</span>%d{HH:mm:ss.SSS} %p [%c{1}]  %m%n<span class="hljs-tag">&lt;/<span class="hljs-name">pattern</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">encoder</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">filter</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ch.qos.logback.classic.filter.ThresholdFilter&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">level</span>&gt;</span>TRACE<span class="hljs-tag">&lt;/<span class="hljs-name">level</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">appender</span>&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>FILE<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ch.qos.logback.core.rolling.RollingFileAppender<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>file</span><span class="token punctuation">&gt;</span></span>./logs/thanos-gateway.log<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>file</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rollingPolicy</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ch.qos.logback.core.rolling.TimeBasedRollingPolicy<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token comment">&lt;!-- rollover hourly --&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fileNamePattern</span><span class="token punctuation">&gt;</span></span>./logs/thanos-gateway-%d{yyyy-MM-dd-&apos;h&apos;HH}.log<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fileNamePattern</span><span class="token punctuation">&gt;</span></span>
+            <span class="token comment">&lt;!-- ~1 month --&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maxHistory</span><span class="token punctuation">&gt;</span></span>720<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maxHistory</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>totalSizeCap</span><span class="token punctuation">&gt;</span></span>50GB<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>totalSizeCap</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rollingPolicy</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>encoder</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span>%d{HH:mm:ss.SSS} %p [%c{1}]  %m%n<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pattern</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>encoder</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ch.qos.logback.classic.filter.ThresholdFilter<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>level</span><span class="token punctuation">&gt;</span></span>TRACE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>level</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>appender</span><span class="token punctuation">&gt;</span></span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">appender</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;ASYNC&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ch.qos.logback.classic.AsyncAppender&quot;</span>&gt;</span>
-        <span class="hljs-comment">&lt;!-- Don&apos;t discard INFO, DEBUG, TRACE events in case of queue is 80% full --&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">discardingThreshold</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">discardingThreshold</span>&gt;</span>
-        <span class="hljs-comment">&lt;!-- Default is 256 --&gt;</span>
-        <span class="hljs-comment">&lt;!-- Logger will block incoming events (log calls) until queue will free some space --&gt;</span>
-        <span class="hljs-comment">&lt;!-- (the smaller value -&gt; flush occurs often) --&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">queueSize</span>&gt;</span>100<span class="hljs-tag">&lt;/<span class="hljs-name">queueSize</span>&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ASYNC<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ch.qos.logback.classic.AsyncAppender<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- Don&apos;t discard INFO, DEBUG, TRACE events in case of queue is 80% full --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>discardingThreshold</span><span class="token punctuation">&gt;</span></span>0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>discardingThreshold</span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- Default is 256 --&gt;</span>
+        <span class="token comment">&lt;!-- Logger will block incoming events (log calls) until queue will free some space --&gt;</span>
+        <span class="token comment">&lt;!-- (the smaller value -&gt; flush occurs often) --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>queueSize</span><span class="token punctuation">&gt;</span></span>100<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>queueSize</span><span class="token punctuation">&gt;</span></span>
 
-        <span class="hljs-tag">&lt;<span class="hljs-name">appender-ref</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;FILE&quot;</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">filter</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ch.qos.logback.classic.filter.ThresholdFilter&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">level</span>&gt;</span>TRACE<span class="hljs-tag">&lt;/<span class="hljs-name">level</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">appender</span>&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender-ref</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>FILE<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ch.qos.logback.classic.filter.ThresholdFilter<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>level</span><span class="token punctuation">&gt;</span></span>TRACE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>level</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>appender</span><span class="token punctuation">&gt;</span></span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">root</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;INFO&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">appender-ref</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;FILE&quot;</span>/&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">appender-ref</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;CONSOLE&quot;</span>/&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">root</span>&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>root</span> <span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>INFO<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender-ref</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>FILE<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender-ref</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>CONSOLE<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>root</span><span class="token punctuation">&gt;</span></span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">logger</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;sync&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;DEBUG&quot;</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">logger</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;jsonrpc&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;DEBUG&quot;</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">logger</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;txpool&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;DEBUG&quot;</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">logger</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;node&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;DEBUG&quot;</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">logger</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;push&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;DEBUG&quot;</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">logger</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;broadcast&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;DEBUG&quot;</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">logger</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;java.nio&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;ERROR&quot;</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">logger</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;io.netty&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;ERROR&quot;</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">logger</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;io.grpc&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;ERROR&quot;</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">logger</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;com.googlecode.jsonrpc4j&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;ERROR&quot;</span>/&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>logger</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>sync<span class="token punctuation">&quot;</span></span> <span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>DEBUG<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>logger</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>jsonrpc<span class="token punctuation">&quot;</span></span> <span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>DEBUG<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>logger</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>txpool<span class="token punctuation">&quot;</span></span> <span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>DEBUG<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>logger</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>node<span class="token punctuation">&quot;</span></span> <span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>DEBUG<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>logger</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>push<span class="token punctuation">&quot;</span></span> <span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>DEBUG<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>logger</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>broadcast<span class="token punctuation">&quot;</span></span> <span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>DEBUG<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>logger</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>java.nio<span class="token punctuation">&quot;</span></span> <span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ERROR<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>logger</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>io.netty<span class="token punctuation">&quot;</span></span> <span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ERROR<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>logger</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>io.grpc<span class="token punctuation">&quot;</span></span> <span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ERROR<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>logger</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.googlecode.jsonrpc4j<span class="token punctuation">&quot;</span></span> <span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ERROR<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
 
-<span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <h3 id="&#x914D;&#x7F6E;&#x6253;&#x5370;&#x7684;&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;-">&#x914D;&#x7F6E;&#x6253;&#x5370;&#x7684;&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6; <a href="#id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-zu-jian" id="id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-zu-jian"></a></h3>
 <p>&#x901A;&#x8FC7; <em>\<appender></appender></em> &#x6807;&#x7B7E; &#x6307;&#x5B9A;&#x6253;&#x5370;&#x7684;&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;&#x3002;&#x5728;&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x6307;&#x5B9A;&#x4E86;&#x4E09;&#x4E2A;&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;&#xFF1A;<em>STDOUT</em> &#x3001;<em>FILE</em> &#x3001;<em>ASYNC</em></p>
@@ -938,11 +940,14 @@ tls {
 <p>3&#xFF09;<strong>ASYNC &#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;</strong>&#xFF1A; &#x91C7;&#x7528; <em>ch.qos.logback.classic.AsyncAppender</em> &#x7EC4;&#x4EF6;&#xFF0C;&#x8D1F;&#x8D23;&#x5F02;&#x6B65;&#x8BB0;&#x5F55;&#x65E5;&#x5FD7;&#x3002;&#x8BE5;&#x7EC4;&#x4EF6;&#x4EC5;&#x5145;&#x5F53;&#x4E8B;&#x4EF6;&#x5206;&#x6D3E;&#x5668;&#xFF0C;&#x5FC5;&#x987B;&#x642D;&#x914D;&#x5176;&#x4ED6; <em>appender</em> &#x4F7F;&#x7528;&#xFF0C;&#x793A;&#x4F8B;&#x6587;&#x4EF6;&#x4E2D;&#x642D;&#x914D; FILE &#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;&#xFF0C;&#x8868;&#x793A;&#x5C06;&#x65E5;&#x5FD7;&#x4E8B;&#x4EF6;&#x5F02;&#x6B65;&#x8BB0;&#x5F55;&#x5230;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
 <p>&#x6B64;&#x5916;&#xFF0C;&#x53EF;&#x901A;&#x8FC7; <em>\<root></root></em> &#x6807;&#x7B7E;&#xFF0C;&#x6307;&#x5B9A;&#x65E5;&#x5FD7;&#x7684;&#x6253;&#x5370;&#x7B49;&#x7EA7;&#x3002;&#x5E76;&#x901A;&#x8FC7; <em>\<appender-ref></appender-ref></em> &#x6807;&#x7B7E;&#x6307;&#x5B9A;&#x751F;&#x6548;&#x7684;&#x65E5;&#x5FD7;&#x7EC4;&#x4EF6;&#x3002;</p>
 <h3 id="&#x914D;&#x7F6E;&#x6253;&#x5370;&#x7684;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;-">&#x914D;&#x7F6E;&#x6253;&#x5370;&#x7684;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7; <a href="#id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-deng-ji" id="id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-deng-ji"></a></h3>
-<p>&#x901A;&#x8FC7; <em>\<logger></logger></em> &#x6807;&#x7B7E;&#x6307;&#x5B9A;&#x76F8;&#x5E94;&#x7C7B;&#x7684;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#x3002;</p>
-<script type="text/javascript">var className='atoc';</script>
-						
-					</section>
-					
+<p>&#x901A;&#x8FC7; <em>\<logger></logger></em> &#x6807;&#x7B7E;&#x6307;&#x5B9A;&#x76F8;&#x5E94;&#x7C7B;&#x7684;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#x3002; </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; netease 2024 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x6863;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2024-09-14 15:53:14
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                        
+                    </section>
+                    
     </div>
     <div class="search-results">
         <div class="has-results">
@@ -959,31 +964,31 @@ tls {
     </div>
 </div>
 
-				</div>
-			</div>
-			
-		</div>
+                </div>
+            </div>
+            
+        </div>
 
-		
-		
-		<a href="installation.html" class="navigation navigation-prev " aria-label="Previous page: 安装">
-			<i class="fa fa-angle-left"></i>
-		</a>
-		
-		
-		<a href="../../app-development-manual/account.html" class="navigation navigation-next " aria-label="Next page: 创建和使用账户">
-			<i class="fa fa-angle-right"></i>
-		</a>
-		
-		
-		
-	</div>
-	<script>
-		var gitbook = gitbook || [];
-		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"配置说明","level":"3.2.2","depth":2,"next":{"title":"创建和使用账户","level":"4.1","depth":1,"path":"app-development-manual/account.md","ref":"app-development-manual/account.md","articles":[]},"previous":{"title":"安装","level":"3.2.1","depth":2,"path":"installation-manual/tianxaun-gateway/installation.md","ref":"installation-manual/tianxaun-gateway/installation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-fexa","codetabs","-search","favicon","-lunr","search-plus","atoc","image-captions","-sharing","-livereload","code","cuav-chapters","heading-anchors","back-to-top-button","pageview-count","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"atoc":{"addClass":true,"className":"atoc"},"codetabs":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"assets/logo-120.ico","favicon":"assets/logo-32.ico"},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"favicon":{"shortcut":"assets/logo.jpg","bookmark":"assets/logo-32.ico"},"back-to-top-button":{},"pageview-count":{},"edit-link":{"base":"https://github.com/TianXuan-Chain/thanos-docs","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{},"image-captions":{"caption":"Image - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"Emosama","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"overview.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"https://github.com/TianXuan-Chain","target":"_blank","name":"天玄代码库"}]},"_pictures":[]},"title":"天玄技术文档","language":"zh-hans","gitbook":"*"},"file":{"path":"installation-manual/tianxaun-gateway/configuration.md","mtime":"2024-09-12T08:38:02.148Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-13T08:26:44.967Z"},"basePath":"../..","book":{"language":""}});
-		});
-	</script>
+        
+        
+        <a href="installation.html" class="navigation navigation-prev " aria-label="Previous page: 安装">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        
+        
+        <a href="../../app-development-manual/account.html" class="navigation navigation-next " aria-label="Next page: 创建和使用账户">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        
+        
+        
+    </div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"配置说明","level":"3.2.2","depth":2,"next":{"title":"创建和使用账户","level":"4.1","depth":1,"path":"app-development-manual/account.md","ref":"app-development-manual/account.md","articles":[]},"previous":{"title":"安装","level":"3.2.1","depth":2,"path":"installation-manual/tianxaun-gateway/installation.md","ref":"installation-manual/tianxaun-gateway/installation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["popup","splitter","hide-element","search-pro-fixed","-highlight","chapter-fold","expandable-chapters","tbfed-pagefooter","github","flexible-alerts","prism","auto-scroll-table","theme-d4t","-search","-lunr","image-captions","-sharing","code","back-to-top-button","pageview-count"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-d4t":{},"tbfed-pagefooter":{"copyright":"Copyright &copy netease 2024","modify_label":"文档修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js","ascii","result","manifest","payload","google","tree","java_out","log4j2","jsp","class","Exception","stack","c#","xml-dtd","C++","twig","jinja2","exception","tpl"]},"github":{"url":"https://github.com/TianXuan-Chain"},"d4t":{"search-placeholder":"请输关键字搜索","logo":"./assets/logo.svg","favicon":"./assets/fav.ico"},"splitter":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"search-pro-fixed":{},"hide-element":{"elements":[".gitbook-link",".title",".treeview__copyright",".treeview__main-title"]},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"pageview-count":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"image-captions":{"caption":"Image - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"Emosama","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"overview.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"https://github.com/TianXuan-Chain","target":"_blank","name":"天玄代码仓库"}]},"_pictures":[{"backlink":"community/channel.html#fig6.3.1","level":"6.3","list_caption":"Figure: 网易公众号","alt":"网易公众号","nro":1,"url":"../assets/%E5%85%AC%E4%BC%97%E5%8F%B7.png","index":1,"caption_template":"Image - _CAPTION_","label":"网易公众号","attributes":{},"skip":false,"key":"6.3.1"}]},"title":"天玄技术文档","language":"zh-hans","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"installation-manual/tianxaun-gateway/configuration.md","mtime":"2024-09-14T07:53:14.289Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-14T07:54:10.151Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
 </div>
 
         
@@ -991,35 +996,43 @@ tls {
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-atoc/atoc.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
         
     
         
         <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-cuav-chapters/cuav-chapters.js"></script>
-        
-    
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
         
     
         
@@ -1035,7 +1048,7 @@ tls {
         
     
         
-        <script src="../../gitbook/gitbook-plugin-theme-fexa/fexa.js"></script>
+        <script src="../../gitbook/gitbook-plugin-theme-d4t/script.js"></script>
         
     
 
