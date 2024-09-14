@@ -8,12 +8,12 @@
 
 ### 通用 DAG 分析器
 
-一个无环的有向图称做有向无环图（Directed Acyclic Graph），简称DAG图。在一批交易中，可以通过一定方法识别出每笔交易需要占用的互斥资源，再根据交易在Event中的顺序及互斥资源的占用关系构造出一个交易依赖 DAG 图，如下图所示，凡是同一 Level （无被依赖的前序任务）的交易均可以并行执行。如下图所示，基于左图的原始交易列表的顺序进行拓扑排序后，可以得到下图的交易 DAG。
+一个无环的有向图称做有向无环图（Directed Acyclic Graph），简称 DAG 图。在一批交易中，可以通过一定方法识别出每笔交易需要占用的互斥资源，再根据交易在 Event 中的顺序及互斥资源的占用关系构造出一个交易依赖 DAG 图，如下图所示，凡是同一 Level （无被依赖的前序任务）的交易均可以并行执行。如下图所示，基于左图的原始交易列表的顺序进行拓扑排序后，可以得到下图的交易 DAG 。
 
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/交易依赖图.png" alt="图1. 交易DAG" style="width: 100%; max-width: 800px; height: auto;">
-        <figcaption style="text-align: center; max-width: 1000px; font-weight: bold; font-size: 14px; margin-top: -20px; color: #555;">图1. 交易DAG</figcaption>
+        <figcaption style="text-align: center; max-width: 1000px; font-weight: bold; font-size: 14px; color: #555;">图1. 交易DAG</figcaption>
     </figure>
 </div>
 
@@ -22,7 +22,7 @@
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/DAG核心结构.png" alt="图2. 核心结构" style="width: 100%; max-width: 800px; height: auto;">
-        <figcaption style="text-align: center; max-width: 1000px; font-weight: bold; font-size: 14px; margin-top: -40px; color: #555;">图2. 核心结构</figcaption>
+        <figcaption style="text-align: center; max-width: 1000px; font-weight: bold; font-size: 14px; color: #555;">图2. 核心结构</figcaption>
     </figure>
 </div>
 
