@@ -30,7 +30,7 @@
 | receiptsRoot | bytes0                         | 收据根，天玄中暂未启用            | 4                                                                          |
 | epoch        | u256                           | 世代号，标记当前验证者集合所处时间单位    | 5                                                                          |
 | number       | u256                           | 区块号，标记当前区块的高度          | 6                                                                          |
-| timestamp    | u256                           | 时间错，标记当前区块的出块时间        | 7                                                                          |
+| timestamp    | u256                           | 时间戳，标记当前区块的出块时间        | 7                                                                          |
 | globalEvents | vector&lt;globalEvent&gt;          | 全局事件，当前区块内包含的系统更新事件    | 8                                                                          |
 | receipts     | vector&lt;EthTransactionReceipt&gt; | 交易收据，当前区块内包含交易的所有执行后收据 | <p>9：receipts size</p><p>10：receipts[0]</p><p>11：receipts[1]</p><p>...</p> |
 
