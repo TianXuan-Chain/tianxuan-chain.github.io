@@ -15,6 +15,7 @@ RUN \
   && ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime
 COPY --from=builder /app /usr/share/nginx/html
 
+# 删除暴露git信息文件
 RUN \
 cd /usr/share/nginx/html \
 && rm -rf Dockerfile \
