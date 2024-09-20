@@ -13,4 +13,12 @@ RUN \
   && apk add --no-cache tzdata \
   && echo "${TIME_ZONE}" > /etc/timezone \
   && ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app /usr/share/nginx/html
+
+RUN \
+cd /usr/share/nginx/html \
+&& rm -rf Dockerfile \
+&& rm -rf Dockerfile-${TIME_ZONE} \
+&& rm -rf LICENSE \
+&& rm -rf package.json \
+&& rm -rf README.md
