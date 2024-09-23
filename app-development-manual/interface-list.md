@@ -63,7 +63,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_sh
 
 **描述**
 
-* 返回天玄区块链组网版本
+* 返回天玄链组网版本
 
 **参数**
 
@@ -71,7 +71,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_sh
 
 **返回值**
 
-* `string` - 天玄区块链组网版本
+* `string` - 天玄链组网版本
 * 示例
 
 ```json
@@ -91,7 +91,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ne
 
 **描述**
 
-* 返回天玄区块链协议版本
+* 返回天玄链协议版本
 
 **参数**
 
@@ -99,7 +99,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ne
 
 **返回值**
 
-* `string` - 天玄区块链协议版本
+* `string` - 天玄链协议版本
 * 示例
 
 ```json
@@ -119,7 +119,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_pr
 
 **描述**
 
-* 返回天玄区块链编译器
+* 返回天玄链编译器
 
 **参数**
 
@@ -127,7 +127,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_pr
 
 **返回值**
 
-* `string[]` - 天玄区块链编译器类型
+* `string[]` - 天玄链编译器类型
 * 示例
 
 ```json

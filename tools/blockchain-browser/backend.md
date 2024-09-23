@@ -29,7 +29,7 @@ git clone https://github.com/TianXuan-Chain/thanos-common.git # thanos-common代
 
 按照依赖顺序，在编译 *thanos-common* 前，还需将其依赖的 `bctls-gm-jdk15on.jar` 加载到本地 *Maven* 仓库当中。
 
-```
+```bash
 mvn install:install-file -Dfile=bctls-gm-jdk15on.jar -DgroupId=org.bouncycastle -DartifactId=bctls-gm-jdk15on -Dversion=0.1 -Dpackaging=jar
 ```
 
@@ -184,14 +184,14 @@ mvn clean package -U -Dmaven.test.skip=true
 mysql -u ${your_db_account} -p${your_db_password}  例如：mysql -u root -p123456
 ```
 
-```mysql
+```
 #新建数据库：
 CREATE DATABASE IF NOT EXISTS thanos_browser DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
 ```
 
 * 运行SQL文件
 
-```mysql
+```
 #退出MySQL客户端
 exit;
 ```
@@ -233,12 +233,12 @@ tail -f /root/logs/thanos-browser.log
 
 注：标题中${your_error_partition}为报错日期，根据实际报错日志填写sql
 
-```mysql
+```
 #SQL中的日期填写报错日期+1
 ALTER TABLE thanos_evm_transaction ADD PARTITION(PARTITION p${your_error_partition} + 1 VALUES LESS THAN (${your_error_partition} + 1) ENGINE = InnoDB);
 ```
 
-```mysql
+```
 例：
 报错日志：java.sql.SQLException: Table has no partition for value 20240923
 执行SQL:ALTER TABLE thanos_evm_transaction ADD PARTITION(PARTITION p20240924 VALUES LESS THAN (20240924) ENGINE = InnoDB);
@@ -377,14 +377,14 @@ mysql -uroot -p -h localhost -P 3306
 
 * 授权root用户远程访问
 
-```mysql
+```
 mysql > GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
 mysql > flush PRIVILEGES;
 ```
 
 * 创建test用户并授权本地访问
 
-```mysql
+```
 mysql > GRANT ALL PRIVILEGES ON *.* TO 'test'@localhost IDENTIFIED BY '123456' WITH GRANT OPTION;
 mysql > flush PRIVILEGES;
 ```
@@ -399,7 +399,7 @@ mysql -utest -p123456 -h localhost -P 3306
 
 * 创建数据库
 
-```mysql
+```
 mysql > create database thanos_browser;
 ```
 
