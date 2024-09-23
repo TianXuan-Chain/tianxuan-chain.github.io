@@ -57,7 +57,7 @@ case SLOAD: {
 ```
 
 #### 其他
-完整指令请参考[EVM虚拟机指令](https://www.evm.codes/)。
+完整指令请参考[ EVM 虚拟机指令](https://www.evm.codes/)。
 
 ## JVM 虚拟机
 当前版本仅支持，系统内部事件的合约编写。
