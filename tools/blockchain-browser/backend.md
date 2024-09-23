@@ -20,6 +20,7 @@
 需要从 *GitHub* 上拉取 `thanos-web3j` 代码，由于 `thanos-web3j` 编译依赖于 `thanos-common.jar` ，所以还需要拉取 `thanos-common` 代码。
 
 ```bash
+cd /root
 git clone https://github.com/TianXuan-Chain/thanos-web3j.git # thanos-web3j代码库
 git clone https://github.com/TianXuan-Chain/thanos-common.git # thanos-common代码库 
 ```
@@ -37,7 +38,7 @@ mvn install:install-file -Dfile=bctls-gm-jdk15on.jar -DgroupId=org.bouncycastle 
 而后，编译 `thanos-common` 。
 
 ```bash
-cd thanos-common
+cd /root/thanos-common
 mvn clean install -Dmaven.test.skip=true
 ```
 
@@ -52,7 +53,7 @@ chmod -R 777 thanos-web3j # 赋予目录内文件最高权限
 而后运行编译脚本。
 
 ```sh
-cd thanos-web3j
+cd /root/thanos-web3j
 ./compile.sh build
 ```
 
@@ -135,11 +136,12 @@ gradle publishToMavenLocal
 ### 3.2拉取代码
 
 ```sh
+cd /root
 git clone ssh://git@gitlab.fuxi.netease.com:2222/thanos-blockchain/thanos-browser-backend.git
 ```
 
 ```sh
-cd thanos-browser-backend
+cd /root/thanos-browser-backend
 ```
 
 ### 3.3修改配置
@@ -147,7 +149,7 @@ cd thanos-browser-backend
 * 进入配置文件
 
 ```sh
-vim thanos-browser-web/src/main/resources/application.properties
+vim /root/thanos-browser-backend/thanos-browser-web/src/main/resources/application.properties
 ```
 
 * 修改MySQL配置
@@ -205,7 +207,7 @@ mysql -u ${your_db_account} -p${your_db_password} thanos_browser < thanos_browse
 
 ```sh
 #拷贝jar到root路径下
-cp thanos-browser-web/target/thanos-browser-web-1.0-SNAPSHOT.jar /root/
+cp /root/thanos-browser-backend/thanos-browser-web/target/thanos-browser-web-1.0-SNAPSHOT.jar /root/
 cd /root
 ```
 
@@ -218,9 +220,9 @@ nohup java -jar thanos-browser-web-1.0-SNAPSHOT.jar >/dev/null 2>&1 &
 
 ```sh
 #启动日志
-tail -f logs/thanos-browser-normal.log
+tail -f /root/logs/thanos-browser-normal.log
 #运行日志
-tail -f logs/thanos-browser.log
+tail -f /root/logs/thanos-browser.log
 ```
 
 ## 4.问题排查
@@ -312,13 +314,8 @@ mvn -v
 下载开发部署工具的源码需要依赖 *Git* ，安装命令如下：
 
 ```sh
-# Ubuntu 系统
-sudo apt install -y git
-```
-
-```sh
-# CentOS 系统
-sudo yum install -y git
+CentOS:sudo yum install -y git
+Ubuntu:sudo apt install -y git
 ```
 
 配置 *git* 密钥 (可选) ：
@@ -336,7 +333,7 @@ sudo yum install -y git
 * 安装命令
 
 ```sh
-Centos：sudo yum install -y mariadb*
+CentOS：sudo yum install -y mariadb*
 Ubuntu：sudo apt install mariadb-server
 ```
 
