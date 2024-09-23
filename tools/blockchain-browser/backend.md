@@ -322,6 +322,7 @@ Ubuntu:sudo apt install -y git
 
 * 将自己的 *github* 账户私钥上传到 `~/.ssh/` 目录下
 * 修改私钥访问权限 `chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub`
+* 启动ssh-agent `eval $(ssh-agent)`
 * 添加私钥到ssh-agent `ssh-add ~/.ssh/id_rsa`
 
 ### 5.4MySQL安装
