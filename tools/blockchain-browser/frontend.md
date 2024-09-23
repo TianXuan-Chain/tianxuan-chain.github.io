@@ -28,9 +28,13 @@ https://gitlab.fuxi.netease.com:8081/thanos-blockchain/thanos-browser-frontend.g
 
 ### 2.3 打包
 
-直接终端执行npm run build即可，打包产物在dist文件夹中。
+下载好依赖后直接终端执行npm run build即可，打包产物在dist文件夹中。
 
-### 2.4 nginx配置
+### 2.4 部署云端服务器
+
+部署云服务器可参考具体服务器的api或网络教程，示例：[阿里云部署](https://blog.csdn.net/weixin_43239880/article/details/129434402)。
+
+### 2.5 nginx配置
 
 配置文件默认路径在/usr/local/nginx/conf/nginx.conf
 修改nginx.conf：
@@ -57,7 +61,7 @@ server {
     }
 }
 ```
-### 2.5 启动nginx
+### 2.6 启动nginx
 
 1. 启动命令
 
