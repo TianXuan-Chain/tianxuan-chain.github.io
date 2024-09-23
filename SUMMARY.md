@@ -40,7 +40,6 @@
 
 * [区块链浏览器](tools/blockchain-browser/README.md)
   * [使用介绍](tools/blockchain-browser/introduce.md)
-  * [部署](tools/blockchain-browser/deploy.md)
   * [浏览器后端服务](tools/blockchain-browser/backend.md)
   * [浏览器前端](tools/blockchain-browser/frontend.md)
 
