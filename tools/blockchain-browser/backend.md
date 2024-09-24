@@ -135,7 +135,7 @@ gradle publishToMavenLocal
 
 ```sh
 cd /root
-git clone ssh://git@gitlab.fuxi.netease.com:2222/thanos-blockchain/thanos-browser-backend.git
+git clone git@github.com:TianXuan-Chain/thanos-browser-backend.git
 ```
 
 ```sh
