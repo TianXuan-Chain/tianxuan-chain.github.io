@@ -16,123 +16,7 @@
 ## 1.2.3. 部署说明
 
 ### 1.2.3.1. 下载物料包
-* 获取相关物料包（thanos-web3j和thanos-common已推到本地 Maven 仓库中的直接跳过即可）
-
-需要从 *GitHub* 上拉取 `thanos-web3j` 代码，由于 `thanos-web3j` 编译依赖于 `thanos-common.jar` ，所以还需要拉取 `thanos-common` 代码。
-
-```bash
-cd /root
-git clone https://github.com/TianXuan-Chain/thanos-web3j.git # thanos-web3j代码库
-git clone https://github.com/TianXuan-Chain/thanos-common.git # thanos-common代码库 
-```
-
-* 编译
-
-按照依赖顺序，在编译 *thanos-common* 前，还需将其依赖的 `bctls-gm-jdk15on.jar` 加载到本地 *Maven* 仓库当中。
-
-```
-mvn install:install-file -Dfile=bctls-gm-jdk15on.jar -DgroupId=org.bouncycastle -DartifactId=bctls-gm-jdk15on -Dversion=0.1 -Dpackaging=jar
-```
-
-该文件可以从此处获取：[https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bctls-gm/bctls-gm-jdk15on.jar ](https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bctls-gm/bctls-gm-jdk15on.jar)
-
-而后，编译 `thanos-common` 。
-
-```bash
-cd /root/thanos-common
-mvn clean install -Dmaven.test.skip=true
-```
-
-编译后，`thanos-common.jar` 应已被加载到了本地 *Maven* 仓库当中。可以开始编译 *thanos-web3j* 了。
-
-请先检查 *thanos-web3j* 内部文件是否具备可执行权限，如果不具备，可以使用以下指令。
-
-```sh
-chmod -R 777 thanos-web3j # 赋予目录内文件最高权限
-```
-
-而后运行编译脚本。
-
-```sh
-cd /root/thanos-web3j
-./compile.sh build
-```
-
-编译成功后会在当前目录下产生一个 dist 文件夹，该文件夹结构如下：
-
-```
-| 目录             | 说明                                       |
-| -------------- | ---------------------------------------- |
-| dist/apps      | web3sdk项目编译生成的jar包web3sdk.jar             |
-| dist/bin       | - web3sdk: 可执行脚本，调用web3sdk.jar执行web3sdk内方法(如部署系统合约、调用合约工具方法等) <br>  - compile.sh: 调用该脚本可将dist/contracts目录下的合约代码转换成java代码，该功能便于用户基于web3sdk开发更多应用 |
-| dist/conf      | 配置目录, 用于配置节点信息、证书信息、日志目录等，详细信息会在下节叙述     |
-| dist/contracts | 合约存放目录，调用compile.sh脚本可将存放于该目录下的.sol格式合约代码转换成java代码 |
-| dist/lib       | 存放web3sdk依赖库的jar包                         |
-| dist/solc      | 存放合约编译工具,solc需要安装到/usr/local/bin/         |
-```
-
-如果 `compile.sh` 脚本执行停滞、执行失败等情况，可能是服务器存在网络连接问题或者系统不兼容。可以手动安装 gradle 后进行编译。gradle 安装流程如下：
-
-```bash
-# Linux 系统
-# 下载 gradle 文件
-wget https://services.gradle.org/distributions/gradle-5.6.2-all.zip -P /software
-# 解压
-sudo unzip -d /software/gradle /software/gradle-5.6.2-all.zip
-```
-
-修改配置，将下面内容写入到 `gradle.sh` 中。
-
-```bash
-sudo vim /etc/profile.d/gradle.sh
-```
-
-```editorconfig
-# 将下面写入 gradle.sh 中
-export GRADLE_HOME=/software/gradle/gradle-5.6.2
-export PATH=${GRADLE_HOME}/bin:${PATH}
-```
-
-而后执行脚本
-
-```bash
-sudo chmod +x /etc/profile.d/gradle.sh
-source /etc/profile.d/gradle.sh
-# 验证 gradle 安装
-gradle -v
-```
-
-注意：如果第一步拉取 *gradle* 安装包失败，表明服务器网络连接 *gradle* 官网存在限制，请到 [官方网站](https://services.gradle.org/distributions/gradle-5.6.2-all.zip) 下载后上传到服务器。
-
-*gradle* 安装完成后，如果是国内服务器，可以看需求是否修改为国内的镜像源。在 `{USER_HOME}/.gradle/` 目录下创建 `init.gradle` 文件，并添加下面内容：
-
-```editorconfig
-allprojects {
-    repositories {
-        def ALIYUN_REPOSITORY_URL = 'https://maven.aliyun.com/repository/public'
-        all { ArtifactRepository repo ->
-            if (repo instanceof MavenArtifactRepository) {
-                def url = repo.url.toString()
-                if (url.startsWith('https://repo1.maven.org/maven2')) {
-                    project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_REPOSITORY_URL."
-                    remove repo
-                }
-            }
-        }
-        maven { url ALIYUN_REPOSITORY_URL }
-    }
-}
-```
-
-安装配置完后，进入 `thanos-web3j` 目录，执行以下指令：
-
-```
-# 考虑到后续可能会依赖到 thanos-web3j.jar，所以将其发布到本地 Maven 仓库中
-gradle publishToMavenLocal
-# 如果不需要将 thanos-web3j.jar 发布到本地 Maven 仓库
-# 可以使用 gradle build 指令
-```
-
+* 获取相关物料包（thanos-web3j和thanos-common已推到本地 Maven 仓库中的直接跳过即可），具体下载流程参见[快速入门](../../app-development-manual/java-sdk/quick-start.md) 3.1.2.1. 至3.1.2.2. 章节
 
 ### 1.2.3.2. 拉取代码
 
@@ -225,6 +109,22 @@ tail -f /root/logs/thanos-browser-normal.log
 #运行日志
 tail -f /root/logs/thanos-browser.log
 ```
+
+启动日志中看到`Started MainAplication in 7.2 seconds (JVM running for 8.224)`说明启动成功
+<div style="text-align: left;">
+    <figure style="display: inline-block; margin: 0;">
+        <img src="../../assets/浏览器启动成功日志.png" alt="浏览器启动成功日志" style="width: 100%; max-width: 600px; height: auto;">
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">浏览器启动成功日志</figcaption>
+    </figure>
+</div>
+
+运行日志中看`BlockTnxReporterHandler start handle!`说明开始拉取区块信息
+<div style="text-align: left;">
+    <figure style="display: inline-block; margin: 0;">
+        <img src="../../assets/浏览器开始拉取区块日志.png" alt="浏览器开始拉取区块" style="width: 100%; max-width: 600px; height: auto;">
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">浏览器开始拉取区块</figcaption>
+    </figure>
+</div>
 
 ## 1.2.4. 问题排查
 
