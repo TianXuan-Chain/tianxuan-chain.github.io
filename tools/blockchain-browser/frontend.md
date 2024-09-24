@@ -38,7 +38,7 @@ node -v
 ### 1.3.3 拉取代码
 
 ```sh
-git clone https://gitlab.fuxi.netease.com:8081/thanos-blockchain/thanos-browser-frontend.git
+git clone https://github.com/TianXuan-Chain/thanos-browser-frontend.git
 ```
 
 ### 1.3.4 打包
