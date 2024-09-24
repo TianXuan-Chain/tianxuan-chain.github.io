@@ -1,13 +1,11 @@
-# 存储
-
-## 概述
+## 4.4.1. 概述
 
 在传统公链架构中，核心的存储模型架构还是以 *MPT*（默克尔压缩前缀树）的方式组织，目的是方便对状态提供存在性证明。使用 *MPT* 树能够最大程度上提供数据的存在性证明的情况下，减少树更新的计算次数。但对于联盟链来说，使用 *MPT* 树是一种性能的降低。在基于 *EVM* 的账户模型数据以及合约代码中数据的存取 ，其底层就是对 *MPT* 的 *CRUD* 操作。因此，树节点的读取可能会读取多次磁盘（根据树高以及节点的大小来决定读取次数），而一个节点的变更可能会引起 *MPT* 多次的裂变。
 
 随着合约代码的存储数据越大，会导致 *EVM* 执行速度线性下降(生产环境中，出现线性下降的情况)。而天玄中，通过去 *MPT* 的存储结构来解决随着状态数据的增加而导致 *EVM* 执行速度线性下降的问题。
-## 去MPT存储
+## 4.4.2. 去MPT存储
 
-### MPT 使用对比 <a href="#id5.4.4-cun-chu-mo-kuai-mpt-shi-yong-dui-bi" id="id5.4.4-cun-chu-mo-kuai-mpt-shi-yong-dui-bi"></a>
+### 4.4.2.1. MPT 使用对比 <a href="#id5.4.4-cun-chu-mo-kuai-mpt-shi-yong-dui-bi" id="id5.4.4-cun-chu-mo-kuai-mpt-shi-yong-dui-bi"></a>
 
 **优点**
 
@@ -22,7 +20,7 @@
 * 目前只适用于强一致性共识算法。
 * 目前只存储最新状态值，无法访问特定历史状态；
 
-### 以太坊 MPT 树状态检索
+### 4.4.2.2. 以太坊 MPT 树状态检索
 
 在以太坊中，区块链全局状态被存储在 *MPT* 树中，这些全局状态通常指账户状态。而智能合约中的数据状态则是存在于智能合约账户的 *MPT* 子树中，即以账户维度管理合约数据。如下：
 
@@ -55,7 +53,7 @@
 
 其中，依次先向缓存、*db* 读取。
 
-### 天玄去MPT架构 <a href="#id5.4.4-cun-chu-mo-kuai-tian-xuan-qu-mpt-jia-gou" id="id5.4.4-cun-chu-mo-kuai-tian-xuan-qu-mpt-jia-gou"></a>
+### 4.4.2.3. 天玄去MPT架构 <a href="#id5.4.4-cun-chu-mo-kuai-tian-xuan-qu-mpt-jia-gou" id="id5.4.4-cun-chu-mo-kuai-tian-xuan-qu-mpt-jia-gou"></a>
 
 由于每次读写状态都需要对前缀树进行检索，严重影响联盟链场景下的执行效率。天玄直接使用 *HashMap* 作为替代方案，每个 *\<storage key, value>* 直接存储到 *HashMap* 中，不通过 *MPT* 树检索。另外，为了区分不用合约账户的数据状态，确保数据状态的全局唯一性，*storage key* 的计算方式变为：`new storage key = sha3(account address+ storage key)` 。
 

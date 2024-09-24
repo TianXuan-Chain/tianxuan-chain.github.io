@@ -1,4 +1,4 @@
-# 天玄节点网关
+# 2. 天玄节点网关
 天玄链节点分为应用和网关两部分，本章节会详细讲解如何手动部署天玄网关：
-- [安装](installation.md)
-- [配置说明](configuration.md)
+- [2.1. 安装](installation.md)
+- [2.2. 配置说明](configuration.md)

@@ -1,6 +1,4 @@
-# 创建和使用账户
-
-## 生成账户 <a href="#id4.1-chuang-jian-he-shi-yong-zhang-hu-sheng-cheng-zhang-hu" id="id4.1-chuang-jian-he-shi-yong-zhang-hu-sheng-cheng-zhang-hu"></a>
+## 1.1. 生成账户 <a href="#id4.1-chuang-jian-he-shi-yong-zhang-hu-sheng-cheng-zhang-hu" id="id4.1-chuang-jian-he-shi-yong-zhang-hu-sheng-cheng-zhang-hu"></a>
 
 下面是使用 *Java SDK* 创建一个随机账户的方法，总共支持三种加密算法
 
@@ -56,7 +54,7 @@ Credentials credentials = Credentials.create(secureKey);
 String accountAddr = credentials.getAddress();
 ```
 
-## 账户地址的计算 <a href="#id4.1-chuang-jian-he-shi-yong-zhang-hu-zhang-hu-di-zhi-de-ji-suan" id="id4.1-chuang-jian-he-shi-yong-zhang-hu-zhang-hu-di-zhi-de-ji-suan"></a>
+## 1.2. 账户地址的计算 <a href="#id4.1-chuang-jian-he-shi-yong-zhang-hu-zhang-hu-di-zhi-de-ji-suan" id="id4.1-chuang-jian-he-shi-yong-zhang-hu-zhang-hu-di-zhi-de-ji-suan"></a>
 
 账户地址由 *ECDSA* 公钥计算得来，与以太坊兼容，对 *ECDSA* 公钥的 16 进制表示计算 *keccak-256sum* 哈希，取计算结果的后 20 字节的 16 进制表示作为账户地址，每个字节需要两个 16 进制数表示，所以账户地址长度为 40 。
 

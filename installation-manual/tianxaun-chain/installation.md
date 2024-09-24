@@ -1,8 +1,6 @@
-# 安装
-
 本章介绍天玄节点应用所需的必要安装和配置。本章通过在单机上部署一条天玄测试链，来帮助用户掌握部署流程。
 
-## 硬件要求 <a href="#id3.1.2-an-zhuang-yi-huan-jing-yao-qiu" id="id3.1.2-an-zhuang-yi-huan-jing-yao-qiu"></a>
+## 1.2.1. 硬件要求 <a href="#id3.1.2-an-zhuang-yi-huan-jing-yao-qiu" id="id3.1.2-an-zhuang-yi-huan-jing-yao-qiu"></a>
 
 | 配置   | 最低配置                                  | 推荐配置   |
 | ---- | ------------------------------------- | ------ |
@@ -13,9 +11,9 @@
 | 操作系统 | CentOS (7及以上 64位) 或 Ubuntu(18.04 64位) |        |
 | JAVA | JDK 1.8                               |        |
 
-## 天玄链安装搭建
+## 1.2.2. 天玄链安装搭建
 
-### 前置依赖软件 <a href="#id3.1.2-an-zhuang-1-qian-zhi-zhun-bei" id="id3.1.2-an-zhuang-1-qian-zhi-zhun-bei"></a>
+### 1.2.2.1. 前置依赖软件 <a href="#id3.1.2-an-zhuang-1-qian-zhi-zhun-bei" id="id3.1.2-an-zhuang-1-qian-zhi-zhun-bei"></a>
 
 * [Oracle JDK 1.8](../../quick-start/depoly-tianxaun-chain/software-requirement.md#oracle-jdk-18-安装)
 * GmSSL-v2（该软件只支持 *Linux* 系统）
@@ -53,7 +51,7 @@ source /etc/profile
 gmssl version
 ```
 
-### 创建操作目录 <a href="#id3.1.2-an-zhuang-chuang-jian-cao-zuo-mu-lu" id="id3.1.2-an-zhuang-chuang-jian-cao-zuo-mu-lu"></a>
+### 1.2.2.2. 创建操作目录 <a href="#id3.1.2-an-zhuang-chuang-jian-cao-zuo-mu-lu" id="id3.1.2-an-zhuang-chuang-jian-cao-zuo-mu-lu"></a>
 
 创建当前链节点的操作目录，以 *node0* 为例。
 
@@ -73,11 +71,11 @@ mkdir database logs resource
 mkdir resource/tls
 ```
 
-### 添加可执行文件 <a href="#id3.1.2-an-zhuang-tian-jia-ke-zhi-xing-wen-jian" id="id3.1.2-an-zhuang-tian-jia-ke-zhi-xing-wen-jian"></a>
+### 1.2.2.3. 添加可执行文件 <a href="#id3.1.2-an-zhuang-tian-jia-ke-zhi-xing-wen-jian" id="id3.1.2-an-zhuang-tian-jia-ke-zhi-xing-wen-jian"></a>
 
 获取可执行文件 `thanos-chain.jar`（获取方式见 [获取可执行文件](executable-file.md)），并放在节点操作目录下，如 `~/thanos-chain/node0/`
 
-### 创建链证书和机构证书 <a href="#id3.1.2-an-zhuang-chuang-jian-lian-zheng-shu-he-ji-gou-zheng-shu" id="id3.1.2-an-zhuang-chuang-jian-lian-zheng-shu-he-ji-gou-zheng-shu"></a>
+### 1.2.2.4. 创建链证书和机构证书 <a href="#id3.1.2-an-zhuang-chuang-jian-lian-zheng-shu-he-ji-gou-zheng-shu" id="id3.1.2-an-zhuang-chuang-jian-lian-zheng-shu-he-ji-gou-zheng-shu"></a>
 
 在配置节点前，需要先准备好链证书、机构证书和机构私钥等信息，用于签发节点证书。具体证书说明见：[证书说明](log.md)
 
@@ -155,7 +153,7 @@ gmssl req -new -sm3 -key agency.key -config cert.cnf -out agency.csr
 gmssl x509 -req -days 3650 -CA ca.crt -CAkey ca.key -in agency.csr -out agency.crt -CAcreateserial -sm3 -extensions v4_req -extfile cert.cnf
 ```
 
-### 配置单节点 <a href="#id3.1.2-an-zhuang-2-pei-zhi-dan-jie-dian" id="id3.1.2-an-zhuang-2-pei-zhi-dan-jie-dian"></a>
+### 1.2.2.5. 配置单节点 <a href="#id3.1.2-an-zhuang-2-pei-zhi-dan-jie-dian" id="id3.1.2-an-zhuang-2-pei-zhi-dan-jie-dian"></a>
 
 本节主要以 *node0* 节点为例，介绍如何进行节点信息配置，包括节点身份信息、网络端口配置等。其他节点的配置流程相同。
 
@@ -483,7 +481,7 @@ java.lang.SecurityException: JCE cannot authenticate the provider BC
 
 需要手动将 `bcprov-jdk15on-1.66.jar` 包放置到 `$JAVA_HOME/jre/lib/ext` 目录下，可从此处下载：[https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bcprov-jdk15on-1.66.jar](https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bcprov-jdk15on-1.66.jar)
 
-### 配置多节点
+### 1.2.2.6. 配置多节点
 
 &#x20;当多个节点进行组网时，需要完成以下操作：
 

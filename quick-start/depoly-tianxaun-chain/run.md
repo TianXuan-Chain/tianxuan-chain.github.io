@@ -1,6 +1,4 @@
-# 安装并启动节点
-
-## 安装节点
+## 1.4.1. 安装节点
 
 将生成的安装包传至相应 *Ip* 的服务器上，解压并安装各节点。
 
@@ -12,7 +10,7 @@ bash install_node.sh #运行安装脚本
 
 执行成功后，会在每个 *node* 目录中生成 *thanos-chain* 和 *thanos-gateway* 两个目录。
 
-## 启动节点应用 <a href="#id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-ying-yong" id="id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-ying-yong"></a>
+## 1.4.2. 启动节点应用 <a href="#id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-ying-yong" id="id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-ying-yong"></a>
 
 启动四个节点应用，顺序为先启动 *thanos-chain* 应用，再启动 *thanos-gateway* 应用。
 
@@ -32,7 +30,7 @@ cd node0
 tail -f thanos-chain/logs/thanos-chain.log | grep 'empty do commit cost' #如果持续打印该消息，说明节点chain应用启动成功并参与共识。
 ```
 
-## 启动节点网关 <a href="#id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-wang-guan" id="id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-wang-guan"></a>
+## 1.4.3. 启动节点网关 <a href="#id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-wang-guan" id="id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-wang-guan"></a>
 
 节点应用启动成功后，再启动 *thanos-gateway*
 

@@ -1,10 +1,8 @@
-# 配置说明
-
-## 概述 <a href="#id3.2.2-pei-zhi-yi-gai-shu" id="id3.2.2-pei-zhi-yi-gai-shu"></a>
+## 2.2.1. 概述 <a href="#id3.2.2-pei-zhi-yi-gai-shu" id="id3.2.2-pei-zhi-yi-gai-shu"></a>
 
 节点网关的配置文件中，主要包含一个主配置 `thanos-gateway.conf` 和日志管理配置 `logback.xml` 。
 
-## 主配置文件 thanos-chain.conf <a href="#id3.2.2-pei-zhi-er-zhu-pei-zhi-wen-jian-thanoschain.conf" id="id3.2.2-pei-zhi-er-zhu-pei-zhi-wen-jian-thanoschain.conf"></a>
+## 2.2.2. 主配置文件 thanos-chain.conf <a href="#id3.2.2-pei-zhi-er-zhu-pei-zhi-wen-jian-thanoschain.conf" id="id3.2.2-pei-zhi-er-zhu-pei-zhi-wen-jian-thanoschain.conf"></a>
 
 `thanos-gateway.conf` 主要包括了 *gateway* 和 *tls* 等配置项。配置内容示例如下：
 
@@ -60,7 +58,7 @@ tls {
 }
 ```
 
-### 配置 gateway 标签 <a href="#id3.2.2-pei-zhi-pei-zhi-gateway-biao-qian" id="id3.2.2-pei-zhi-pei-zhi-gateway-biao-qian"></a>
+### 2.2.2.1. 配置 gateway 标签 <a href="#id3.2.2-pei-zhi-pei-zhi-gateway-biao-qian" id="id3.2.2-pei-zhi-pei-zhi-gateway-biao-qian"></a>
 
 * **node.myself**：本机节点信息，用于与其他 gateway 节点互连。
 * **rpc.address**：本机 *rpc* 服务 *ip* 和端口，用于向 *sdk* 提供 *rpc* 服务，需要注意此 *ip* 地址需要使用内网地址，因为当前限制 *rpc* 只能通过内网访问。
@@ -78,13 +76,13 @@ tls {
 * **sync.cache.txPoolDSCacheSizeLimit**：缓存的交易池大小。
 * **switch.only.broadcast.globalEvent**：是否仅广播全局节点事件。
 
-### 配置 tls 标签 <a href="#id3.2.2-pei-zhi-pei-zhi-tls-biao-qian" id="id3.2.2-pei-zhi-pei-zhi-tls-biao-qian"></a>
+### 2.2.2.2. 配置 tls 标签 <a href="#id3.2.2-pei-zhi-pei-zhi-tls-biao-qian" id="id3.2.2-pei-zhi-pei-zhi-tls-biao-qian"></a>
 
 * **needTLS**: *gateway* 与 *web3j* 之间通信，是否要开启 *tls* 认证。
 * **keyPath**：节点私钥文件路径。
 * **certsPath**：节点证书链文件路径。
 
-## 日志管理配置文件 gateway-logback.xml <a href="#id3.2.2-pei-zhi-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml" id="id3.2.2-pei-zhi-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml"></a>
+## 2.2.3. 日志管理配置文件 gateway-logback.xml <a href="#id3.2.2-pei-zhi-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml" id="id3.2.2-pei-zhi-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml"></a>
 
 `gateway-logback.xml`指定了节点日志的存放位置和生成规则。配置内容示例如下：
 
@@ -153,7 +151,7 @@ tls {
 </configuration>
 ```
 
-### 配置打印的日志组件 <a href="#id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-zu-jian" id="id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-zu-jian"></a>
+### 2.2.3.1. 配置打印的日志组件 <a href="#id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-zu-jian" id="id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-zu-jian"></a>
 
 通过 *\<appender>* 标签 指定打印的日志组件。在上述示例文件中，指定了三个日志组件：*STDOUT* 、*FILE* 、*ASYNC*
 
@@ -165,6 +163,6 @@ tls {
 
 此外，可通过 *\<root>* 标签，指定日志的打印等级。并通过 *\<appender-ref>* 标签指定生效的日志组件。
 
-### 配置打印的日志等级 <a href="#id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-deng-ji" id="id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-deng-ji"></a>
+### 2.2.3.2. 配置打印的日志等级 <a href="#id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-deng-ji" id="id3.2.2-pei-zhi-pei-zhi-da-yin-de-ri-zhi-deng-ji"></a>
 
 通过 *\<logger>* 标签指定相应类的日志等级。

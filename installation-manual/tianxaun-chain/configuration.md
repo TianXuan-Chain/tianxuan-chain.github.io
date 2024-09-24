@@ -1,6 +1,4 @@
-# 配置说明
-
-## 概述 <a href="#id3.1.3-pei-zhi-shuo-ming-yi-gai-shu" id="id3.1.3-pei-zhi-shuo-ming-yi-gai-shu"></a>
+## 1.3.1. 概述 <a href="#id3.1.3-pei-zhi-shuo-ming-yi-gai-shu" id="id3.1.3-pei-zhi-shuo-ming-yi-gai-shu"></a>
 
 天玄节点应用中，每个节点包含一个主配置 `thanos-chain.conf` ，日志管理配置 `logback.xml` ，创世块配置 `genesis.json` 以及节点身份配置 `nodeInfo.properties` 。
 
@@ -9,7 +7,7 @@
 * **genesis.json**：创世块配置文件。包括组网节点身份信息、创世区块相关信息等。
 * **nodeInfo.properties**：节点身份配置文件。包括本节点的名称、所属机构、节点私钥、节点 *ID* 等。
 
-## 主配置文件 thanos-chain.conf <a href="#id3.1.3-pei-zhi-shuo-ming-er-zhu-pei-zhi-wen-jian-thanoschain.conf" id="id3.1.3-pei-zhi-shuo-ming-er-zhu-pei-zhi-wen-jian-thanoschain.conf"></a>
+## 1.3.2. 主配置文件 thanos-chain.conf <a href="#id3.1.3-pei-zhi-shuo-ming-er-zhu-pei-zhi-wen-jian-thanoschain.conf" id="id3.1.3-pei-zhi-shuo-ming-er-zhu-pei-zhi-wen-jian-thanoschain.conf"></a>
 
 `thanos-chain.conf` 主要包括了 *network* 、*concesus* 、*resource* 、*tls* 等配置项。配置内容示例如下：
 
@@ -85,7 +83,7 @@ tls {
 }
 ```
 
-### 配置 network <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-network" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-network"></a>
+### 1.3.2.1. 配置 network <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-network" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-network"></a>
 
 * **peer.rpc.ip**：节点的 *rpc* 地址，用于和其他节点通信。通常填本机的外网或内网地址。
 * **peer.bind.ip**：节点绑定的 *ip* 地址，通常固定为 *0.0.0.0* 。
@@ -100,7 +98,7 @@ tls {
 * **gateway.remoteServiceAddress**：与该链节点交互的链网关的 ip 地址和端口号。
 * **gateway.pushTxsQueueSize**：接收 *gateway* 打包交易个数的队列大小，建议为 16 。
 
-### 配置 consensus <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-consensus" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-consensus"></a>
+### 1.3.2.2. 配置 consensus <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-consensus" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-consensus"></a>
 
 * **proposerType**: 提案类型，目前仅支持轮循提案，值为 <mark>2</mark> 。
 * **contiguousRounds**：主节点正常共识时连续共识的轮数，超过该轮数需要切换主节点。
@@ -112,24 +110,24 @@ tls {
 * **roundTimeoutBaseMS**：*Chain BFT* 的每轮共识超时基数，建议为 5000 (即 5 秒) 。
 * **parallelProcessorNum**：*DAG* 并行处理交易的 *cpu* 个数。
 
-### 配置 state <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-state" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-state"></a>
+### 1.3.2.3. 配置 state <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-state" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-state"></a>
 
 * **checkTimeoutMS**：异步共识的检测超时时间，建议为 1500 (毫秒) 。
 * **maxCommitBlockInMemory**：内存中保留已共识成功的 *block* 数量。
 
-### 配置 resource <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-resource" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-resource"></a>
+### 1.3.2.4. 配置 resource <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-resource" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-resource"></a>
 
 * **database.needEncrypt**：账本信息是否需要加密存储。
 * **database.encryptAlg**：账本信息加密存储时采用的加密算法。如果无需加密，可忽视该配置项。
 * **database.dir**：账本信息存放路径。
 * **logConfigPath**：日志管理配置文件 `logback.xml` 所在路径。
 
-### 配置 tls <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-tls" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-tls"></a>
+### 1.3.2.5. 配置 tls <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-tls" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-tls"></a>
 
 * **keyPath**：节点的私钥文件 `node.key` 所在路径。
 * **certsPath**：节点的证书链 `chain.crt` 所在路径。
 
-## 日志管理配置文件 chain-logback.xml <a href="#id3.1.3-pei-zhi-shuo-ming-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml" id="id3.1.3-pei-zhi-shuo-ming-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml"></a>
+## 1.3.3. 日志管理配置文件 chain-logback.xml <a href="#id3.1.3-pei-zhi-shuo-ming-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml" id="id3.1.3-pei-zhi-shuo-ming-san-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml"></a>
 
 `chain-logback.xml` 指定了节点日志的存放位置和生成规则。配置内容示例如下：
 
@@ -213,7 +211,7 @@ tls {
 </configuration>
 ```
 
-### 配置打印的日志组件 <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-zu-jian" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-zu-jian"></a>
+### 1.3.3.1. 配置打印的日志组件 <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-zu-jian" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-zu-jian"></a>
 
 通过 *\<appender>* 标签 指定打印的日志组件。在上述示例文件中，指定了三个日志组件：*STDOUT*、*FILE* 、*ASYNC*
 
@@ -225,11 +223,11 @@ tls {
 
 此外，可通过 *\<root>* 标签，指定日志的打印等级。并通过 *\<appender-ref>* 标签指定生效的日志组件。
 
-### 配置打印的日志等级 <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-deng-ji" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-deng-ji"></a>
+### 1.3.3.2. 配置打印的日志等级 <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-deng-ji" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-deng-ji"></a>
 
 通过 *\<logger>* 标签 指定相应类的日志等级。
 
-## 创世块配置文件 genesis.json <a href="#id3.1.3-pei-zhi-shuo-ming-si-chuang-shi-kuai-pei-zhi-wen-jian-genesis.json" id="id3.1.3-pei-zhi-shuo-ming-si-chuang-shi-kuai-pei-zhi-wen-jian-genesis.json"></a>
+## 1.3.4. 创世块配置文件 genesis.json <a href="#id3.1.3-pei-zhi-shuo-ming-si-chuang-shi-kuai-pei-zhi-wen-jian-genesis.json" id="id3.1.3-pei-zhi-shuo-ming-si-chuang-shi-kuai-pei-zhi-wen-jian-genesis.json"></a>
 
 `genesis.json` 主要包括了 *validatorVerifiers* ，*alloc* 以及和创世区块相关配置。配置内容示例如下：
 
@@ -279,7 +277,7 @@ tls {
 }
 ```
 
-### 配置 validatorVerifiers <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-validatorverifiers" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-validatorverifiers"></a>
+### 1.3.4.1. 配置 validatorVerifiers <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-validatorverifiers" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-validatorverifiers"></a>
 
 *validatorVerifiers* 包括了组网节点的身份信息，*k-v* 对形式。*key* 是组网节点的公钥字符串，*value* 包括以下字段：
 
@@ -289,21 +287,21 @@ tls {
 * **agency**：节点所属机构。
 * **caHash**：节点证书序列号。目前可忽略。
 
-### 配置 committeeAddrs
+### 1.3.4.2. 配置 committeeAddrs
 
 *committeeAddrs* 包括了管理链的节点的委员会的公钥信息。
 
-### 配置 operationsStaffAddrs
+### 1.3.4.3. 配置 operationsStaffAddrs
 *operationsStaffAddrs* 包括了链操作者白名单。
 
-### 配置 voteThreshold
+### 1.3.4.4. 配置 voteThreshold
 委员会决策的门阀值。
 
-### 配置 alloc <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-alloc" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-alloc"></a>
+### 1.3.4.5. 配置 alloc <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-alloc" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-alloc"></a>
 
 *alloc* 包括了创世区块的合约状态。目前可忽略。
 
-### 配置创世块相关信息 <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-chuang-shi-kuai-xiang-guan-xin-xi" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-chuang-shi-kuai-xiang-guan-xin-xi"></a>
+### 1.3.4.6. 配置创世块相关信息 <a href="#id3.1.3-pei-zhi-shuo-ming-pei-zhi-chuang-shi-kuai-xiang-guan-xin-xi" id="id3.1.3-pei-zhi-shuo-ming-pei-zhi-chuang-shi-kuai-xiang-guan-xin-xi"></a>
 
 * **maxShardingNum**：分片最大数量。
 * **shardingNum**：本节点所属分片。
@@ -317,7 +315,7 @@ tls {
 * **gasLimit**：交易执行消耗的最大 *gas* 值。
 * **startEventNumber**：初始块高。
 
-## 节点身份配置文件 nodeInfo.properties <a href="#id3.1.3-pei-zhi-shuo-ming-wu-jie-dian-shen-fen-pei-zhi-wen-jian-nodeinfo.properties" id="id3.1.3-pei-zhi-shuo-ming-wu-jie-dian-shen-fen-pei-zhi-wen-jian-nodeinfo.properties"></a>
+## 1.3.5. 节点身份配置文件 nodeInfo.properties <a href="#id3.1.3-pei-zhi-shuo-ming-wu-jie-dian-shen-fen-pei-zhi-wen-jian-nodeinfo.properties" id="id3.1.3-pei-zhi-shuo-ming-wu-jie-dian-shen-fen-pei-zhi-wen-jian-nodeinfo.properties"></a>
 
 `nodeInfo.properties` 主要包括了节点身份信息。配置内容示例如下：
 

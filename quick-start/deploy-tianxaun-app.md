@@ -1,5 +1,3 @@
-# 应用部署示例
-
 在开始本教程前，请先确保已经按照 [快速搭建天玄链](./depoly-tianxaun-chain/README.md) 在服务器上部署好了一条测试链。
 
 本教程将在 <mark>*Windows*</mark> 环境下，使用 *IntelliJ IDEA* 进行，方便读者基于此 *Demo* 进行开发，所以请确保在运行 *Demo* 代码的机器上具备以下环境。
@@ -8,7 +6,7 @@
 * **Oracle JDK**：Java应用需要依赖 [*Oracle JDK*](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html) ，且 *JDK* 版本不低于 1.8.0u201
 * **Maven**：项目需要依赖 [*Maven*](https://archive.apache.org/dist/maven/maven-3/3.3.9/) ，且版本不低于 3.3.9
 
-## 下载Demo物料包
+# 2.1. 下载Demo物料包
 
 从 *GitHub* 上下载 *Demo* 示例代码，该示例代码会使用天玄的 *Web3j SDK* 与天玄链交互，模拟部署应用合约并向合约发起交易。
 
@@ -21,7 +19,7 @@ git clone https://github.com/TianXuan-Chain/thanos-web3j.git
 git clone https://github.com/TianXuan-Chain/thanos-demo.git
 ```
 
-## 配置 IntelliJ IDEA <a href="#id2.2-bu-shu-di-yi-ge-tian-xuan-ying-yong-pei-zhi-maven-he-jdk" id="id2.2-bu-shu-di-yi-ge-tian-xuan-ying-yong-pei-zhi-maven-he-jdk"></a>
+# 2.2. 配置 IntelliJ IDEA <a href="#id2.2-bu-shu-di-yi-ge-tian-xuan-ying-yong-pei-zhi-maven-he-jdk" id="id2.2-bu-shu-di-yi-ge-tian-xuan-ying-yong-pei-zhi-maven-he-jdk"></a>
 
 **配置 *JDK***
 
@@ -41,7 +39,7 @@ git clone https://github.com/TianXuan-Chain/thanos-demo.git
     </figure>
 </div>
 
-## 编译 thanos-common
+# 2.3. 编译 thanos-common
 
 首先，由于 *thanos-common* 依赖于 `bctls-gm-jdk15on.jar` 文件，所以请先下载好的物料包中找到 `thanos-package-generate/dependenies/jar/bctls-gm/bctls-gm-jdk15on.jar` 文件。也可以直接在此处获取：[bctls-gm-jdk15on.jar 文件下载](https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bctls-gm/bctls-gm-jdk15on.jar)
 
@@ -62,7 +60,7 @@ mvn install:install-file -Dfile=bctls-gm-jdk15on.jar -DgroupId=org.bouncycastle 
 
 编译执行成功后，`thanos-common.jar` 会被加载到本地仓库中。
 
-## 编译 thanos-web3j
+# 2.4. 编译 thanos-web3j
 
 使用 *IntelliJ IDEA* 打开 *thanos-web3j* 项目，执行 `gradle publishToMavenLocal` （如果本地安装了 *gradle* ，也可以通过 *cmd* 执行）。
 
@@ -75,7 +73,7 @@ mvn install:install-file -Dfile=bctls-gm-jdk15on.jar -DgroupId=org.bouncycastle 
 
 执行成功，`thanos-web3j.jar` 将会被加载到本地 *Maven* 库中。
 
-## 运行 Demo 应用代码 <a href="#id2.2-bu-shu-di-yi-ge-tian-xuan-ying-yong-yun-xing-demo-ying-yong-dai-ma" id="id2.2-bu-shu-di-yi-ge-tian-xuan-ying-yong-yun-xing-demo-ying-yong-dai-ma"></a>
+# 2.5. 运行 Demo 应用代码 <a href="#id2.2-bu-shu-di-yi-ge-tian-xuan-ying-yong-yun-xing-demo-ying-yong-dai-ma" id="id2.2-bu-shu-di-yi-ge-tian-xuan-ying-yong-yun-xing-demo-ying-yong-dai-ma"></a>
 
 使用 *IntelliJ IDEA* 打开 *thanos-demo* 项目，配置 *Maven* 和 *JDK* ，注意 *Maven* 本地仓库路径需要和打包 *thanos-web3j* 时的 *Maven* 本地仓库路径一致。
 

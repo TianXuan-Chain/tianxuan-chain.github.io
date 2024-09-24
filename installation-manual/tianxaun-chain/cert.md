@@ -1,6 +1,4 @@
-# 证书说明
-
-## 概述 <a href="#id3.1.4-zheng-shu-shuo-ming-yi-gai-shu" id="id3.1.4-zheng-shu-shuo-ming-yi-gai-shu"></a>
+## 1.4.1. 概述 <a href="#id3.1.4-zheng-shu-shuo-ming-yi-gai-shu" id="id3.1.4-zheng-shu-shuo-ming-yi-gai-shu"></a>
 
 天玄采用面向 *CA* 的节点准入机制，支持任意多级的证书结构，保障信息保密性、认证性、完整性、不可抵赖性。
 
@@ -19,7 +17,7 @@
 | .crt | 证书文件   |
 | .csr | 证书请求文件 |
 
-## 角色定义 <a href="#id3.1.4-zheng-shu-shuo-ming-er-jue-se-ding-yi" id="id3.1.4-zheng-shu-shuo-ming-er-jue-se-ding-yi"></a>
+## 1.4.2. 角色定义 <a href="#id3.1.4-zheng-shu-shuo-ming-er-jue-se-ding-yi" id="id3.1.4-zheng-shu-shuo-ming-er-jue-se-ding-yi"></a>
 
 天玄证书结构中，共有三种角色，分别是联盟链委员会管理员、机构、节点。
 
@@ -62,7 +60,7 @@ node.key    #节点私钥
 chain.crt   #链式证书文件，由 ca.crt agency.crt node.crt 合并而成
 ```
 
-## 证书生成流程 <a href="#id3.1.4-zheng-shu-shuo-ming-san-zheng-shu-sheng-cheng-liu-cheng" id="id3.1.4-zheng-shu-shuo-ming-san-zheng-shu-sheng-cheng-liu-cheng"></a>
+## 1.4.3. 证书生成流程 <a href="#id3.1.4-zheng-shu-shuo-ming-san-zheng-shu-sheng-cheng-liu-cheng" id="id3.1.4-zheng-shu-shuo-ming-san-zheng-shu-sheng-cheng-liu-cheng"></a>
 
 注意：需要安装好 *GmSSL-v2* ，可参考 [GmSSL-v2 安装](../../installation-manual/tianxaun-chain/installation.md#前置依赖软件)
 
@@ -198,7 +196,7 @@ keytool -keystore keystore.jks -importcert -alias node_key -storepass 123456 -fi
 keytool -keystore truststore.jks  -importcert  -storepass 123456 -file ca.crt
 ```
 
-## 节点证书续期操作 <a href="#id3.1.4-zheng-shu-shuo-ming-si-jie-dian-zheng-shu-xu-qi-cao-zuo" id="id3.1.4-zheng-shu-shuo-ming-si-jie-dian-zheng-shu-xu-qi-cao-zuo"></a>
+## 1.4.4. 节点证书续期操作 <a href="#id3.1.4-zheng-shu-shuo-ming-si-jie-dian-zheng-shu-xu-qi-cao-zuo" id="id3.1.4-zheng-shu-shuo-ming-si-jie-dian-zheng-shu-xu-qi-cao-zuo"></a>
 
 当证书过期时，需要用户使用当前节点私钥重新申请证书，操作如下：
 
@@ -225,7 +223,7 @@ cat ca.crt agency.crt  node.crt > chain.crt
 
 **3）将生成的节点密钥库文件添加至节点对应目录下，如 `node0` 的 `~/thanos-chain/node0/resource/tls` 目录**
 
-## 三级证书续期流程 <a href="#id3.1.4-zheng-shu-shuo-ming-wu-san-ji-zheng-shu-xu-qi-liu-cheng" id="id3.1.4-zheng-shu-shuo-ming-wu-san-ji-zheng-shu-xu-qi-liu-cheng"></a>
+## 1.4.5. 三级证书续期流程 <a href="#id3.1.4-zheng-shu-shuo-ming-wu-san-ji-zheng-shu-xu-qi-liu-cheng" id="id3.1.4-zheng-shu-shuo-ming-wu-san-ji-zheng-shu-xu-qi-liu-cheng"></a>
 
 当整条链的证书均已过期时，需要重新对整条链的证书进行续期操作，续期证书的OpenSSL命令与证书生成流程基本相同，简要步骤如下：
 

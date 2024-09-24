@@ -1,6 +1,4 @@
-# 软件要求
-
-## 要求清单 <a href="#id2.2-ruan-jian-yao-qiu-yao-qiu-qing-dan" id="id2.2-ruan-jian-yao-qiu-yao-qiu-qing-dan"></a>
+## 1.2.1. 要求清单 <a href="#id2.2-ruan-jian-yao-qiu-yao-qiu-qing-dan" id="id2.2-ruan-jian-yao-qiu-yao-qiu-qing-dan"></a>
 
 天玄链和网关提供一键安装部署的脚本，方便用户快速搭建一条测试链。
 
@@ -15,9 +13,9 @@
   * Oracle JDK - 1.8
   * Crudini
 
-## 安装教程 <a href="#id2.2-ruan-jian-yao-qiu-an-zhuang-jiao-cheng" id="id2.2-ruan-jian-yao-qiu-an-zhuang-jiao-cheng"></a>
+## 1.2.2. 安装教程 <a href="#id2.2-ruan-jian-yao-qiu-an-zhuang-jiao-cheng" id="id2.2-ruan-jian-yao-qiu-an-zhuang-jiao-cheng"></a>
 
-### Oracle JDK \[1.8] 安装 <a href="#id2.2-ruan-jian-yao-qiu-oraclejdk1.8-an-zhuang-oraclejdk" id="id2.2-ruan-jian-yao-qiu-oraclejdk1.8-an-zhuang-oraclejdk"></a>
+### 1.2.2.1. Oracle JDK \[1.8] 安装 <a href="#id2.2-ruan-jian-yao-qiu-oraclejdk1.8-an-zhuang-oraclejdk" id="id2.2-ruan-jian-yao-qiu-oraclejdk1.8-an-zhuang-oraclejdk"></a>
 
 ```sh
 # 创建新的文件夹，安装Java 8或以上的版本，将下载的jdk放在software目录
@@ -54,7 +52,7 @@ securerandom.source=file:/dev/random
 securerandom.source=file:/dev/urandom
 ```
 
-### Maven \[3.3.9] 安装 <a href="#id2.2-ruan-jian-yao-qiu-maven3.3.9-an-zhuang-maven" id="id2.2-ruan-jian-yao-qiu-maven3.3.9-an-zhuang-maven"></a>
+### 1.2.2.2. Maven \[3.3.9] 安装 <a href="#id2.2-ruan-jian-yao-qiu-maven3.3.9-an-zhuang-maven" id="id2.2-ruan-jian-yao-qiu-maven3.3.9-an-zhuang-maven"></a>
 
 ```sh
 # 下载安装文件
@@ -91,7 +89,7 @@ mvn -v
 </mirror>
 ```
 
-### Git 安装 <a href="#id2.2-ruan-jian-yao-qiu-git-an-zhuang-git" id="id2.2-ruan-jian-yao-qiu-git-an-zhuang-git"></a>
+### 1.2.2.3. Git 安装 <a href="#id2.2-ruan-jian-yao-qiu-git-an-zhuang-git" id="id2.2-ruan-jian-yao-qiu-git-an-zhuang-git"></a>
 
 下载开发部署工具的源码需要依赖 *Git* ，安装命令如下：
 
@@ -110,7 +108,7 @@ sudo yum install -y git
 * 将自己的 *github* 账户私钥上传到 `~/.ssh/` 目录下
 * 修改私钥访问权限 `chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub`
 
-### Crudini 安装 <a href="#id2.2-ruan-jian-yao-qiu-crudini-an-zhuang-crudini" id="id2.2-ruan-jian-yao-qiu-crudini-an-zhuang-crudini"></a>
+### 1.2.2.4. Crudini 安装 <a href="#id2.2-ruan-jian-yao-qiu-crudini-an-zhuang-crudini" id="id2.2-ruan-jian-yao-qiu-crudini-an-zhuang-crudini"></a>
 
 机器需要安装 *crudini* 。
 
