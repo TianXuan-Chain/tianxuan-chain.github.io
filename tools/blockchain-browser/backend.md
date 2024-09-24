@@ -136,12 +136,12 @@ tail -f /root/logs/thanos-browser.log
 
 注：标题中${your_error_partition}为报错日期，根据实际报错日志填写sql
 
-```
+```sql
 #SQL中的日期填写报错日期+1
 ALTER TABLE thanos_evm_transaction ADD PARTITION(PARTITION p${your_error_partition} + 1 VALUES LESS THAN (${your_error_partition} + 1) ENGINE = InnoDB);
 ```
 
-```
+```sql
 例：
 报错日志：java.sql.SQLException: Table has no partition for value 20240923
 执行SQL:ALTER TABLE thanos_evm_transaction ADD PARTITION(PARTITION p20240924 VALUES LESS THAN (20240924) ENGINE = InnoDB);
@@ -278,7 +278,7 @@ Reload privilege tables now? [Y/n] <– 是否重新加载权限表，回车
 mysql -uroot -p -h localhost -P 3306
 ```
 
-* 授权root用户远程访问
+* 授权root用户远程访问(远程访问需要开放服务器3306端口)
 
 ```sql
 mysql > GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
@@ -303,7 +303,7 @@ mysql -utest -p123456 -h localhost -P 3306
 * 创建数据库
 
 ```sql
-mysql > create database thanos_browser;
+CREATE DATABASE IF NOT EXISTS thanos_browser DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
 ```
 
   

@@ -5,7 +5,7 @@
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/区块链浏览器首页.png" alt="区块链浏览器首页" style="width: 100%; max-width: 600px; height: auto;">
-        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图1. 区块链浏览器</figcaption>
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">区块链浏览器</figcaption>
     </figure>
 </div>
 
@@ -18,7 +18,7 @@
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/区块链信息展示模块.png" alt="区块链信息展示模块" style="width: 100%; max-width: 600px; height: auto;">
-        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图2. 区块链信息展示模块</figcaption>
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">区块链信息展示模块</figcaption>
     </figure>
 </div>
 
@@ -59,7 +59,7 @@
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/区块链浏览器首页.png" alt="区块链浏览器首页" style="width: 100%; max-width: 600px; height: auto;">
-        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图3. 区块链浏览器</figcaption>
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">区块链浏览器</figcaption>
     </figure>
 </div>
 
@@ -68,13 +68,13 @@
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/浏览器区块列表.png" alt="区块列表" style="width: 100%; max-width: 600px; height: auto;">
-        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图4. 区块列表</figcaption>
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">区块列表</figcaption>
     </figure>
 </div>
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/浏览器区块详情.png" alt="区块详情" style="width: 100%; max-width: 600px; height: auto;">
-        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图5. 区块详情</figcaption>
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">区块详情</figcaption>
     </figure>
 </div>
 
@@ -83,12 +83,12 @@
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/浏览器交易列表.png" alt="交易列表" style="width: 100%; max-width: 600px; height: auto;">
-        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图6. 交易列表</figcaption>
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">交易列表</figcaption>
     </figure>
 </div>
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/浏览器交易详情.png" alt="交易详情" style="width: 100%; max-width: 600px; height: auto;">
-        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图7. 交易详情</figcaption>
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">交易详情</figcaption>
     </figure>
 </div>
