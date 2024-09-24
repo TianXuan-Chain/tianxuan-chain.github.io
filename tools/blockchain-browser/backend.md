@@ -1,3 +1,6 @@
+
+本教程脚本运行环境需要在 <mark>*Linux*</mark> 系统中进行，系统版本要求请见：[硬件需求](../../quick-start/depoly-tianxaun-chain/hardware-requirement.md)。
+
 ## 1.2.1. 功能说明
 
 本工程是区块链浏览器的后端服务，功能是解析天玄链节点数据储存数据库，向前端提供数据接口，页面展示。
