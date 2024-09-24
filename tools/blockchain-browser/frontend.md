@@ -24,11 +24,16 @@ git clone https://gitlab.fuxi.netease.com:8081/thanos-blockchain/thanos-browser-
 
 ### 2.2 打包
 
-下载好node后执行npm i下载依赖，最后执行npm run build即可(npm 下载及ssh绑定流程在服务端教程中介绍)，打包产物在根目录下dist文件夹中。
+```sh
+#进入项目文件夹
+cd thanos-browser-frontend
+#下载依赖(下载好node执行以下两步)
+npm i
+#打包
+npm run build
+```
 
-### 2.3 部署云端服务器
-
-部署云服务器可参考具体服务器的api或网络教程，示例：[阿里云部署](https://blog.csdn.net/weixin_43239880/article/details/129434402)。
+### 2.3 nginx反向代理
 
 #### 2.3.1 启动nginx
 
@@ -41,8 +46,10 @@ nginx
 
 #### 2.3.2 将打包产物放到服务器上
 
-可以使用xshell、FinalShell链接云端服务器，并用xftp上传将dist文件上传到你想要的文件夹目录下。
-
+```sh
+#将dist文件复制到nginx
+cp -r dist /usr/share/nginx/html
+```
 #### 2.3.3 nginx配置
 
 先找到默认的nginx配置文件路径
@@ -58,6 +65,11 @@ nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
 其中 /usr/local/nginx/conf/nginx.conf 就是配置config文件路径
 
 修改nginx.conf：
+
+```sh
+#路径根据nginx -t输出填写
+vim /usr/local/nginx/conf/nginx.conf
+```
 
 * 修改前端服务的ip地址和端口。
 * 修改前端文件的路径,直接指向已拉取代码的dist目录。并且如果有需要请修改nginx的user配置，换成对应的user用户（有dist目录访问权限的用户）
@@ -75,7 +87,7 @@ server {
     }
 
     location  /  {
-        root   /usr/share/nginx/html; #步骤2、前端文件路径，修改为你上传dist包的路径地址
+        root   /usr/share/nginx/html/dist; #步骤2、前端文件路径，修改为你上传dist包的路径地址
         index  index.html index.htm;
         try_files $uri $uri/ /index.html;    
     }
