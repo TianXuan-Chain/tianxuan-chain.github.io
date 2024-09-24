@@ -2,7 +2,7 @@
 
 ## 平台介绍
 
-* [1. 天玄区块链](overview.md)
+* [1. 天玄链](overview.md)
 * [2. 版本信息](introduce/tianxaun-chain-ver.md)
 
 ## 快速开始 <a href="#quick-start" id="quick-start"></a>
@@ -40,8 +40,8 @@
 
 * [1. 区块链浏览器](tools/blockchain-browser/README.md)
   * [1.1. 使用介绍](tools/blockchain-browser/introduce.md)
-  * [1.2. 浏览器后端部署](tools/blockchain-browser/backend.md)
-  * [1.3. 浏览器前端部署](tools/blockchain-browser/frontend.md)
+  * [1.2. 后端部署](tools/blockchain-browser/backend.md)
+  * [1.3. 前端部署](tools/blockchain-browser/frontend.md)
 
 ## 系统架构 <a href="#architecture" id="architecture"></a>
 

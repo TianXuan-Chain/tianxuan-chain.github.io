@@ -1,10 +1,11 @@
-# 浏览器后端服务
 
-## 1.功能说明
+本教程脚本运行环境需要在 <mark>*Linux*</mark> 系统中进行，系统版本要求请见：[硬件需求](../../quick-start/depoly-tianxaun-chain/hardware-requirement.md)。
+
+## 1.2.1. 功能说明
 
 本工程是区块链浏览器的后端服务，功能是解析天玄链节点数据储存数据库，向前端提供数据接口，页面展示。
 
-## 2.前提条件
+## 1.2.2. 前提条件
 
 | 环境  | 版本                |
 | ----- | ------------------- |
@@ -12,10 +13,10 @@
 | MySQL | MySQL-5.6或以上版本 |
 | Maven | Maven-3.3或以上版本 |
 
-## 3.部署说明
+## 1.2.3. 部署说明
 
-### 3.1下载物料包
-### 获取相关物料包（thanos-web3j和thanos-common已推到本地 Maven 仓库中的直接跳过即可）
+### 1.2.3.1. 下载物料包
+* 获取相关物料包（thanos-web3j和thanos-common已推到本地 Maven 仓库中的直接跳过即可）
 
 需要从 *GitHub* 上拉取 `thanos-web3j` 代码，由于 `thanos-web3j` 编译依赖于 `thanos-common.jar` ，所以还需要拉取 `thanos-common` 代码。
 
@@ -25,11 +26,11 @@ git clone https://github.com/TianXuan-Chain/thanos-web3j.git # thanos-web3j代�
 git clone https://github.com/TianXuan-Chain/thanos-common.git # thanos-common代码库 
 ```
 
-### 编译 <a href="#id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao" id="id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao"></a>
+* 编译
 
 按照依赖顺序，在编译 *thanos-common* 前，还需将其依赖的 `bctls-gm-jdk15on.jar` 加载到本地 *Maven* 仓库当中。
 
-```bash
+```
 mvn install:install-file -Dfile=bctls-gm-jdk15on.jar -DgroupId=org.bouncycastle -DartifactId=bctls-gm-jdk15on -Dversion=0.1 -Dpackaging=jar
 ```
 
@@ -70,7 +71,7 @@ cd /root/thanos-web3j
 | dist/solc      | 存放合约编译工具,solc需要安装到/usr/local/bin/         |
 ```
 
-如果 `compile.sh` 脚本执行失败，可能是服务器存在网络连接问题或者系统不兼容。可以手动安装 gradle 后进行编译。gradle 安装流程如下：
+如果 `compile.sh` 脚本执行停滞、执行失败等情况，可能是服务器存在网络连接问题或者系统不兼容。可以手动安装 gradle 后进行编译。gradle 安装流程如下：
 
 ```bash
 # Linux 系统
@@ -87,7 +88,7 @@ sudo vim /etc/profile.d/gradle.sh
 ```
 
 ```editorconfig
-# 将下面下面写入 gradle.sh 中
+# 将下面写入 gradle.sh 中
 export GRADLE_HOME=/software/gradle/gradle-5.6.2
 export PATH=${GRADLE_HOME}/bin:${PATH}
 ```
@@ -133,18 +134,18 @@ gradle publishToMavenLocal
 ```
 
 
-### 3.2拉取代码
+### 1.2.3.2. 拉取代码
 
 ```sh
 cd /root
-git clone ssh://git@gitlab.fuxi.netease.com:2222/thanos-blockchain/thanos-browser-backend.git
+git clone https://github.com/TianXuan-Chain/thanos-browser-backend.git
 ```
 
 ```sh
 cd /root/thanos-browser-backend
 ```
 
-### 3.3修改配置
+### 1.2.3.3. 修改配置
 
 * 进入配置文件
 
@@ -169,13 +170,13 @@ thanos.rpc.ip.List=127.0.0.1:8580
 chain.node.list=[{"ip":"127.0.0.1","rpcPort":8580}]
 ```
 
-### 3.4编译代码
+### 1.2.3.4. 编译代码
 
 ```sh
 mvn clean package -U -Dmaven.test.skip=true
 ```
 
-### 3.5数据初始化
+### 1.2.3.5. 数据初始化
 
 * 新建数据库
 
@@ -201,7 +202,7 @@ exit;
 mysql -u ${your_db_account} -p${your_db_password} thanos_browser < thanos_browser.sql
 ```
 
-### 3.6服务启动
+### 1.2.3.6. 服务启动
 
 * 拷贝jar包
 
@@ -216,7 +217,7 @@ cd /root
 nohup java -jar thanos-browser-web-1.0-SNAPSHOT.jar >/dev/null 2>&1 &
 ```
 
-### 3.7查看日志
+### 1.2.3.7. 查看日志
 
 ```sh
 #启动日志
@@ -225,9 +226,11 @@ tail -f /root/logs/thanos-browser-normal.log
 tail -f /root/logs/thanos-browser.log
 ```
 
-## 4.问题排查
+## 1.2.4. 问题排查
 
-### 4.1 同步区块信息，报错：java.sql.SQLException: Table has no partition for value ${your_error_partition}
+### 1.2.4.1. 同步区块信息报错
+
+`java.sql.SQLException: Table has no partition for value ${your_error_partition}`
 
 数据库表分区未创建
 
@@ -244,9 +247,9 @@ ALTER TABLE thanos_evm_transaction ADD PARTITION(PARTITION p${your_error_partiti
 执行SQL:ALTER TABLE thanos_evm_transaction ADD PARTITION(PARTITION p20240924 VALUES LESS THAN (20240924) ENGINE = InnoDB);
 ```
 
-## 5.安装教程
+## 1.2.5. 安装教程
 
-### 5.1Oracle JDK \[1.8] 安装
+### 1.2.5.1. Oracle JDK \[1.8] 安装
 
 ```sh
 # 创建新的文件夹，安装Java 8或以上的版本，将下载的jdk放在software目录
@@ -272,7 +275,7 @@ source /etc/profile
 java -version
 ```
 
-### 5.2Maven \[3.3.9] 安装
+### 1.2.5.2. Maven \[3.3.9] 安装
 
 ```sh
 # 下载安装文件
@@ -309,7 +312,7 @@ mvn -v
 </mirror>
 ```
 
-### 5.3Git 安装
+### 1.2.5.3. Git 安装
 
 下载开发部署工具的源码需要依赖 *Git* ，安装命令如下：
 
@@ -325,11 +328,11 @@ Ubuntu:sudo apt install -y git
 * 启动ssh-agent `eval $(ssh-agent)`
 * 添加私钥到ssh-agent `ssh-add ~/.ssh/id_rsa`
 
-### 5.4MySQL安装
+### 1.2.5.4. MySQL安装
 
 *MariaDB*数据库是 MySQL 的一个分支，主要由开源社区在维护，采用 GPL 授权许可。*MariaDB*完全兼容 MySQL，包括API和命令行。其他安装方式请参考[MySQL官网](https://dev.mysql.com/downloads/mysql/)。
 
-#### 5.4.1安装MariaDB
+**安装MariaDB**
 
 * 安装命令
 
@@ -367,7 +370,7 @@ Remove test database and access to it? [Y/n] <– 是否删除test数据库，�
 Reload privilege tables now? [Y/n] <– 是否重新加载权限表，回车
 ```
 
-#### 5.4.2授权访问和添加用户
+**授权访问和添加用户**
 
 * 使用root用户登录，密码为初始化设置的密码
 
@@ -389,7 +392,7 @@ mysql > GRANT ALL PRIVILEGES ON *.* TO 'test'@localhost IDENTIFIED BY '123456' W
 mysql > flush PRIVILEGES;
 ```
 
-#### 5.4.3测试连接和创建数据库
+**测试连接和创建数据库**
 
 * 登录数据库
 

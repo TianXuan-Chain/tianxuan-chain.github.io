@@ -1,11 +1,9 @@
-# 日志说明
-
-## 概述 <a href="#id3.1.5-ri-zhi-shuo-ming-yi-gai-shu" id="id3.1.5-ri-zhi-shuo-ming-yi-gai-shu"></a>
+## 1.5.1. 概述 <a href="#id3.1.5-ri-zhi-shuo-ming-yi-gai-shu" id="id3.1.5-ri-zhi-shuo-ming-yi-gai-shu"></a>
 
 天玄节点的所有日志都输出到 *logs* 目录下
  `thanos-chain-%d{yyyy-MM-dd-'h'HH}.log` 的文件中，且定制了日志格式，方便用户通过日志查看链运行状态。日志配置说明请参考：[日志管理配置文件](configuration.md#日志管理配置文件-chain-logbackxml)。
 
-## 日志格式 <a href="#id3.1.5-ri-zhi-shuo-ming-er-ri-zhi-ge-shi" id="id3.1.5-ri-zhi-shuo-ming-er-ri-zhi-ge-shi"></a>
+## 1.5.2. 日志格式 <a href="#id3.1.5-ri-zhi-shuo-ming-er-ri-zhi-ge-shi" id="id3.1.5-ri-zhi-shuo-ming-er-ri-zhi-ge-shi"></a>
 
 每一条日志记录格式如下：
 
@@ -24,7 +22,7 @@ time log_level [module_name] content
 * **module_name**：模块关键字，如网络模块关键字为 *network*，共识模块关键字为 *consensus*
 * **content**：日志记录内容
 
-## 日志模块关键字 <a href="#id3.1.5-ri-zhi-shuo-ming-san-ri-zhi-mo-kuai-guan-jian-zi" id="id3.1.5-ri-zhi-shuo-ming-san-ri-zhi-mo-kuai-guan-jian-zi"></a>
+## 1.5.3. 日志模块关键字 <a href="#id3.1.5-ri-zhi-shuo-ming-san-ri-zhi-mo-kuai-guan-jian-zi" id="id3.1.5-ri-zhi-shuo-ming-san-ri-zhi-mo-kuai-guan-jian-zi"></a>
 
 *thanos-chain* 日志中核心模块关键字如下：
 

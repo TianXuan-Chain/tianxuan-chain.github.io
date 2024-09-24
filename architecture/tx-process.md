@@ -1,6 +1,4 @@
-# 天玄链交易流程
-
-## 概述
+## 2.1. 概述
 
 在天玄中，智能合约是一段完整的业务代码，其中定义了对区块链数据状态读写的规则。而交易则是用户发起对智能合约程序的调用，实现对数据状态的变更媒介，其记录了区块链中数据状态发生变化的一切。交易的执行过程反映了用户在区块链上的活动，也是区块链系统的主要工作。
 
@@ -18,9 +16,9 @@
     </figure>
 </div>
 
-## 交易流程
+## 2.2. 交易流程
 
-### 1. 交易发起 <a href="#id5.2-qu-kuai-lian-jiao-yi-liu-cheng-1-jiao-yi-fa-qi" id="id5.2-qu-kuai-lian-jiao-yi-liu-cheng-1-jiao-yi-fa-qi"></a>
+### 2.2.1. 交易发起 <a href="#id5.2-qu-kuai-lian-jiao-yi-liu-cheng-1-jiao-yi-fa-qi" id="id5.2-qu-kuai-lian-jiao-yi-liu-cheng-1-jiao-yi-fa-qi"></a>
 
 当用户与应用客户端交互式，发生了区块链状态变更的操作，客户端需要通过天玄 *SDK* 构造一笔带用户签名的有效交易，以在区块链中执行这些状态变更。该笔交易包含：
 
@@ -36,19 +34,19 @@
 
 当客户端完成交易封装，则选择一个 *RPC* 节点，将交易发送至 *RPC* 节点。
 
-### 2. 交易共识 <a href="#id5.2-qu-kuai-lian-jiao-yi-liu-cheng-2-jiao-yi-gong-shi" id="id5.2-qu-kuai-lian-jiao-yi-liu-cheng-2-jiao-yi-gong-shi"></a>
+### 2.2.2. 交易共识 <a href="#id5.2-qu-kuai-lian-jiao-yi-liu-cheng-2-jiao-yi-gong-shi" id="id5.2-qu-kuai-lian-jiao-yi-liu-cheng-2-jiao-yi-gong-shi"></a>
 
 当 *RPC* 节点接收到交易时，先进入交易池进行交易的预处理，再进行具体的共识排序、出块。具体如下：
 
-#### Gateway交易池处理
+#### 2.2.2.1. Gateway交易池处理
 
 *Gateway* 之前需要对交易交易进行去重、签名验证。前者目的是在交易池的广播过程中去除重复的交易，减少广播重复交易的带宽消耗和计算消耗。后者的目的是验证交易签名的有效性。若不合法或者重复交易产生，将会被直接丢弃，不进入交易池。若合法则会通过 *P2P* 网络对交易进行广播，让交易尽可能到达所有节点。
 
-#### 共识处理
+#### 2.2.2.2. 共识处理
 
 当交易被缓存到 *Gateway* 中时，共识模块会定时从交易池中拉去一定数量的交易进行排序（如按照 *FIFO* 原则排序）。按照区块数据说明文档，将该批次的交易进行封装，再由共识协议对区块进行共识。在联盟链中，共识协议仅承担排序的作用，目的是通过两阶段或者三阶段的广播让全网达成某个高度 *h* 的区块为 *b* 的共识，即 *<h，b>* 在每个节点的试图上必须一致。
 
-### 3. 交易执行 <a href="#id5.2-qu-kuai-lian-jiao-yi-liu-cheng-3-jiao-yi-zhi-xing" id="id5.2-qu-kuai-lian-jiao-yi-liu-cheng-3-jiao-yi-zhi-xing"></a>
+### 2.2.3. 交易执行 <a href="#id5.2-qu-kuai-lian-jiao-yi-liu-cheng-3-jiao-yi-zhi-xing" id="id5.2-qu-kuai-lian-jiao-yi-liu-cheng-3-jiao-yi-zhi-xing"></a>
 
 在节点对区块完成共识后，按照共识顺序，将被执行引擎按照区块为单位进行交易的批次执行。
 
@@ -60,7 +58,7 @@
 
 2）串行慢速路径，若并行执行冲突，说明 *DAG* 构造存在问题，在当前区块回退到串行执行，保证执行后状态的一致性。
 
-### 4. 状态变更持久化 <a href="#id5.2-qu-kuai-lian-jiao-yi-liu-cheng-4-zhuang-tai-bian-geng-chi-jiu-hua" id="id5.2-qu-kuai-lian-jiao-yi-liu-cheng-4-zhuang-tai-bian-geng-chi-jiu-hua"></a>
+### 2.2.4. 状态变更持久化 <a href="#id5.2-qu-kuai-lian-jiao-yi-liu-cheng-4-zhuang-tai-bian-geng-chi-jiu-hua" id="id5.2-qu-kuai-lian-jiao-yi-liu-cheng-4-zhuang-tai-bian-geng-chi-jiu-hua"></a>
 
 在执行完成后，持久化内容分为两部分：
 * 状态持久化

@@ -1,8 +1,6 @@
-# 构建节点安装包
-
 本教程脚本运行环境需要在 <mark>*Linux*</mark> 系统中进行，系统版本要求请见：[硬件需求](./hardware-requirement.md)。
 
-## 下载物料包
+## 1.3.1 下载物料包
 
 ```bash
 cd ~ #使用 root 作为起始工作目录
@@ -12,14 +10,14 @@ git clone https://github.com/TianXuan-Chain/thanos-package-generate.git #拉取�
 cd ./thanos-package-generate #进入工作目录
 ```
 
-## 主要配置
+## 1.3.2 主要配置
 
 找到 `config.ini` 文件。
 
 ```bash
 vim config.ini #修改配置文件
 ```
-### \[chain-nodes] 配置项
+### 1.3.2.1 \[chain-nodes] 配置项
 找到 \[*chain-nodes*] 部分的配置，初始化服务器和节点的数量
 
 ```editorconfig
@@ -53,7 +51,7 @@ node1=101.44.225.133  10.0.11.5  0.0.0.0  1  agency1
 
 上面配置中初始设置两个服务器 *agency* 和 *agency1*，其中 *agency* 上运行两个节点，*agency1* 上运行一个节点，一共三个节点。
 
-### \[chain-ports] 和 \[gateway-ports] 配置项
+### 1.3.2.2 \[chain-ports] 和 \[gateway-ports] 配置项
 
 一般使用默认值即可。但需要在服务器对应安全组中打开，并注意以下两个事项：
 * 如果一台服务器上启动多个节点，节点使用的端口会以默认端口为基准往后递增 1
@@ -75,7 +73,7 @@ web3_http_port = 8580    #web3_http_port端口，用于向web3sdk提供http接�
 listen_chain_port = 7180    #监听chain的端口，用于接收共识完成的区块
 ```
 
-## 生成安装包
+## 1.3.3. 生成安装包
 
 配置修改好后，在项目目录下，执行以下命令。
 
@@ -101,12 +99,12 @@ build
 
 将压缩包上传到 *Ip* 对应的服务器上，就可以进行节点的安装和运行即可。
 
-## 其他配置说明 <a href="#id2.3-gou-jian-jie-dian-an-zhuang-bao-qi-ta-pei-zhi-shuo-ming" id="id2.3-gou-jian-jie-dian-an-zhuang-bao-qi-ta-pei-zhi-shuo-ming"></a>
+## 1.3.4. 其他配置说明 <a href="#id2.3-gou-jian-jie-dian-an-zhuang-bao-qi-ta-pei-zhi-shuo-ming" id="id2.3-gou-jian-jie-dian-an-zhuang-bao-qi-ta-pei-zhi-shuo-ming"></a>
 
 注：下面介绍的相关配置，没有必要不需要改动
 
 
-### \[common] 配置项
+### 1.3.4.1. \[common] 配置项
 
 配置一些基础信息
 
@@ -127,7 +125,7 @@ gateway_github_url = https://github.com/TianXuan-Chain/thanos-gateway.git
 # jar_local_path=/root/jar
 ```
 
-### \[tls] 和 \[crypto] 配置项
+### 1.3.4.2. \[tls] 和 \[crypto] 配置项
 
 国密和密钥算法相关配置。
 
@@ -142,7 +140,7 @@ sharding_number = 1    #节点所属分片号，保持默认为 1 即可
 cipher_key_type = AES    #节点对称密钥的算法算法：AES 或 SM4
 ```
 
-### \[maven-repo] 配置项
+### 1.3.4.3. \[maven-repo] 配置项
 
 注意：该配置暂时已废弃，目前可忽略。
 

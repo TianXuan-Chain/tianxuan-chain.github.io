@@ -1,5 +1,5 @@
-# 天玄区块链浏览器
+# 1. 天玄区块链浏览器
 天玄区块链浏览器介绍与部署指南：
-- [介绍](introduce.md)
-- [后端部署](backend.md)
-- [前端部署](frontend.md)
+- [1.1. 使用介绍](introduce.md)
+- [1.2. 后端部署](backend.md)
+- [1.3. 前端部署](frontend.md)

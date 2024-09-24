@@ -1,6 +1,4 @@
-# 快速入门
-
-## 前置条件 <a href="#id4.3.2-kuai-su-ru-men-qian-zhi-tiao-jian" id="id4.3.2-kuai-su-ru-men-qian-zhi-tiao-jian"></a>
+## 3.1.1. 前置条件 <a href="#id4.3.2-kuai-su-ru-men-qian-zhi-tiao-jian" id="id4.3.2-kuai-su-ru-men-qian-zhi-tiao-jian"></a>
 
 在开始本教程前，请确保已经准备好了以下资源
 
@@ -11,13 +9,13 @@
 * **天玄测试链**： 请参考 [快速搭建天玄网络](../../quick-start/depoly-tianxaun-chain/README.md) 搭建，并获取到相应的 *http* 或者 *rpc* 链接
 * **智能合约应用**： 请准备好需要部署的应用合约（本教程涉及的物料包中也提供了两个简单的智能合约示例）
 
-## 编译智能合约 <a href="#id4.3.2-kuai-su-ru-men-bian-yi-zhi-neng-he-yue" id="id4.3.2-kuai-su-ru-men-bian-yi-zhi-neng-he-yue"></a>
+## 3.1.2. 编译智能合约 <a href="#id4.3.2-kuai-su-ru-men-bian-yi-zhi-neng-he-yue" id="id4.3.2-kuai-su-ru-men-bian-yi-zhi-neng-he-yue"></a>
 
 目前天玄链支持 *solidity* 编译及运行最高版本为 0.4.25 ，且必须使用附件提供的 *solc* 编译工具编译合约
 
 编译智能合约部分教程请使用 *Linux* 系统进行，推荐 <mark>*Centos 7+* 或者 *Ubuntu 18+*</mark> 。
 
-### 获取相关物料包 <a href="#id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao" id="id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao"></a>
+### 3.1.2.1 获取相关物料包 <a href="#id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao" id="id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao"></a>
 
 需要从 *GitHub* 上拉取 `thanos-web3j` 代码，由于 `thanos-web3j` 编译依赖于 `thanos-common.jar` ，所以还需要拉取 `thanos-common` 代码。
 
@@ -26,7 +24,7 @@ git clone https://github.com/TianXuan-Chain/thanos-web3j.git # thanos-web3j代�
 git clone https://github.com/TianXuan-Chain/thanos-common.git # thanos-common代码库 
 ```
 
-### 编译 <a href="#id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao" id="id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao"></a>
+### 3.1.2.2 编译 <a href="#id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao" id="id4.3.2-kuai-su-ru-men-huo-qu-sdk-wu-liao-bao"></a>
 
 按照依赖顺序，在编译 *thanos-common* 前，还需将其依赖的 `bctls-gm-jdk15on.jar` 加载到本地 *Maven* 仓库当中。
 
@@ -133,11 +131,11 @@ gradle publishToMavenLocal
 # 可以使用 gradle build 指令
 ```
 
-### 配置 java 运行环境 <a href="#id4.3.2-kuai-su-ru-men-an-zhuang-solc" id="id4.3.2-kuai-su-ru-men-an-zhuang-solc"></a>
+### 3.1.2.3 配置 java 运行环境 <a href="#id4.3.2-kuai-su-ru-men-an-zhuang-solc" id="id4.3.2-kuai-su-ru-men-an-zhuang-solc"></a>
 
 在使用 *Web3j SDK* 时，需要在 *java* 运行环境中（具体为 `$JAVA_HOME/jre/lib/ext` 目录下）添加 `bcprov-jdk15on-1.66.jar` 包。该文件可以在此处获取：[https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bcprov-jdk15on-1.66.jar](https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bcprov-jdk15on-1.66.jar)
 
-### 安装 solc <a href="#id4.3.2-kuai-su-ru-men-an-zhuang-solc" id="id4.3.2-kuai-su-ru-men-an-zhuang-solc"></a>
+### 3.1.2.4 安装 solc <a href="#id4.3.2-kuai-su-ru-men-an-zhuang-solc" id="id4.3.2-kuai-su-ru-men-an-zhuang-solc"></a>
 
 将 `dist/solc` 目录下的可执行文件 `solc` 复制到 `/user/local/bin/` 目录下。
 
@@ -154,7 +152,7 @@ solc --version
 
 有版本信息输出，表示安装成功。
 
-### 编译合约 <a href="#id4.3.2-kuai-su-ru-men-bian-yi-he-yue" id="id4.3.2-kuai-su-ru-men-bian-yi-he-yue"></a>
+### 3.1.2.5 编译合约 <a href="#id4.3.2-kuai-su-ru-men-bian-yi-he-yue" id="id4.3.2-kuai-su-ru-men-bian-yi-he-yue"></a>
 
 将需要编译的 *solidity* 合约代码放置到 `dist/contracts` 目录内，当前目录下有两个示例合约 `HelloWorld.sol` 和 `TokensDemo.sol` 。而后运行 `dist/bin/compile.sh` 脚本。
 
@@ -164,16 +162,16 @@ solc --version
 
 执行成功后，会在 `dist` 文件夹内产生一个 `output` 文件夹，合约编译后对应的 *abi* ，*bin* 以及 *java* 文件（在 `com` 文件夹内）都存放在其中。 *java* 文件是基于 *abi* 与 *bin* 文件生成的，其中*abi* 与以太坊的一致，*abi*相关知识可以在此处了解：[https://docs.soliditylang.org/en/latest/abi-spec.html#](https://docs.soliditylang.org/en/latest/abi-spec.html)
 
-## 部署并使用合约应用 <a href="#id4.3.2-kuai-su-ru-men-bu-shu-bing-shi-yong-ying-yong" id="id4.3.2-kuai-su-ru-men-bu-shu-bing-shi-yong-ying-yong"></a>
+## 3.1.3. 部署并使用合约应用 <a href="#id4.3.2-kuai-su-ru-men-bu-shu-bing-shi-yong-ying-yong" id="id4.3.2-kuai-su-ru-men-bu-shu-bing-shi-yong-ying-yong"></a>
 
-### 前置准备 <a href="#id4.3.2-kuai-su-ru-men-qian-zhi-zhun-bei" id="id4.3.2-kuai-su-ru-men-qian-zhi-zhun-bei"></a>
+### 3.1.3.1. 前置准备 <a href="#id4.3.2-kuai-su-ru-men-qian-zhi-zhun-bei" id="id4.3.2-kuai-su-ru-men-qian-zhi-zhun-bei"></a>
 
 * 开始本部分教程时，默认用户已经准备好了<mark>编译为 *Java* 的合约应用</mark>。
 
 * 这部分教程使用 *IntelliJ IDEA* 进行。如果上述流程和编写应用的不是一台机器 (例如：使用 *Windows* 系统进行)。请参考[应用部署示例](../../quick-start/deploy-tianxaun-app.md)在当前机器重新构建 *Maven* 本地依赖。
 
 
-### 引入 SDK <a href="#id4.3.2-kuai-su-ru-men-yin-ru-sdk" id="id4.3.2-kuai-su-ru-men-yin-ru-sdk"></a>
+### 3.1.3.2. 引入 SDK <a href="#id4.3.2-kuai-su-ru-men-yin-ru-sdk" id="id4.3.2-kuai-su-ru-men-yin-ru-sdk"></a>
 
 **使用 *Gradle* 引入 *SDK***
 
@@ -191,7 +189,7 @@ compile('com.netease.blockchain.thanos:thanos-web3j:1.7.3-SNAPSHOT')
 </dependency>
 ```
 
-### 初始化 SDK 配置 <a href="#id4.3.2-kuai-su-ru-men-chu-shi-hua-sdk-pei-zhi" id="id4.3.2-kuai-su-ru-men-chu-shi-hua-sdk-pei-zhi"></a>
+### 3.1.3.3. 初始化 SDK 配置 <a href="#id4.3.2-kuai-su-ru-men-chu-shi-hua-sdk-pei-zhi" id="id4.3.2-kuai-su-ru-men-chu-shi-hua-sdk-pei-zhi"></a>
 
 **1）通过 new 方法初始化 SystemConfig**
 
@@ -293,7 +291,7 @@ tls {
 SystemConfig systemConfig = ConfigResourceUtil.loadSystemConfig();
 ```
 
-### 初始化链连接器
+### 3.1.3.4. 初始化链连接器
 
 加载日志路径，并使用 *SystemConfig* 初始化 *Web3manager*
 
@@ -302,7 +300,7 @@ ConfigResourceUtil.loadLogConfig(systemConfig.logConfigPath());
 Web3Manager web3Manager = new Web3Manager(systemConfig);
 ```
 
-### SDK 调用
+### 3.1.3.5. SDK 调用
 
 由于 *thanos-web3j* 提供了两种链连接方式（*rpc* 和 *http*），下面分别介绍每种连接方式的调用逻辑。
 

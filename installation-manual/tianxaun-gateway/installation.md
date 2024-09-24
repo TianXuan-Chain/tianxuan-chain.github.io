@@ -1,6 +1,4 @@
-# 安装
-
-## 硬件要求 <a href="#id3.2.1-an-zhuang-yi-huan-jing-yao-qiu" id="id3.2.1-an-zhuang-yi-huan-jing-yao-qiu"></a>
+## 2.1.1 硬件要求 <a href="#id3.2.1-an-zhuang-yi-huan-jing-yao-qiu" id="id3.2.1-an-zhuang-yi-huan-jing-yao-qiu"></a>
 
 | 配置   | 最低配置                                  | 推荐配置   |
 | ---- | ------------------------------------- | ------ |
@@ -11,9 +9,9 @@
 | 操作系统 | CentOS (7及以上 64位) 或 Ubuntu(18.04 64位) |        |
 | JAVA | JDK 1.8                               |        |
 
-## 天玄网关安装 <a href="#id3.2.1-an-zhuang-er-thanosgateway-an-zhuang" id="id3.2.1-an-zhuang-er-thanosgateway-an-zhuang"></a>
+## 2.1.2 天玄网关安装 <a href="#id3.2.1-an-zhuang-er-thanosgateway-an-zhuang" id="id3.2.1-an-zhuang-er-thanosgateway-an-zhuang"></a>
 
-### 前置准备 <a href="#id3.2.1-an-zhuang-1-qian-zhi-zhun-bei" id="id3.2.1-an-zhuang-1-qian-zhi-zhun-bei"></a>
+### 2.1.2.1 前置准备 <a href="#id3.2.1-an-zhuang-1-qian-zhi-zhun-bei" id="id3.2.1-an-zhuang-1-qian-zhi-zhun-bei"></a>
 
 **1）在安装节点网关之前，请确保已经安装并运行了节点应用**
 
@@ -49,7 +47,7 @@ mkdir resource/tls
 
 将 `thanos-gateway.jar` 放在操作目录下，如 `~/thanos-gateway/node0/` 。
 
-### 节点网关系统配置
+### 2.1.2.2 节点网关系统配置
 
 以 `node0` 节点为例，进行网关系统的配置，包括网络端口配置、tls配置、日志配置等。配置文件中各配置项的具体含义参见：[网关配置说明](configuration.md)
 

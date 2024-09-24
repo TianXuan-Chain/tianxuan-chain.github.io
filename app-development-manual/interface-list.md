@@ -1,8 +1,6 @@
-# 天玄链功能接口列表
-
 下列接口的示例中采用 *curl* 命令，*curl* 是一个利用 *url* 语法在命令行下运行的数据传输工具，通过 *curl* 命令发送 *http post* 请求，可以访问天玄链的 *JSON RPC* 接口。*curl* 命令的 *url* 地址设置为节点配置文件监听端口（*gateway.http.port*）。为了格式化 *json* ，使用 *json* 工具进行格式化显示。
 
-## thanos\_clientVersion <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosclientversion" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosclientversion"></a>
+## 4.1. thanos\_clientVersion <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosclientversion" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosclientversion"></a>
 
 **描述**
 
@@ -31,7 +29,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_cl
 }
 ```
 
-## thanos\_sha3 <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanossha3" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanossha3"></a>
+## 4.2. thanos\_sha3 <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanossha3" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanossha3"></a>
 
 **描述**
 
@@ -59,7 +57,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_sh
 }
 ```
 
-## thanos\_net\_version <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosnetversion" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosnetversion"></a>
+## 4.3. thanos\_net\_version <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosnetversion" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosnetversion"></a>
 
 **描述**
 
@@ -87,7 +85,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ne
 }
 ```
 
-## thanos\_protocolVersion <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosprotocolversion" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosprotocolversion"></a>
+## 4.4. thanos\_protocolVersion <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosprotocolversion" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosprotocolversion"></a>
 
 **描述**
 
@@ -115,7 +113,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_pr
 }
 ```
 
-## thanos\_getCompilers <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetcompilers" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetcompilers"></a>
+## 4.5. thanos\_getCompilers <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetcompilers" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetcompilers"></a>
 
 **描述**
 
@@ -145,7 +143,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 }
 ```
 
-## thanos\_sendEthRawTransaction <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanossendethrawtransaction" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanossendethrawtransaction"></a>
+## 4.6. thanos\_sendEthRawTransaction <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanossendethrawtransaction" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanossendethrawtransaction"></a>
 
 **描述**
 
@@ -173,7 +171,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_se
 }
 ```
 
-## thanos\_ethCall <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosethcall" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosethcall"></a>
+## 4.7. thanos\_ethCall <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosethcall" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosethcall"></a>
 
 **描述**
 
@@ -201,7 +199,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d  '{"jsonrpc":"2.0","method":"thanos_e
 }
 ```
 
-## thanos\_getLatestBeExecutedNum <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetlatestbeexecutednum" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetlatestbeexecutednum"></a>
+## 4.8. thanos\_getLatestBeExecutedNum <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetlatestbeexecutednum" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetlatestbeexecutednum"></a>
 
 **描述**
 
@@ -228,7 +226,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 }
 ```
 
-## thanos\_getLatestConsensusNumber <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetlatestconsensusnumber" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetlatestconsensusnumber"></a>
+## 4.9. thanos\_getLatestConsensusNumber <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetlatestconsensusnumber" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetlatestconsensusnumber"></a>
 
 **描述**
 
@@ -256,7 +254,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 }
 ```
 
-## thanos\_getBlockByNumber <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetblockbynumber" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetblockbynumber"></a>
+## 4.10. thanos\_getBlockByNumber <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetblockbynumber" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetblockbynumber"></a>
 
 **描述**
 
@@ -284,7 +282,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 }
 ```
 
-## thanos\_getEthTransactionByHash <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetethtransactionbyhash" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetethtransactionbyhash"></a>
+## 4.11. thanos\_getEthTransactionByHash <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetethtransactionbyhash" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetethtransactionbyhash"></a>
 
 **描述**
 
@@ -312,7 +310,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 }
 ```
 
-## thanos\_getEthTransactionByHashByChain <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetethtransactionbyhashbychain" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetethtransactionbyhashbychain"></a>
+## 4.12. thanos\_getEthTransactionByHashByChain <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetethtransactionbyhashbychain" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetethtransactionbyhashbychain"></a>
 
 **描述**
 
@@ -340,7 +338,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 }
 ```
 
-## thanos\_getEthTransactionsByHashes <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetethtransactionsbyhashes" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetethtransactionsbyhashes"></a>
+## 4.13. thanos\_getEthTransactionsByHashes <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetethtransactionsbyhashes" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetethtransactionsbyhashes"></a>
 
 **描述**
 
@@ -368,7 +366,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 }
 ```
 
-## thanos\_getGlobalNodeEventByHash <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetglobalnodeeventbyhash" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetglobalnodeeventbyhash"></a>
+## 4.14. thanos\_getGlobalNodeEventByHash <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetglobalnodeeventbyhash" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetglobalnodeeventbyhash"></a>
 
 **描述**
 
@@ -396,7 +394,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 }
 ```
 
-## thanos\_getGlobalNodeEventReceiptByHash <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetglobalnodeeventreceiptbyhash" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetglobalnodeeventreceiptbyhash"></a>
+## 4.15. thanos\_getGlobalNodeEventReceiptByHash <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetglobalnodeeventreceiptbyhash" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetglobalnodeeventreceiptbyhash"></a>
 
 **描述**
 
@@ -424,7 +422,7 @@ curl http://127.0.0.1:8080/rpc  -X POST -d '{"jsonrpc":"2.0","method":"thanos_ge
 }
 ```
 
-## thanos\_getGlobalNodeEventByHashByChain <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetglobalnodeeventbyhashbychain" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetglobalnodeeventbyhashbychain"></a>
+## 4.16. thanos\_getGlobalNodeEventByHashByChain <a href="#id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetglobalnodeeventbyhashbychain" id="id4.4-qu-kuai-lian-gong-neng-jie-kou-lie-biao-thanosgetglobalnodeeventbyhashbychain"></a>
 
 **描述**
 

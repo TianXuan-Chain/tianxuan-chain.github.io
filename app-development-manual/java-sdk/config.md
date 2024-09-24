@@ -1,10 +1,8 @@
-# 配置说明
-
-## 概述 <a href="#id4.3.3-pei-zhi-shuo-ming-gai-shu" id="id4.3.3-pei-zhi-shuo-ming-gai-shu"></a>
+## 3.2.1. 概述 <a href="#id4.3.3-pei-zhi-shuo-ming-gai-shu" id="id4.3.3-pei-zhi-shuo-ming-gai-shu"></a>
 
 天玄链中，使用 *sdk* 需要加载主配置文件 `thanos-web3j.conf` 以及 日志管理配置 `logback.xml`。
 
-## 主配置文件 thanos-web3j.conf <a href="#id4.3.3-pei-zhi-shuo-ming-zhu-pei-zhi-wen-jian-thanosweb3j.conf" id="id4.3.3-pei-zhi-shuo-ming-zhu-pei-zhi-wen-jian-thanosweb3j.conf"></a>
+## 3.2.2. 主配置文件 thanos-web3j.conf <a href="#id4.3.3-pei-zhi-shuo-ming-zhu-pei-zhi-wen-jian-thanosweb3j.conf" id="id4.3.3-pei-zhi-shuo-ming-zhu-pei-zhi-wen-jian-thanosweb3j.conf"></a>
 
 `thanos-web3j.conf` 主要包括了 *gateway* 、*resource* 、*tls* 等配置项。配置内容示例如下：
 
@@ -38,24 +36,24 @@ tls {
 }
 ```
 
-### 配置gateway标签 <a href="#id4.3.3-pei-zhi-shuo-ming-pei-zhi-gateway-biao-qian" id="id4.3.3-pei-zhi-shuo-ming-pei-zhi-gateway-biao-qian"></a>
+### 3.2.2.1. 配置gateway标签 <a href="#id4.3.3-pei-zhi-shuo-ming-pei-zhi-gateway-biao-qian" id="id4.3.3-pei-zhi-shuo-ming-pei-zhi-gateway-biao-qian"></a>
 
 * **rpc.ip.list**：*gateway* 提供 *rpc* 服务的 *ip* 和端口号（列表）。
 * **web3Size**：每个 *gateway* 节点对应的 *rpc* 连接池中的连接数量。
 * **checkInterval**：*rpc* 连接有效性检测的时间间隔。
 * **http.ip.list**：*gateway* 提供 *http* 服务的 *ip*和端口号（列表）。
 
-### 配置resource标签 <a href="#id4.3.3-pei-zhi-shuo-ming-pei-zhi-resource-biao-qian" id="id4.3.3-pei-zhi-shuo-ming-pei-zhi-resource-biao-qian"></a>
+### 3.2.2.2. 配置resource标签 <a href="#id4.3.3-pei-zhi-shuo-ming-pei-zhi-resource-biao-qian" id="id4.3.3-pei-zhi-shuo-ming-pei-zhi-resource-biao-qian"></a>
 
 * **logConfigPath**：日志管理配置文件 `logback.xml` 所在路径。
 
-### 配置tls标签 <a href="#id4.3.3-pei-zhi-shuo-ming-pei-zhi-tls-biao-qian" id="id4.3.3-pei-zhi-shuo-ming-pei-zhi-tls-biao-qian"></a>
+### 3.2.2.3. 配置tls标签 <a href="#id4.3.3-pei-zhi-shuo-ming-pei-zhi-tls-biao-qian" id="id4.3.3-pei-zhi-shuo-ming-pei-zhi-tls-biao-qian"></a>
 
 * **needTLS**：与 *gateway* 之间的 *rpc* 通信是否需要建立 *tls* 链接，需要与 *gateway* 端配置保持一致。
 * **keyPath**：*sdk* 的私钥文件 `node.key` 所在路径。
 * **certsPath**：*sdk* 的证书链 `chain.crt` 所在路径。
 
-## 日志管理配置文件 logback.xml <a href="#id4.3.3-pei-zhi-shuo-ming-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml" id="id4.3.3-pei-zhi-shuo-ming-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml"></a>
+## 3.2.3. 日志管理配置文件 logback.xml <a href="#id4.3.3-pei-zhi-shuo-ming-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml" id="id4.3.3-pei-zhi-shuo-ming-ri-zhi-guan-li-pei-zhi-wen-jian-logback.xml"></a>
 
 `logback.xml` 指定了节点日志的存放位置和生成规则。配置内容示例如下：
 
@@ -118,7 +116,7 @@ tls {
 
 ```
 
-### 配置打印的日志组件 <a href="#id4.3.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-zu-jian" id="id4.3.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-zu-jian"></a>
+### 3.2.3.1. 配置打印的日志组件 <a href="#id4.3.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-zu-jian" id="id4.3.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-zu-jian"></a>
 
 通过 *\<appender>* 标签 指定打印的日志组件。在上述示例文件中，指定了三个日志组件：*STDOUT* 、*FILE* 、*ASYNC*
 

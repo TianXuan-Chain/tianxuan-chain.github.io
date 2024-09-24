@@ -1,6 +1,4 @@
-# 硬件要求
-
-## 硬件配置要求 <a href="#id2.1-ying-jian-yao-qiu-ying-jian-pei-zhi-yao-qiu" id="id2.1-ying-jian-yao-qiu-ying-jian-pei-zhi-yao-qiu"></a>
+## 1.1.1. 硬件配置要求 <a href="#id2.1-ying-jian-yao-qiu-ying-jian-pei-zhi-yao-qiu" id="id2.1-ying-jian-yao-qiu-ying-jian-pei-zhi-yao-qiu"></a>
 
 | 配置     | 最低配置                                                        | 推荐配置 |
 | ------ | ----------------------------------------------------------- | ---- |
@@ -10,7 +8,7 @@
 | 网络带宽   | 1Mb                                                         | 10Mb |
 | 操作系统   | CentOS 7+ (推荐)、Ubuntu18+ |      |
 
-## 网络及端口要求 <a href="#id2.1-ying-jian-yao-qiu-wang-luo-ji-duan-kou-yao-qiu" id="id2.1-ying-jian-yao-qiu-wang-luo-ji-duan-kou-yao-qiu"></a>
+## 1.1.2. 网络及端口要求 <a href="#id2.1-ying-jian-yao-qiu-wang-luo-ji-duan-kou-yao-qiu" id="id2.1-ying-jian-yao-qiu-wang-luo-ji-duan-kou-yao-qiu"></a>
 
 至少需要开放7个端口，供链节点部署使用。
 
