@@ -8,7 +8,7 @@
 | 环境 | 版本|
 | --- | --- |
 | nginx |nginx1.6或以上版本  |
-| node |node12  |
+| node |node12~16  |
 
 nginx及node安装请参考附录
 
@@ -24,7 +24,7 @@ git clone https://gitlab.fuxi.netease.com:8081/thanos-blockchain/thanos-browser-
 
 ### 2.2 打包
 
-下载好node后执行npm i下载依赖，最后执行npm run build即可，打包产物在根目录下dist文件夹中。
+下载好node后执行npm i下载依赖，最后执行npm run build即可(npm 下载及ssh绑定流程在服务端教程中介绍)，打包产物在根目录下dist文件夹中。
 
 ### 2.3 部署云端服务器
 
@@ -147,17 +147,28 @@ ps -ef | grep nginx                              # 查看nginx进程
 
 ```
 
-### 3.2 安装node和npm
+### 3.2 安装node
+#### 3.2.1 安装NVM
+推荐使用nvm管理nodejs版本
+使用命令安装nvm
 
-使用命令
-
 ```
-sudo apt update
-sudo apt install nodejs npm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 ```
 
-安装完成后执行
+#### 3.2.2 更新会话
+安装完成后，您需要关闭并重新打开终端，或者运行以下命令来更新会话以使用NVM
 ```
-nodejs --version
+source ~/.bashrc
 ```
-出现版本号即安装成功
+#### 3.2.3 使用NVM安装指定版本的Node.js
+现在，您可以使用NVM安装任何您想要的Node.js版本。例如，要安装Node.js 16.20.2，您可以运行：
+```
+nvm install 16.20.2
+```
+#### 3.2.4 验证安装
+安装完成后，您可以使用以下命令来检查Node.js是否安装成功：
+```
+node -v
+```
+这个命令应该会显示您刚刚安装的Node.js版本号。如果要切换版本可执行nvm use 版本号
