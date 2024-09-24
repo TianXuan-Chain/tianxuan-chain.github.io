@@ -87,7 +87,7 @@ sudo vim /etc/profile.d/gradle.sh
 ```
 
 ```editorconfig
-# 将下面下面写入 gradle.sh 中
+# 将下面写入 gradle.sh 中
 export GRADLE_HOME=/software/gradle/gradle-5.6.2
 export PATH=${GRADLE_HOME}/bin:${PATH}
 ```
@@ -227,7 +227,7 @@ tail -f /root/logs/thanos-browser.log
 
 ## 4.问题排查
 
-### 4.1 同步区块信息，报错：java.sql.SQLException: Table has no partition for value ${your_error_partition}
+### 4.1 同步区块信息，报错：`java.sql.SQLException: Table has no partition for value ${your_error_partition}`
 
 数据库表分区未创建
 
