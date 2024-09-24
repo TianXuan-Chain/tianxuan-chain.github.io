@@ -71,6 +71,16 @@ npm i
 npm run build
 ```
 
+注：如果依赖下载缓慢可以尝试切换淘宝镜像源，命令如下：
+```
+# 切换淘宝镜像源
+npm config set registry https://registry.npmmirror.com
+
+# 查看当前镜像源
+npm config get registry
+
+```
+
 ### 1.3.5 nginx反向代理
 #### 1.3.5.1 下载nginx(本文以Ubuntu系统为例，centos可参考网络教程)
 
