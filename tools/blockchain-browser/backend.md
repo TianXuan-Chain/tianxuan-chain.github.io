@@ -71,7 +71,7 @@ cd /root/thanos-web3j
 | dist/solc      | 存放合约编译工具,solc需要安装到/usr/local/bin/         |
 ```
 
-如果 `compile.sh` 脚本执行失败，可能是服务器存在网络连接问题或者系统不兼容。可以手动安装 gradle 后进行编译。gradle 安装流程如下：
+如果 `compile.sh` 脚本执行停滞、执行失败等情况，可能是服务器存在网络连接问题或者系统不兼容。可以手动安装 gradle 后进行编译。gradle 安装流程如下：
 
 ```bash
 # Linux 系统
