@@ -124,17 +124,7 @@ sudo apt-get install nginx
 nginx -v
 ```
 
-#### 3.1.2  查看nginx
-
-nginx下载地址：https://nginx.org/download/（下载最新稳定版本即可） 或者使用命令：
-
-```
-wget http://nginx.org/download/nginx-1.10.2.tar.gz  (版本号可换)
-```
-
-将下载的包移动到/usr/local/下
-
-##### 3.1.3 测试是否安装成功
+##### 3.1.2 测试是否安装成功
 
 使用命令：
 
@@ -149,7 +139,7 @@ nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok
 nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
 ```
 
-##### 3.1.4 nginx几个常见命令
+##### 3.1.3 nginx几个常见命令
 
 ```
 /usr/local/nginx/sbin/nginx -s reload            # 重新载入配置文件
