@@ -35,6 +35,25 @@ node -v
 ```
 这个命令应该会显示您刚刚安装的Node.js版本号。如果要切换版本可执行nvm use 版本号
 
+#### 1.3.2.5 直接安装nodejs
+若不想安装nvm也可直接安装指定版本nodejs(本项目支持12到16版本)，代码如下：
+
+```
+#ubuntu 安装命令
+
+sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+
+sudo apt install nodejs
+
+#centOS 安装命令
+
+curl  -sL https://rpm.nodesource.com/setup_16.x | bash -
+
+yum install -y nodejs
+```
+
 ### 1.3.3 拉取代码
 
 ```sh
@@ -58,8 +77,14 @@ npm run build
 安装nginx
 
 ```
+#ubuntu 安装命令
+
 sudo apt-get update
 sudo apt-get install nginx
+
+#centOS 安装命令
+
+yum install nginx
 ```
 
 执行命令时注意权限问题，如遇到，请加上sudo
@@ -67,7 +92,7 @@ sudo apt-get install nginx
 查看安装版本
 
 ```
-nginx -v
+nginx --version
 ```
 
 #### 1.3.5.2 启动nginx
@@ -106,9 +131,10 @@ nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
 vim /usr/local/nginx/conf/nginx.conf
 ```
 
-* 修改前端服务的ip地址和端口。
-* 修改前端文件的路径,直接指向已拉取代码的dist目录。并且如果有需要请修改nginx的user配置，换成对应的user用户（有dist目录访问权限的用户）
-* 修改后端服务的ip和端口。示例如下：
+* 修改前端服务的ip地址和端口，如示例中步骤1的localhost和80。
+* 修改前端文件的路径,直接指向已拉取代码的dist目录。并且如果有需要请修改nginx的user配置，换成对应的user用户（有dist目录访问权限的用户）,如示例中步骤2的/usr/share/nginx/html/dist。
+* 修改后端服务的ip和端口(后端端口在thanos-browser-backend项目下的thanos-browser-web/src/main/resources/application.properties路径下的server.port配置查看)。如示例中步骤3的http://127.0.0.1:7776。
+示例如下：
 
 ```
 server {
