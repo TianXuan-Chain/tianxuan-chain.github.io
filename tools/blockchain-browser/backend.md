@@ -138,7 +138,7 @@ gradle publishToMavenLocal
 
 ```sh
 cd /root
-git clone git@github.com:TianXuan-Chain/thanos-browser-backend.git
+git clone https://github.com/TianXuan-Chain/thanos-browser-backend.git
 ```
 
 ```sh
