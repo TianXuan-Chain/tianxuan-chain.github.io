@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>4.4. 存储 · 天玄技术文档</title>
+        <title>4.4. 存储 · 天玄链技术文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -126,7 +126,7 @@
         <!-- Nav -->
         <ul class="header-nav">
             <li>
-                <a href="https://github.com/TianXuan-Chain" target="_blank">天玄代码仓库</a>
+                <a href="https://github.com/TianXuan-Chain" target="_blank">天玄链代码仓库</a>
             </li>
         </ul>
     </div>
@@ -280,7 +280,7 @@
                 <a href="../../installation-manual/tianxaun-chain/">
             
                     
-                    1. 天玄链
+                    1. 天玄链服务
             
                 </a>
             
@@ -364,7 +364,7 @@
                 <a href="../../installation-manual/tianxaun-gateway/">
             
                     
-                    2. 天玄网关
+                    2. 天玄链网关
             
                 </a>
             
@@ -830,7 +830,7 @@
                         
                         <h2 id="441-&#x6982;&#x8FF0;">4.4.1. &#x6982;&#x8FF0;</h2>
 <p>&#x5728;&#x4F20;&#x7EDF;&#x516C;&#x94FE;&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x6838;&#x5FC3;&#x7684;&#x5B58;&#x50A8;&#x6A21;&#x578B;&#x67B6;&#x6784;&#x8FD8;&#x662F;&#x4EE5; <em>MPT</em>&#xFF08;&#x9ED8;&#x514B;&#x5C14;&#x538B;&#x7F29;&#x524D;&#x7F00;&#x6811;&#xFF09;&#x7684;&#x65B9;&#x5F0F;&#x7EC4;&#x7EC7;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x65B9;&#x4FBF;&#x5BF9;&#x72B6;&#x6001;&#x63D0;&#x4F9B;&#x5B58;&#x5728;&#x6027;&#x8BC1;&#x660E;&#x3002;&#x4F7F;&#x7528; <em>MPT</em> &#x6811;&#x80FD;&#x591F;&#x6700;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x63D0;&#x4F9B;&#x6570;&#x636E;&#x7684;&#x5B58;&#x5728;&#x6027;&#x8BC1;&#x660E;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x51CF;&#x5C11;&#x6811;&#x66F4;&#x65B0;&#x7684;&#x8BA1;&#x7B97;&#x6B21;&#x6570;&#x3002;&#x4F46;&#x5BF9;&#x4E8E;&#x8054;&#x76DF;&#x94FE;&#x6765;&#x8BF4;&#xFF0C;&#x4F7F;&#x7528; <em>MPT</em> &#x6811;&#x662F;&#x4E00;&#x79CD;&#x6027;&#x80FD;&#x7684;&#x964D;&#x4F4E;&#x3002;&#x5728;&#x57FA;&#x4E8E; <em>EVM</em> &#x7684;&#x8D26;&#x6237;&#x6A21;&#x578B;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x5408;&#x7EA6;&#x4EE3;&#x7801;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x5B58;&#x53D6; &#xFF0C;&#x5176;&#x5E95;&#x5C42;&#x5C31;&#x662F;&#x5BF9; <em>MPT</em> &#x7684; <em>CRUD</em> &#x64CD;&#x4F5C;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6811;&#x8282;&#x70B9;&#x7684;&#x8BFB;&#x53D6;&#x53EF;&#x80FD;&#x4F1A;&#x8BFB;&#x53D6;&#x591A;&#x6B21;&#x78C1;&#x76D8;&#xFF08;&#x6839;&#x636E;&#x6811;&#x9AD8;&#x4EE5;&#x53CA;&#x8282;&#x70B9;&#x7684;&#x5927;&#x5C0F;&#x6765;&#x51B3;&#x5B9A;&#x8BFB;&#x53D6;&#x6B21;&#x6570;&#xFF09;&#xFF0C;&#x800C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x53D8;&#x66F4;&#x53EF;&#x80FD;&#x4F1A;&#x5F15;&#x8D77; <em>MPT</em> &#x591A;&#x6B21;&#x7684;&#x88C2;&#x53D8;&#x3002;</p>
-<p>&#x968F;&#x7740;&#x5408;&#x7EA6;&#x4EE3;&#x7801;&#x7684;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x8D8A;&#x5927;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4; <em>EVM</em> &#x6267;&#x884C;&#x901F;&#x5EA6;&#x7EBF;&#x6027;&#x4E0B;&#x964D;(&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x51FA;&#x73B0;&#x7EBF;&#x6027;&#x4E0B;&#x964D;&#x7684;&#x60C5;&#x51B5;)&#x3002;&#x800C;&#x5929;&#x7384;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;&#x53BB; <em>MPT</em> &#x7684;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x6765;&#x89E3;&#x51B3;&#x968F;&#x7740;&#x72B6;&#x6001;&#x6570;&#x636E;&#x7684;&#x589E;&#x52A0;&#x800C;&#x5BFC;&#x81F4; <em>EVM</em> &#x6267;&#x884C;&#x901F;&#x5EA6;&#x7EBF;&#x6027;&#x4E0B;&#x964D;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x968F;&#x7740;&#x5408;&#x7EA6;&#x4EE3;&#x7801;&#x7684;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x8D8A;&#x5927;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4; <em>EVM</em> &#x6267;&#x884C;&#x901F;&#x5EA6;&#x7EBF;&#x6027;&#x4E0B;&#x964D;(&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x51FA;&#x73B0;&#x7EBF;&#x6027;&#x4E0B;&#x964D;&#x7684;&#x60C5;&#x51B5;)&#x3002;&#x800C;&#x5929;&#x7384;&#x94FE;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;&#x53BB; <em>MPT</em> &#x7684;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x6765;&#x89E3;&#x51B3;&#x968F;&#x7740;&#x72B6;&#x6001;&#x6570;&#x636E;&#x7684;&#x589E;&#x52A0;&#x800C;&#x5BFC;&#x81F4; <em>EVM</em> &#x6267;&#x884C;&#x901F;&#x5EA6;&#x7EBF;&#x6027;&#x4E0B;&#x964D;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
 <h2 id="442-&#x53BB;mpt&#x5B58;&#x50A8;">4.4.2. &#x53BB;MPT&#x5B58;&#x50A8;</h2>
 <h3 id="4421-mpt-&#x4F7F;&#x7528;&#x5BF9;&#x6BD4;-">4.4.2.1. MPT &#x4F7F;&#x7528;&#x5BF9;&#x6BD4; <a href="#id5.4.4-cun-chu-mo-kuai-mpt-shi-yong-dui-bi" id="id5.4.4-cun-chu-mo-kuai-mpt-shi-yong-dui-bi"></a></h3>
 <p><strong>&#x4F18;&#x70B9;</strong></p>
@@ -876,17 +876,17 @@
 <li>&#x6839;&#x636E; <em>storage key</em> &#x8BFB;&#x53D6;&#x5411;&#x5B50;&#x6811;&#x68C0;&#x7D22;&#x5230;&#x5B58;&#x50A8; <em>value</em> &#x7684;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x3002;</li>
 </ol>
 <p>&#x5176;&#x4E2D;&#xFF0C;&#x4F9D;&#x6B21;&#x5148;&#x5411;&#x7F13;&#x5B58;&#x3001;<em>db</em> &#x8BFB;&#x53D6;&#x3002;</p>
-<h3 id="4423-&#x5929;&#x7384;&#x53BB;mpt&#x67B6;&#x6784;-">4.4.2.3. &#x5929;&#x7384;&#x53BB;MPT&#x67B6;&#x6784; <a href="#id5.4.4-cun-chu-mo-kuai-tian-xuan-qu-mpt-jia-gou" id="id5.4.4-cun-chu-mo-kuai-tian-xuan-qu-mpt-jia-gou"></a></h3>
-<p>&#x7531;&#x4E8E;&#x6BCF;&#x6B21;&#x8BFB;&#x5199;&#x72B6;&#x6001;&#x90FD;&#x9700;&#x8981;&#x5BF9;&#x524D;&#x7F00;&#x6811;&#x8FDB;&#x884C;&#x68C0;&#x7D22;&#xFF0C;&#x4E25;&#x91CD;&#x5F71;&#x54CD;&#x8054;&#x76DF;&#x94FE;&#x573A;&#x666F;&#x4E0B;&#x7684;&#x6267;&#x884C;&#x6548;&#x7387;&#x3002;&#x5929;&#x7384;&#x76F4;&#x63A5;&#x4F7F;&#x7528; <em>HashMap</em> &#x4F5C;&#x4E3A;&#x66FF;&#x4EE3;&#x65B9;&#x6848;&#xFF0C;&#x6BCF;&#x4E2A; <em>\<storage key,="" value=""></storage></em> &#x76F4;&#x63A5;&#x5B58;&#x50A8;&#x5230; <em>HashMap</em> &#x4E2D;&#xFF0C;&#x4E0D;&#x901A;&#x8FC7; <em>MPT</em> &#x6811;&#x68C0;&#x7D22;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x4E3A;&#x4E86;&#x533A;&#x5206;&#x4E0D;&#x7528;&#x5408;&#x7EA6;&#x8D26;&#x6237;&#x7684;&#x6570;&#x636E;&#x72B6;&#x6001;&#xFF0C;&#x786E;&#x4FDD;&#x6570;&#x636E;&#x72B6;&#x6001;&#x7684;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6027;&#xFF0C;<em>storage key</em> &#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x5F0F;&#x53D8;&#x4E3A;&#xFF1A;<code>new storage key = sha3(account address+ storage key)</code> &#x3002;</p>
-<p>&#x5929;&#x7384;&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x53BB; <em>MPT</em> &#x5BF9;&#x6574;&#x4E2A;&#x67B6;&#x6784;&#x7684;&#x5F71;&#x54CD;&#x4F53;&#x73B0;&#x5728;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#x3002;</p>
+<h3 id="4423-&#x5929;&#x7384;&#x94FE;&#x53BB;mpt&#x67B6;&#x6784;-">4.4.2.3. &#x5929;&#x7384;&#x94FE;&#x53BB;MPT&#x67B6;&#x6784; <a href="#id5.4.4-cun-chu-mo-kuai-tian-xuan-qu-mpt-jia-gou" id="id5.4.4-cun-chu-mo-kuai-tian-xuan-qu-mpt-jia-gou"></a></h3>
+<p>&#x7531;&#x4E8E;&#x6BCF;&#x6B21;&#x8BFB;&#x5199;&#x72B6;&#x6001;&#x90FD;&#x9700;&#x8981;&#x5BF9;&#x524D;&#x7F00;&#x6811;&#x8FDB;&#x884C;&#x68C0;&#x7D22;&#xFF0C;&#x4E25;&#x91CD;&#x5F71;&#x54CD;&#x8054;&#x76DF;&#x94FE;&#x573A;&#x666F;&#x4E0B;&#x7684;&#x6267;&#x884C;&#x6548;&#x7387;&#x3002;&#x5929;&#x7384;&#x94FE;&#x76F4;&#x63A5;&#x4F7F;&#x7528; <em>HashMap</em> &#x4F5C;&#x4E3A;&#x66FF;&#x4EE3;&#x65B9;&#x6848;&#xFF0C;&#x6BCF;&#x4E2A; <em>\<storage key,="" value=""></storage></em> &#x76F4;&#x63A5;&#x5B58;&#x50A8;&#x5230; <em>HashMap</em> &#x4E2D;&#xFF0C;&#x4E0D;&#x901A;&#x8FC7; <em>MPT</em> &#x6811;&#x68C0;&#x7D22;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x4E3A;&#x4E86;&#x533A;&#x5206;&#x4E0D;&#x7528;&#x5408;&#x7EA6;&#x8D26;&#x6237;&#x7684;&#x6570;&#x636E;&#x72B6;&#x6001;&#xFF0C;&#x786E;&#x4FDD;&#x6570;&#x636E;&#x72B6;&#x6001;&#x7684;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6027;&#xFF0C;<em>storage key</em> &#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x5F0F;&#x53D8;&#x4E3A;&#xFF1A;<code>new storage key = sha3(account address+ storage key)</code> &#x3002;</p>
+<p>&#x5929;&#x7384;&#x94FE;&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x53BB; <em>MPT</em> &#x5BF9;&#x6574;&#x4E2A;&#x67B6;&#x6784;&#x7684;&#x5F71;&#x54CD;&#x4F53;&#x73B0;&#x5728;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#x3002;</p>
 <ul>
 <li>&#x5171;&#x8BC6;&#x6267;&#x884C;&#x90E8;&#x5206;&#xFF0C;&#x53D1;&#x751F;&#x5BF9;&#x72B6;&#x6001;&#x7684;&#x8BFB;&#x5199;&#x5DE5;&#x4F5C;&#x3002;</li>
 <li>&#x72B6;&#x6001;&#x7684;&#x6301;&#x4E45;&#x5316;&#x5DE5;&#x4F5C;&#x3002;</li>
 </ul>
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
-        <img src="../../assets/&#x53BB;MPT&#x6811;&#x6267;&#x884C;.png" alt="&#x56FE;3. &#x5929;&#x7384;&#x5904;&#x7406;&#x6D41;&#x7A0B;" style="width: 100%; max-width: 800px; height: auto;">
-        <figcaption style="text-align: center; max-width: 1000px; font-weight: bold; font-size: 14px; color: #555;">&#x56FE;3. &#x5929;&#x7384;&#x5904;&#x7406;&#x6D41;&#x7A0B;</figcaption>
+        <img src="../../assets/&#x53BB;MPT&#x6811;&#x6267;&#x884C;.png" alt="&#x56FE;3. &#x5929;&#x7384;&#x94FE;&#x5904;&#x7406;&#x6D41;&#x7A0B;" style="width: 100%; max-width: 800px; height: auto;">
+        <figcaption style="text-align: center; max-width: 1000px; font-weight: bold; font-size: 14px; color: #555;">&#x56FE;3. &#x5929;&#x7384;&#x94FE;&#x5904;&#x7406;&#x6D41;&#x7A0B;</figcaption>
     </figure>
 </div>
 
@@ -904,7 +904,7 @@
 </li>
 </ul>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; netease 2024 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x6863;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2024-09-24 17:38:57
+2024-09-25 10:58:01
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                         
@@ -948,7 +948,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.4. 存储","level":"6.4.4","depth":2,"next":{"title":"4.5. 流水线执行","level":"6.4.5","depth":2,"path":"architecture/core-modules/execution-pipeline.md","ref":"architecture/core-modules/execution-pipeline.md","articles":[]},"previous":{"title":"4.3. 交易并行","level":"6.4.3","depth":2,"path":"architecture/core-modules/tx-parallelization.md","ref":"architecture/core-modules/tx-parallelization.md","articles":[]},"dir":"ltr"},"config":{"plugins":["popup","splitter","hide-element","search-pro-fixed","-highlight","chapter-fold","expandable-chapters","tbfed-pagefooter","github","flexible-alerts","prism","auto-scroll-table","theme-d4t","-search","-lunr","image-captions","-sharing","code","back-to-top-button","pageview-count","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-d4t":{},"tbfed-pagefooter":{"copyright":"Copyright &copy netease 2024","modify_label":"文档修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js","ascii","result","manifest","payload","google","tree","java_out","log4j2","jsp","class","Exception","stack","c#","xml-dtd","C++","twig","jinja2","exception","tpl"]},"github":{"url":"https://github.com/TianXuan-Chain"},"d4t":{"search-placeholder":"请输关键字搜索","logo":"./assets/logo.svg","favicon":"./assets/fav.ico"},"livereload":{},"splitter":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"search-pro-fixed":{},"hide-element":{"elements":[".gitbook-link",".title",".treeview__copyright",".treeview__main-title"]},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"pageview-count":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"image-captions":{"caption":"Image - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"Emosama","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"overview.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"https://github.com/TianXuan-Chain","target":"_blank","name":"天玄代码仓库"}]},"_pictures":[{"backlink":"community/channel.html#fig7.1.1","level":"7.1","list_caption":"Figure: 网易公众号","alt":"网易公众号","nro":1,"url":"../assets/%E5%85%AC%E4%BC%97%E5%8F%B7.png","index":1,"caption_template":"Image - _CAPTION_","label":"网易公众号","attributes":{},"skip":false,"key":"7.1.1"}]},"title":"天玄技术文档","language":"zh-hans","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"architecture/core-modules/storage.md","mtime":"2024-09-24T09:38:57.738Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-24T10:11:58.904Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.4. 存储","level":"6.4.4","depth":2,"next":{"title":"4.5. 流水线执行","level":"6.4.5","depth":2,"path":"architecture/core-modules/execution-pipeline.md","ref":"architecture/core-modules/execution-pipeline.md","articles":[]},"previous":{"title":"4.3. 交易并行","level":"6.4.3","depth":2,"path":"architecture/core-modules/tx-parallelization.md","ref":"architecture/core-modules/tx-parallelization.md","articles":[]},"dir":"ltr"},"config":{"plugins":["popup","splitter","hide-element","search-pro-fixed","-highlight","chapter-fold","expandable-chapters","tbfed-pagefooter","github","flexible-alerts","prism","auto-scroll-table","theme-d4t","-search","-lunr","image-captions","-sharing","code","back-to-top-button","pageview-count","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-d4t":{},"tbfed-pagefooter":{"copyright":"Copyright &copy netease 2024","modify_label":"文档修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js","ascii","result","manifest","payload","google","tree","java_out","log4j2","jsp","class","Exception","stack","c#","xml-dtd","C++","twig","jinja2","exception","tpl"]},"github":{"url":"https://github.com/TianXuan-Chain"},"d4t":{"search-placeholder":"请输关键字搜索","logo":"./assets/logo.svg","favicon":"./assets/fav.ico"},"livereload":{},"splitter":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"search-pro-fixed":{},"hide-element":{"elements":[".gitbook-link",".title",".treeview__copyright",".treeview__main-title"]},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"pageview-count":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"image-captions":{"caption":"Image - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"Emosama","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"overview.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"https://github.com/TianXuan-Chain","target":"_blank","name":"天玄链代码仓库"}]},"_pictures":[{"backlink":"community/channel.html#fig7.1.1","level":"7.1","list_caption":"Figure: 网易公众号","alt":"网易公众号","nro":1,"url":"../assets/%E5%85%AC%E4%BC%97%E5%8F%B7.png","index":1,"caption_template":"Image - _CAPTION_","label":"网易公众号","attributes":{},"skip":false,"key":"7.1.1"}]},"title":"天玄链技术文档","language":"zh-hans","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"architecture/core-modules/storage.md","mtime":"2024-09-25T02:58:01.539Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-25T02:58:40.114Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
