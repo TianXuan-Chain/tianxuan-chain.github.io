@@ -1,4 +1,4 @@
-天玄目前支持 *Solidity* 合约
+天玄链目前支持 *Solidity* 合约
 
 * Solidity 合约与以太坊相同，目前支持的版本为 v0.4.25
 * 相关语法学习，请参考：[Solidity 官方文档](https://docs.soliditylang.org/en/latest/)

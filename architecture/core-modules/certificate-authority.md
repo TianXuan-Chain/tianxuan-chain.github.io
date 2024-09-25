@@ -1,6 +1,6 @@
 ## 4.6.1. 概述
 
-天玄作为联盟链，需要一套完整的联盟准入机制，即加入通信网络并参与共识的节点必须是经过验证的联盟成员。因此，天玄使用了一套基于 *CA* 体系构建的联盟准入机制，该机制理论上支持任意多级的证书结构，保证了良好的扩展性。根据现有业务场景，目前采用三层证书体系：【链证书 → 机构证书 → 节点证书】。
+天玄链作为联盟链，需要一套完整的联盟准入机制，即加入通信网络并参与共识的节点必须是经过验证的联盟成员。因此，天玄链使用了一套基于 *CA* 体系构建的联盟准入机制，该机制理论上支持任意多级的证书结构，保证了良好的扩展性。根据现有业务场景，目前采用三层证书体系：【链证书 → 机构证书 → 节点证书】。
 
 其中，<mark>链证书</mark>作为根证书，承担信任根的角色，由链管理员生成。一条联盟链唯一对应一个链证书，联盟链的所有节点都共享链证书，用于验证彼此证书的合法性。<mark>机构证书</mark>由机构管理者持有，用于给隶属于该机构的联盟节点颁发证书。通过层级设计，减少链私钥的使用，提高 *CA* 体系的安全性。<mark>节点证书</mark>由节点管理者持有，用于证明该节点公钥的合法性，在与其他节点建立安全通信和对消息进行签名验签的过程中必不可少。
 
@@ -34,14 +34,14 @@
     </figure>
 </div>
 
-### 4.6.2.2. 天玄 CA 机制
+### 4.6.2.2. 天玄链 CA 机制
 
 在三级证书体系的基础上，进一步构建 *CA* 机制的整体架构如下：
 
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/天玄CA机制.png" alt="图3. 天玄CA机制" style="width: 100%; max-width: 800px; height: auto;">
-        <figcaption style="text-align: center; max-width: 800px; font-weight: bold; font-size: 14px; color: #555;">图3. 天玄CA机制</figcaption>
+        <figcaption style="text-align: center; max-width: 800px; font-weight: bold; font-size: 14px; color: #555;">图3. 天玄链CA机制</figcaption>
     </figure>
 </div>
 

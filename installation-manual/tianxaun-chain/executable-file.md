@@ -52,7 +52,7 @@ mvn clean install -Dmaven.test.skip=true
 
 ## 1.1.4. 打包 thanos-chain <a href="#id3.1.1-huo-qu-ke-zhi-xing-wen-jian-san-da-bao-thanoscommon" id="id3.1.1-huo-qu-ke-zhi-xing-wen-jian-san-da-bao-thanoscommon"></a>
 
-*thanos-chain* 应用，除了依赖 `thanos-common.jar` 以外，还依赖于 `solcJ-all-0.4.25.jar` 。按照文档执行顺序，`thanos-common.jar` 以应被加载到了本地 Maven 库中，还需要手动加载一下 `solcJ-all-0.4.25.jar` 到本地库，该 *jar* 包可在此处下载：[https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/solc/solcJ-all-0.4.25.jar](https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/solc/solcJ-all-0.4.25.jar)
+*thanos-chain* 服务，除了依赖 `thanos-common.jar` 以外，还依赖于 `solcJ-all-0.4.25.jar` 。按照文档执行顺序，`thanos-common.jar` 以应被加载到了本地 Maven 库中，还需要手动加载一下 `solcJ-all-0.4.25.jar` 到本地库，该 *jar* 包可在此处下载：[https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/solc/solcJ-all-0.4.25.jar](https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/solc/solcJ-all-0.4.25.jar)
 
 ```sh
 # 将 solcJ-all-0.4.25.jar 加载到本地库

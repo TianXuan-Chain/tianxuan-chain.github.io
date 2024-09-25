@@ -81,7 +81,7 @@ listen_chain_port = 7180    #监听chain的端口，用于接收共识完成的�
 bash build_chain.sh build
 ```
 
-中间会有 *thanos-common* ，*thanos-gateway* ，*thanos-chain* 等应用的下载和 *Maven* 打包，需要等待片刻。当前目录下生成 `build` 目录后，表明脚本执行成功。
+中间会有 *thanos-common* ，*thanos-gateway* ，*thanos-chain* 等模块的下载和 *Maven* 打包，需要等待片刻。当前目录下生成 `build` 目录后，表明脚本执行成功。
 
 查看生成的 `build` 目录结构（配置了多服务器多节点时）。
 
@@ -108,7 +108,7 @@ build
 
 配置一些基础信息
 
-* 指定天玄相关库的 *github* 地址，便于拉取代码
+* 指定天玄链相关库的 *github* 地址，便于拉取代码
 * 打包 *jar* 后的存放路径 (可以不配置)
 
 ```editorconfig
@@ -118,7 +118,7 @@ common_github_url = https://github.com/TianXuan-Chain/thanos-common.git
 chain_github_url = https://github.com/TianXuan-Chain/thanos-chain.git
 gateway_github_url = https://github.com/TianXuan-Chain/thanos-gateway.git
 
-# 物料包拉取天玄源码之后, 会将源码保存在本地的目录, 保存的目录为thanos-common，thanos-chain，thanos-gateway
+# 物料包拉取天玄链源码之后, 会将源码保存在本地的目录, 保存的目录为thanos-common，thanos-chain，thanos-gateway
 # chain_src_local = /root/src
 
 # 源码打成jar包的本地存放地址

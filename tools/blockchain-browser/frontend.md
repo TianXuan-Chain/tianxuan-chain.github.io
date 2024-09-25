@@ -1,5 +1,5 @@
 ## 1.3 前端部署
-本项目是天玄区块链浏览器前端项目，使用框架react。
+本项目是天玄链区块链浏览器前端项目，使用框架react。
 本教程脚本运行环境需要在 <mark>*Linux*</mark> 系统中进行，系统版本要求请见：[硬件需求](../../quick-start/depoly-tianxaun-chain/hardware-requirement.md)。
 
 ### 1.3.1 依赖环境

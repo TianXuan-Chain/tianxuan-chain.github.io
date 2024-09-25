@@ -3,12 +3,12 @@
 本教程将在 <mark>*Windows*</mark> 环境下，使用 *IntelliJ IDEA* 进行，方便读者基于此 *Demo* 进行开发，所以请确保在运行 *Demo* 代码的机器上具备以下环境。
 
 * **IDE**：进入 [*IntelliJ IDEA* 官网](https://www.jetbrains.com/idea/download/) ，下载并安装社区版 *IntelliJ IDEA*
-* **Oracle JDK**：Java应用需要依赖 [*Oracle JDK*](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html) ，且 *JDK* 版本不低于 1.8.0u201
+* **Oracle JDK**：*Java* 应用需要依赖 [*Oracle JDK*](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html) ，且 *JDK* 版本不低于 1.8.0u201
 * **Maven**：项目需要依赖 [*Maven*](https://archive.apache.org/dist/maven/maven-3/3.3.9/) ，且版本不低于 3.3.9
 
 # 2.1. 下载Demo物料包
 
-从 *GitHub* 上下载 *Demo* 示例代码，该示例代码会使用天玄的 *Web3j SDK* 与天玄链交互，模拟部署应用合约并向合约发起交易。
+从 *GitHub* 上下载 *Demo* 示例代码，该示例代码会使用天玄链的 *Web3j SDK* 与天玄链交互，模拟部署应用合约并向合约发起交易。
 
 由于依赖的 `thanos-web3j.jar` 还未发布到 *Maven* 公共库，所以当前阶段也需要手动安装一下，同样 *thanos-web3j* 依赖的 *thanos-common* 也是。以确保在本地机器的 *Maven* 本地仓库中构建完整的依赖。
 

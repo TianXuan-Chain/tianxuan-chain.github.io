@@ -70,8 +70,8 @@ tls {
 * **http.maxThreads**：本机 *http* 服务最多开启的线程数。
 * **http.readWriteTimeout**：*http* 连接的读写超时时间 (毫秒) 。
 * **broadcast**：广播节点列表，即其他 *gateway* 节点信息。
-* **push.address**：*gateway* 节点推送交易给 *chain* 应用时，*chain* 应用的接收地址。
-* **sync.address**：*gateway* 节点的端口号，负责监听 *chain* 应用推送的区块信息。
+* **push.address**：*gateway* 节点推送交易给 *chain* 服务时，*chain* 服务的接收地址。
+* **sync.address**：*gateway* 节点的端口号，负责监听 *chain* 服务推送的区块信息。
 * **sync.cache.blockLimit**：缓存的的区块最大数量。
 * **sync.cache.txPoolDSCacheSizeLimit**：缓存的交易池大小。
 * **switch.only.broadcast.globalEvent**：是否仅广播全局节点事件。

@@ -1,5 +1,5 @@
 {
-  "title": "天玄技术文档",
+  "title": "天玄链技术文档",
   "language": "zh-hans",
   "author": "Emosama",
   "theme-default": {
@@ -33,7 +33,7 @@
         {
           "url": "https://github.com/TianXuan-Chain",
           "target": "_blank",
-          "name": "天玄代码仓库"
+          "name": "天玄链代码仓库"
         }
       ]
     }

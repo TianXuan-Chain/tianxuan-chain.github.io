@@ -1,6 +1,6 @@
 ## 1.5.1. 概述 <a href="#id3.1.5-ri-zhi-shuo-ming-yi-gai-shu" id="id3.1.5-ri-zhi-shuo-ming-yi-gai-shu"></a>
 
-天玄节点的所有日志都输出到 *logs* 目录下
+天玄链节点的所有日志都输出到 *logs* 目录下
  `thanos-chain-%d{yyyy-MM-dd-'h'HH}.log` 的文件中，且定制了日志格式，方便用户通过日志查看链运行状态。日志配置说明请参考：[日志管理配置文件](configuration.md#日志管理配置文件-chain-logbackxml)。
 
 ## 1.5.2. 日志格式 <a href="#id3.1.5-ri-zhi-shuo-ming-er-ri-zhi-ge-shi" id="id3.1.5-ri-zhi-shuo-ming-er-ri-zhi-ge-shi"></a>

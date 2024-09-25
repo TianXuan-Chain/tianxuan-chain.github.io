@@ -1,4 +1,4 @@
-本章介绍天玄节点应用所需的必要安装和配置。本章通过在单机上部署一条天玄测试链，来帮助用户掌握部署流程。
+本章介绍天玄链节点服务所需的必要安装和配置。本章通过在单机上部署一条天玄测试链，来帮助用户掌握部署流程。
 
 ## 1.2.1. 硬件要求 <a href="#id3.1.2-an-zhuang-yi-huan-jing-yao-qiu" id="id3.1.2-an-zhuang-yi-huan-jing-yao-qiu"></a>
 
@@ -365,7 +365,7 @@ tls {
 在配置 `nodeInfo.properties` 前，需要先为节点生成 privateKey 和 id ，请先找到并进入 `thanos-common.jar` 所在的目录，并执行以下指令
 
 ```bash
-# "ECDSA" 是链选用的密钥算法，1 分片链的 id ，当前天玄还未实现分片，所以默认为 1 即可
+# "ECDSA" 是链选用的密钥算法，1 分片链的 id ，当前天玄链还未实现分片，所以默认为 1 即可
 java -jar ./thanos-common.jar "ECDSA" 1 1>>./node.private
 ```
 

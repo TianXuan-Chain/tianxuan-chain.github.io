@@ -1,6 +1,6 @@
 ## 1.3.1. 概述 <a href="#id3.1.3-pei-zhi-shuo-ming-yi-gai-shu" id="id3.1.3-pei-zhi-shuo-ming-yi-gai-shu"></a>
 
-天玄节点应用中，每个节点包含一个主配置 `thanos-chain.conf` ，日志管理配置 `logback.xml` ，创世块配置 `genesis.json` 以及节点身份配置 `nodeInfo.properties` 。
+天玄链节点服务中，每个节点包含一个主配置 `thanos-chain.conf` ，日志管理配置 `logback.xml` ，创世块配置 `genesis.json` 以及节点身份配置 `nodeInfo.properties` 。
 
 * **thanos-chain.conf**：主配置文件。包括节点网络配置、共识配置、账本配置文件路径、*SSL* 密钥库配置、密码算法等信息。
 * **logback.xml**：日志管理配置文件。包括日志存放路径、日志生成规则等。

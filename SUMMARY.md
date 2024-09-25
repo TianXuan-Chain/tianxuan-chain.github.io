@@ -16,13 +16,13 @@
 
 ## 安装手册 <a href="#installation-manual" id="installation-manual"></a>
 
-* [1. 天玄链](installation-manual/tianxaun-chain/README.md)
+* [1. 天玄链服务](installation-manual/tianxaun-chain/README.md)
   * [1.1. 打包可执行文件](installation-manual/tianxaun-chain/executable-file.md)
   * [1.2. 安装](installation-manual/tianxaun-chain/installation.md)
   * [1.3. 配置说明](installation-manual/tianxaun-chain/configuration.md)
   * [1.4. 证书说明](installation-manual/tianxaun-chain/cert.md)
   * [1.5. 日志说明](installation-manual/tianxaun-chain/log.md)
-* [2. 天玄网关](installation-manual/tianxaun-gateway/README.md)
+* [2. 天玄链网关](installation-manual/tianxaun-gateway/README.md)
   * [2.1. 安装](installation-manual/tianxaun-gateway/installation.md)
   * [2.2. 配置说明](installation-manual/tianxaun-gateway/configuration.md)
 

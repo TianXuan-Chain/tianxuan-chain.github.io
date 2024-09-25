@@ -6,7 +6,7 @@
 * **Maven3.3.9**： 项目编译需要依赖 *Maven*，且版本不低于 3.3.9
 * **bcprov-jdk**： 在使用 *sdk* 时，需要在 *java* 运行环境中（具体为 `$JAVA_HOME`（*JDK* 所在目录）`/jre/lib/ext` 目录下）添加 [bcprov-jdk15on-1.66.jar](https://github.com/TianXuan-Chain/thanos-package-generate/blob/main/dependencies/jar/bcprov-jdk15on-1.66.jar) 包
 * **IDE**： 进入[*IntelliJ IDEA* 官网](https://www.jetbrains.com/idea/download/)，下载并安装社区版 *IntelliJ IDEA*
-* **天玄测试链**： 请参考 [快速搭建天玄网络](../../quick-start/depoly-tianxaun-chain/README.md) 搭建，并获取到相应的 *http* 或者 *rpc* 链接
+* **天玄测试链**： 请参考 [快速搭建天玄链](../../quick-start/depoly-tianxaun-chain/README.md) 搭建，并获取到相应的 *http* 或者 *rpc* 链接
 * **智能合约应用**： 请准备好需要部署的应用合约（本教程涉及的物料包中也提供了两个简单的智能合约示例）
 
 ## 3.1.2. 编译智能合约 <a href="#id4.3.2-kuai-su-ru-men-bian-yi-zhi-neng-he-yue" id="id4.3.2-kuai-su-ru-men-bian-yi-zhi-neng-he-yue"></a>
@@ -283,7 +283,7 @@ tls {
 
 * 日志配置文件所在路径 *logConfigPath* (要求是绝对路径)
 * 如果应用需要使用链的 *http* 接口服务（包括合约部署和调用），需要修改配置项 *http.ip.list* ，对应网关所在机器 *ip* 和应用的 *http* 端口
-* 如果应用需要使用链的rpc接口服务（除合约部署和调用外，还有权限管理），需要修改配置项 *rpc.ip.list* ，对应网关所在机器 *ip* 和应用的 *rpc* 端口。并修改 *tls* 配置项，配置 *SDK* 密钥文件和链证书文件路径
+* 如果应用需要使用链的 *rpc* 接口服务（除合约部署和调用外，还有权限管理），需要修改配置项 *rpc.ip.list* ，对应网关所在机器 *ip* 和应用的 *rpc* 端口。并修改 *tls* 配置项，配置 *SDK* 密钥文件和链证书文件路径
 
 在业务系统中加载配置并完成 *Web3Manager* 的初始化。
 

@@ -9,11 +9,11 @@
 | 操作系统 | CentOS (7及以上 64位) 或 Ubuntu(18.04 64位) |        |
 | JAVA | JDK 1.8                               |        |
 
-## 2.1.2. 天玄网关安装 <a href="#id3.2.1-an-zhuang-er-thanosgateway-an-zhuang" id="id3.2.1-an-zhuang-er-thanosgateway-an-zhuang"></a>
+## 2.1.2. 天玄链网关安装 <a href="#id3.2.1-an-zhuang-er-thanosgateway-an-zhuang" id="id3.2.1-an-zhuang-er-thanosgateway-an-zhuang"></a>
 
 ### 2.1.2.1. 前置准备 <a href="#id3.2.1-an-zhuang-1-qian-zhi-zhun-bei" id="id3.2.1-an-zhuang-1-qian-zhi-zhun-bei"></a>
 
-**1）在安装节点网关之前，请确保已经安装并运行了节点应用**
+**1）在安装节点网关之前，请确保已经安装并运行了节点服务**
 
 **2）网关安装所需依赖**
 
@@ -146,7 +146,7 @@ tls {
 
 而后，添加 *tls* 相关证书和密钥等文件。
 
-由于节点网关和节点应用是一一对应的，需要将应用部署中生成的 *tls* 配置（在 `~/thanos-chain/node0/resource/tls` 目录下的 `node.key` 和 `chain.crt` 两个文件）添加至 `~/thanos-gateway/node0/resource/tls` 目录下。
+由于节点网关和节点服务是一一对应的，需要将服务部署中生成的 *tls* 配置（在 `~/thanos-chain/node0/resource/tls` 目录下的 `node.key` 和 `chain.crt` 两个文件）添加至 `~/thanos-gateway/node0/resource/tls` 目录下。
 
 ```sh
 # 复制文件到指定目录

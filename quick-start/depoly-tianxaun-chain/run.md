@@ -10,9 +10,9 @@ bash install_node.sh #运行安装脚本
 
 执行成功后，会在每个 *node* 目录中生成 *thanos-chain* 和 *thanos-gateway* 两个目录。
 
-## 1.4.2. 启动节点应用 <a href="#id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-ying-yong" id="id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-ying-yong"></a>
+## 1.4.2. 启动节点服务 <a href="#id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-ying-yong" id="id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-ying-yong"></a>
 
-启动四个节点应用，顺序为先启动 *thanos-chain* 应用，再启动 *thanos-gateway* 应用。
+启动四个节点服务，顺序为先启动 *thanos-chain* 服务，再启动 *thanos-gateway* 网关。
 
 ```bash
 # 以node0为例
@@ -20,19 +20,19 @@ cd node0/thanos-chain
 bash start_chain.sh
 ```
 
-当配置的初始节点应用均已启动，则链启动完成。脚本中每个进程默认设置占用 *1g* 的内存，如果需要修改，可以进入脚本中直接修改运行指令。
+当配置的初始节点服务均已启动，则链启动完成。脚本中每个进程默认设置占用 *1g* 的内存，如果需要修改，可以进入脚本中直接修改运行指令。
 
-运行脚本会后台启动应用，运行结果不会直接输出，请转至相应的 `logs` 目录下查看运行日志。
+运行脚本会后台启动进程，运行结果不会直接输出，请转至相应的 `logs` 目录下查看运行日志。
 
 ```bash
 # 以node0为例
 cd node0
-tail -f thanos-chain/logs/thanos-chain.log | grep 'empty do commit cost' #如果持续打印该消息，说明节点chain应用启动成功并参与共识。
+tail -f thanos-chain/logs/thanos-chain.log | grep 'empty do commit cost' #如果持续打印该消息，说明节点 chain 服务启动成功并参与共识。
 ```
 
 ## 1.4.3. 启动节点网关 <a href="#id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-wang-guan" id="id2.4-an-zhuang-bing-qi-dong-jie-dian-qi-dong-jie-dian-wang-guan"></a>
 
-节点应用启动成功后，再启动 *thanos-gateway*
+节点服务启动成功后，再启动 *thanos-gateway* 网关
 
 ```bash
 # 以node0为例
@@ -45,7 +45,7 @@ bash start_gateway.sh
 ```bash
 # 以node0为例
 cd node0
-cat thanos-gateway/logs/thanos-gateway.log |grep 'INFO [main]  Main start success!!' #如果打印该消息，说明节点gateway应用启动成功。
+cat thanos-gateway/logs/thanos-gateway.log |grep 'INFO [main]  Main start success!!' #如果打印该消息，说明节点 gateway 程序启动成功。
 ```
 
 ## 其他问题
