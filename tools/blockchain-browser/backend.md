@@ -85,7 +85,7 @@ mvn clean package -U -Dmaven.test.skip=true
 
 ```sh
 #登录MySQL:
-mysql -u ${your_db_account} -p${your_db_password}  例如：mysql -u root -p123456
+mysql -u${your_db_account} -p${your_db_password}  例如：mysql -uroot -p123456
 ```
 
 ```sql
@@ -102,7 +102,7 @@ exit;
 
 ```sh
 #运行SQL文件
-mysql -u ${your_db_account} -p${your_db_password} thanos_browser < thanos_browser.sql
+mysql -u${your_db_account} -p${your_db_password} thanos_browser < thanos_browser.sql
 ```
 
 ### 1.2.5.6. 服务启动
@@ -297,7 +297,7 @@ Reload privilege tables now? [Y/n] <– 是否重新加载权限表，回车
 mysql -uroot -p -h localhost -P 3306
 ```
 
-* 授权root用户远程访问
+* 授权root用户远程访问(如果执行完成远程访问失败，请查看服务器`3306`端口是否开放)
 
 ```sql
 mysql > GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
