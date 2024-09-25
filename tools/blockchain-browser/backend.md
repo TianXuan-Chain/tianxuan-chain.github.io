@@ -129,7 +129,7 @@ tail -f /root/logs/thanos-browser-normal.log
 tail -f /root/logs/thanos-browser.log
 ```
 
-启动日志中看到`Started MainAplication in 7.2 seconds (JVM running for 8.224)`说明启动成功
+启动日志中看到`Started MainAplication in 7.2 seconds (JVM running for 8.053)`说明启动成功
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/浏览器启动成功日志.png" alt="浏览器启动成功日志" style="width: 100%; max-width: 600px; height: auto;">
