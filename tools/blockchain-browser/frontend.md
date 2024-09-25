@@ -102,7 +102,7 @@ yum install nginx
 查看安装版本
 
 ```
-nginx --version
+nginx -v
 ```
 
 #### 1.3.5.2 启动nginx
