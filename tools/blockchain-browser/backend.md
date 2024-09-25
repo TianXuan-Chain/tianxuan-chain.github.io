@@ -117,7 +117,7 @@ cd /root
 
 ```sh
 #启动
-nohup java -Xmx1g -Xms512m -Xmn750m -Xss4M -jar thanos-browser-web-1.0-SNAPSHOT.jar >/dev/null 2>&1 &
+nohup java -Xmx512m -Xms512m -Xmn200m -Xss4M -jar thanos-browser-web-1.0-SNAPSHOT.jar >/dev/null 2>&1 &
 ```
 
 ### 1.2.5.7. 查看日志
