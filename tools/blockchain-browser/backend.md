@@ -1,11 +1,30 @@
 
-本教程脚本运行环境需要在 <mark>*Linux*</mark> 系统中进行，系统版本要求请见：[硬件需求](../../quick-start/depoly-tianxaun-chain/hardware-requirement.md)。
+本教程脚本运行环境需要在 <mark>*Linux*</mark> 系统中进行
 
-## 1.2.1. 功能说明
+## 1.2.1. 硬件配置要求
+
+| 配置     | 最低配置                     | 推荐配置 |
+| ------ |--------------------------|------|
+| 内存     | 1GB                      | 4GB  |
+| CPU核心数 | 2核                       | 4核   |
+| 硬盘大小   | 40G                      | 200G |
+| 网络带宽   | 1Mb                      | 10Mb |
+| 操作系统   | CentOS 7+ (推荐)、Ubuntu18+ |      |
+
+## 1.2.2. 网络及端口要求
+
+至少需要开放2个端口，供区块链浏览器部署使用。
+
+| 端口信息       | 端口号     |
+|------------|---------|
+| 后端服务端口     | 7776 \~ |
+| MySQL数据库端口 | 3306 \~ |
+
+## 1.2.3. 功能说明
 
 本工程是区块链浏览器的后端服务，功能是解析天玄链节点数据储存数据库，向前端提供数据接口，页面展示。
 
-## 1.2.2. 前提条件
+## 1.2.4. 前提条件
 
 | 环境  | 版本                |
 | ----- | ------------------- |
@@ -13,12 +32,12 @@
 | MySQL | MySQL-5.6或以上版本 |
 | Maven | Maven-3.3或以上版本 |
 
-## 1.2.3. 部署说明
+## 1.2.5. 部署说明
 
-### 1.2.3.1. 下载物料包
+### 1.2.5.1. 下载物料包
 * 获取相关物料包（thanos-web3j和thanos-common已推到本地 Maven 仓库中的直接跳过即可），具体下载流程参见[快速入门](../../app-development-manual/java-sdk/quick-start.md) 3.1.2.1. 至3.1.2.2. 章节
 
-### 1.2.3.2. 拉取代码
+### 1.2.5.2. 拉取代码
 
 ```sh
 cd /root
@@ -29,7 +48,7 @@ git clone https://github.com/TianXuan-Chain/thanos-browser-backend.git
 cd /root/thanos-browser-backend
 ```
 
-### 1.2.3.3. 修改配置
+### 1.2.5.3. 修改配置
 
 * 进入配置文件
 
@@ -54,19 +73,19 @@ thanos.rpc.ip.List=127.0.0.1:8580
 chain.node.list=[{"ip":"127.0.0.1","rpcPort":8580}]
 ```
 
-### 1.2.3.4. 编译代码
+### 1.2.5.4. 编译代码
 
 ```sh
 mvn clean package -U -Dmaven.test.skip=true
 ```
 
-### 1.2.3.5. 数据初始化
+### 1.2.5.5. 数据初始化
 
 * 新建数据库
 
 ```sh
 #登录MySQL:
-mysql -u ${your_db_account} -p${your_db_password}  例如：mysql -u root -p123456
+mysql -u${your_db_account} -p${your_db_password}  例如：mysql -uroot -p123456
 ```
 
 ```sql
@@ -83,10 +102,10 @@ exit;
 
 ```sh
 #运行SQL文件
-mysql -u ${your_db_account} -p${your_db_password} thanos_browser < thanos_browser.sql
+mysql -u${your_db_account} -p${your_db_password} thanos_browser < thanos_browser.sql
 ```
 
-### 1.2.3.6. 服务启动
+### 1.2.5.6. 服务启动
 
 * 拷贝jar包
 
@@ -98,10 +117,10 @@ cd /root
 
 ```sh
 #启动
-nohup java -jar thanos-browser-web-1.0-SNAPSHOT.jar >/dev/null 2>&1 &
+nohup java -Xmx1g -Xms512m -Xmn750m -Xss4M -jar thanos-browser-web-1.0-SNAPSHOT.jar >/dev/null 2>&1 &
 ```
 
-### 1.2.3.7. 查看日志
+### 1.2.5.7. 查看日志
 
 ```sh
 #启动日志
@@ -126,9 +145,9 @@ tail -f /root/logs/thanos-browser.log
     </figure>
 </div>
 
-## 1.2.4. 问题排查
+## 1.2.6. 问题排查
 
-### 1.2.4.1. 同步区块信息报错
+### 1.2.6.1. 同步区块信息报错
 
 `java.sql.SQLException: Table has no partition for value ${your_error_partition}`
 
@@ -147,9 +166,9 @@ ALTER TABLE thanos_evm_transaction ADD PARTITION(PARTITION p${your_error_partiti
 执行SQL:ALTER TABLE thanos_evm_transaction ADD PARTITION(PARTITION p20240924 VALUES LESS THAN (20240924) ENGINE = InnoDB);
 ```
 
-## 1.2.5. 安装教程
+## 1.2.7. 安装教程
 
-### 1.2.5.1. Oracle JDK \[1.8] 安装
+### 1.2.7.1. Oracle JDK \[1.8] 安装
 
 ```sh
 # 创建新的文件夹，安装Java 8或以上的版本，将下载的jdk放在software目录
@@ -175,7 +194,7 @@ source /etc/profile
 java -version
 ```
 
-### 1.2.5.2. Maven \[3.3.9] 安装
+### 1.2.7.2. Maven \[3.3.9] 安装
 
 ```sh
 # 下载安装文件
@@ -212,7 +231,7 @@ mvn -v
 </mirror>
 ```
 
-### 1.2.5.3. Git 安装
+### 1.2.7.3. Git 安装
 
 下载开发部署工具的源码需要依赖 *Git* ，安装命令如下：
 
@@ -228,7 +247,7 @@ Ubuntu:sudo apt install -y git
 * 启动ssh-agent `eval $(ssh-agent)`
 * 添加私钥到ssh-agent `ssh-add ~/.ssh/id_rsa`
 
-### 1.2.5.4. MySQL安装
+### 1.2.7.4. MySQL安装
 
 *MariaDB*数据库是 MySQL 的一个分支，主要由开源社区在维护，采用 GPL 授权许可。*MariaDB*完全兼容 MySQL，包括API和命令行。其他安装方式请参考[MySQL官网](https://dev.mysql.com/downloads/mysql/)。
 
@@ -278,7 +297,7 @@ Reload privilege tables now? [Y/n] <– 是否重新加载权限表，回车
 mysql -uroot -p -h localhost -P 3306
 ```
 
-* 授权root用户远程访问(远程访问需要开放服务器3306端口)
+* 授权root用户远程访问(如果执行完成远程访问失败，请查看服务器`3306`端口是否开放)
 
 ```sql
 mysql > GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
