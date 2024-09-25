@@ -133,7 +133,7 @@ tail -f /root/logs/thanos-browser.log
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/浏览器启动成功日志.png" alt="浏览器启动成功日志" style="width: 100%; max-width: 600px; height: auto;">
-        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">浏览器启动成功日志</figcaption>
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图1. 浏览器启动成功日志</figcaption>
     </figure>
 </div>
 
@@ -141,7 +141,7 @@ tail -f /root/logs/thanos-browser.log
 <div style="text-align: left;">
     <figure style="display: inline-block; margin: 0;">
         <img src="../../assets/浏览器开始拉取区块日志.png" alt="浏览器开始拉取区块" style="width: 100%; max-width: 600px; height: auto;">
-        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">浏览器开始拉取区块</figcaption>
+        <figcaption style="text-align: center; max-width: 600px; font-weight: bold; font-size: 14px; color: #555;">图2. 浏览器开始拉取区块</figcaption>
     </figure>
 </div>
 
