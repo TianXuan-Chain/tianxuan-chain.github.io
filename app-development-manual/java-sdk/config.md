@@ -126,6 +126,6 @@ tls {
 
 3）**ASYNC 日志组件**： 采用 *ch.qos.logback.classic.AsyncAppender* 组件，负责异步记录日志。该组件仅充当事件分派器，必须搭配其他 *appender* 使用，示例文件中搭配 *FILE* 日志组件，表示将日志事件异步记录到文件中。此外，可通过 *\<root>* 标签，指定日志的打印等级。并通过 *\<appender-ref>* 标签指定生效的日志组件。
 
-### 配置打印的日志等级 <a href="#id4.3.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-deng-ji" id="id4.3.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-deng-ji"></a>
+### 3.2.3.2. 配置打印的日志等级 <a href="#id4.3.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-deng-ji" id="id4.3.3-pei-zhi-shuo-ming-pei-zhi-da-yin-de-ri-zhi-deng-ji"></a>
 
 通过 *\<logger>* 标签 指定相应类的日志等级。

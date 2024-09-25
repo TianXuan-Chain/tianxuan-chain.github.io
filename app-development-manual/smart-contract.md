@@ -6,7 +6,7 @@
 
 下面是编写一个简单的 *Erc20* 代币合约的示例
 
-**1）合约接口**
+## 2.1. 合约接口
 
 ```solidity
 pragma solidity ^0.4.24;
@@ -30,7 +30,7 @@ interface IERC20 {
 }
 ```
 
-2）工具合约
+## 2.2. 工具合约
 
 ```solidity
 pragma solidity ^0.4.24;
@@ -100,7 +100,7 @@ library SafeMath {
 }
 ```
 
-3）合约实现
+## 2.3. 合约实现
 
 ```solidity
 /**
