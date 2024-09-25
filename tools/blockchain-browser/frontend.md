@@ -13,23 +13,23 @@
 推荐使用nvm管理nodejs版本
 使用命令安装nvm
 
-```
+```sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 ```
 
 ### 1.3.2.2 更新会话
 安装完成后，您需要关闭并重新打开终端，或者运行以下命令来更新会话以使用NVM
-```
+```sh
 source ~/.bashrc
 ```
 ### 1.3.2.3 使用NVM安装指定版本的Node.js
 现在，您可以使用NVM安装任何您想要的Node.js版本。例如，要安装Node.js 16.20.2，您可以运行：
-```
+```sh
 nvm install 16.20.2
 ```
 ### 1.3.2.4 验证安装
 安装完成后，您可以使用以下命令来检查Node.js是否安装成功：
-```
+```sh
 node -v
 ```
 这个命令应该会显示您刚刚安装的Node.js版本号。如果要切换版本可执行nvm use 版本号
@@ -37,7 +37,7 @@ node -v
 ### 1.3.2.5 直接安装nodejs
 若不想安装nvm也可直接安装指定版本nodejs(本项目支持12到16版本)，代码如下：
 
-```
+```sh
 #ubuntu 安装命令
 
 sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
@@ -71,13 +71,12 @@ npm run build
 ```
 
 注：如果依赖下载缓慢可以尝试切换淘宝镜像源，命令如下：
-```
+```sh
 # 切换淘宝镜像源
 npm config set registry https://registry.npmmirror.com
 
 # 查看当前镜像源
 npm config get registry
-
 ```
 
 ## 1.3.5 nginx反向代理
@@ -85,7 +84,7 @@ npm config get registry
 
 安装nginx
 
-```
+```sh
 #ubuntu 安装命令
 
 sudo apt-get update
@@ -100,14 +99,14 @@ yum install nginx
 
 查看安装版本
 
-```
+```sh
 nginx -v
 ```
 
 ### 1.3.5.2 启动nginx
 
 执行
-```
+```sh
 nginx
 ```
 一般输入后没有反馈，如果想确认nginx是否启动成功可以使用netstat -anput | grep nginx这个命令看看有没有nginx的端口占用。
@@ -122,12 +121,12 @@ cp -r dist /usr/share/nginx/html
 ### 1.3.5.4 nginx配置
 
 先找到默认的nginx配置文件路径
-```
+```sh
 nginx -t
 ```
 正常情况的信息输出：
 
-```
+```sh
 nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok
 nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
 ```
@@ -145,7 +144,7 @@ vim /usr/local/nginx/conf/nginx.conf
 * 修改后端服务的ip和端口(后端端口在thanos-browser-backend项目下的thanos-browser-web/src/main/resources/application.properties路径下的server.port配置查看)。如示例中步骤3的http://127.0.0.1:7776。
 示例如下：
 
-```
+```json
 server {
     listen       80; #步骤1、前端nginx监听端口
     server_name  localhost; #步骤1、前端地址，可配置为域名
@@ -167,7 +166,7 @@ server {
 
 执行命令重启
 
-```
+```sh
 nginx -s reload
 ```
 
