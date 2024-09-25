@@ -1,16 +1,15 @@
-## 1.3 前端部署
 本项目是天玄区块链浏览器前端项目，使用框架react。
 本教程脚本运行环境需要在 <mark>*Linux*</mark> 系统中进行，系统版本要求请见：[硬件需求](../../quick-start/depoly-tianxaun-chain/hardware-requirement.md)。
 
-### 1.3.1 依赖环境
+## 1.3.1 依赖环境
 
 | 环境 | 版本|
 | --- | --- |
 | nginx |nginx1.6或以上版本  |
 | node |node12~16  |
 
-### 1.3.2 安装node
-#### 1.3.2.1 安装NVM
+## 1.3.2 安装node
+### 1.3.2.1 安装NVM
 推荐使用nvm管理nodejs版本
 使用命令安装nvm
 
@@ -18,24 +17,24 @@
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 ```
 
-#### 1.3.2.2 更新会话
+### 1.3.2.2 更新会话
 安装完成后，您需要关闭并重新打开终端，或者运行以下命令来更新会话以使用NVM
 ```
 source ~/.bashrc
 ```
-#### 1.3.2.3 使用NVM安装指定版本的Node.js
+### 1.3.2.3 使用NVM安装指定版本的Node.js
 现在，您可以使用NVM安装任何您想要的Node.js版本。例如，要安装Node.js 16.20.2，您可以运行：
 ```
 nvm install 16.20.2
 ```
-#### 1.3.2.4 验证安装
+### 1.3.2.4 验证安装
 安装完成后，您可以使用以下命令来检查Node.js是否安装成功：
 ```
 node -v
 ```
 这个命令应该会显示您刚刚安装的Node.js版本号。如果要切换版本可执行nvm use 版本号
 
-#### 1.3.2.5 直接安装nodejs
+### 1.3.2.5 直接安装nodejs
 若不想安装nvm也可直接安装指定版本nodejs(本项目支持12到16版本)，代码如下：
 
 ```
@@ -54,13 +53,13 @@ curl  -sL https://rpm.nodesource.com/setup_16.x | bash -
 yum install -y nodejs
 ```
 
-### 1.3.3 拉取代码
+## 1.3.3 拉取代码
 
 ```sh
 git clone https://github.com/TianXuan-Chain/thanos-browser-frontend.git
 ```
 
-### 1.3.4 打包
+## 1.3.4 打包
 
 ```sh
 #进入项目文件夹
@@ -81,8 +80,8 @@ npm config get registry
 
 ```
 
-### 1.3.5 nginx反向代理
-#### 1.3.5.1 下载nginx(本文以Ubuntu系统为例，centos可参考网络教程)
+## 1.3.5 nginx反向代理
+### 1.3.5.1 下载nginx(本文以Ubuntu系统为例，centos可参考网络教程)
 
 安装nginx
 
@@ -105,7 +104,7 @@ yum install nginx
 nginx -v
 ```
 
-#### 1.3.5.2 启动nginx
+### 1.3.5.2 启动nginx
 
 执行
 ```
@@ -114,13 +113,13 @@ nginx
 一般输入后没有反馈，如果想确认nginx是否启动成功可以使用netstat -anput | grep nginx这个命令看看有没有nginx的端口占用。
 然后在浏览器输入你对外的ip地址，如果页面出现了内容（一般是nginx页面）就说明你的nginx启动成功了。
 
-#### 1.3.5.3 将打包产物放到服务器上
+### 1.3.5.3 将打包产物放到服务器上
 
 ```sh
 #将dist文件复制到nginx
 cp -r dist /usr/share/nginx/html
 ```
-#### 1.3.5.4 nginx配置
+### 1.3.5.4 nginx配置
 
 先找到默认的nginx配置文件路径
 ```
@@ -164,7 +163,7 @@ server {
     }
 }
 ```
-#### 1.3.5.5 重启nginx
+### 1.3.5.5 重启nginx
 
 执行命令重启
 
